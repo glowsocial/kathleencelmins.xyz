@@ -1,4 +1,4 @@
-import { Playfair_Display, Lora } from "next/font/google";
+import { Playfair_Display, Courier_Prime } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -10,10 +10,10 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const lora = Lora({
+const courierPrime = Courier_Prime({
   subsets: ["latin"],
-  variable: "--font-lora",
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-courier",
+  weight: ["400", "700"],
   style: ["normal", "italic"],
   display: "swap",
 });
@@ -46,7 +46,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${lora.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${courierPrime.variable}`}>
       <body>
         <Header />
         <main>{children}</main>

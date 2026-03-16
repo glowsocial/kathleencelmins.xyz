@@ -32,22 +32,22 @@
 
   /* Typography scale */
   --font-heading: var(--font-playfair), 'Playfair Display', 'Georgia', serif;
-  --font-body: var(--font-lora), 'Lora', 'Georgia', serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-body: var(--font-courier), 'Courier Prime', 'Courier New', 'Courier', monospace;
+  --font-mono: var(--font-courier), 'Courier Prime', 'Courier New', monospace;
 
-  --text-xs: 0.8125rem;
-  --text-sm: 0.9375rem;
-  --text-base: 1.125rem;
-  --text-lg: 1.3125rem;
-  --text-xl: 1.625rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
   --text-2xl: 2.25rem;
   --text-3xl: 3rem;
   --text-4xl: 3.75rem;
   --text-hero: clamp(2.5rem, 5vw, 4.5rem);
 
   --leading-tight: 1.2;
-  --leading-normal: 1.75;
-  --leading-relaxed: 1.85;
+  --leading-normal: 1.8;
+  --leading-relaxed: 1.9;
   --leading-manifesto: 1.4;
 
   /* Spacing */
