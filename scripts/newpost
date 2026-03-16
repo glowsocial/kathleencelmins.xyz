@@ -1,0 +1,116 @@
+#!/bin/bash
+# =============================================================
+# newpost — Zero-friction publishing for kathleencelmins.xyz
+#
+# Usage:
+#   newpost                    → prompts for a title
+#   newpost "My great thought" → creates the post immediately
+#   newpost --quick "Just a thought about hiking"
+#                              → creates + publishes a short thought
+#                                without opening an editor
+# =============================================================
+
+CONTENT_DIR="$HOME/Code/kathleencelmins.xyz/content/writing"
+SITE_DIR="$HOME/Code/kathleencelmins.xyz"
+
+# Ensure content directory exists
+mkdir -p "$CONTENT_DIR"
+
+# --- Get the title ---
+QUICK_MODE=false
+if [[ "$1" == "--quick" || "$1" == "-q" ]]; then
+  QUICK_MODE=true
+  shift
+  TITLE="$*"
+elif [[ -n "$1" ]]; then
+  TITLE="$*"
+else
+  echo ""
+  echo "  ✏️  What's the title? (or just a working title — you can change it)"
+  echo ""
+  read -r -p "  → " TITLE
+fi
+
+if [[ -z "$TITLE" ]]; then
+  echo "  Need a title. Try again."
+  exit 1
+fi
+
+# --- Generate slug & filename ---
+SLUG=$(echo "$TITLE" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-//;s/-$//')
+DATE=$(date +%Y-%m-%d)
+FILENAME="${SLUG}.md"
+FILEPATH="${CONTENT_DIR}/${FILENAME}"
+
+# Check if file already exists
+if [[ -f "$FILEPATH" ]]; then
+  echo "  ⚠️  A post with that slug already exists: $FILENAME"
+  echo "  Opening the existing file..."
+  ${EDITOR:-code} "$FILEPATH"
+  exit 0
+fi
+
+# --- Quick mode: write the thought directly ---
+if [[ "$QUICK_MODE" == true ]]; then
+  echo ""
+  echo "  💭 Type your thought (press Enter twice when done):"
+  echo ""
+  BODY=""
+  EMPTY_LINES=0
+  while IFS= read -r line; do
+    if [[ -z "$line" ]]; then
+      EMPTY_LINES=$((EMPTY_LINES + 1))
+      if [[ $EMPTY_LINES -ge 2 ]]; then
+        break
+      fi
+      BODY="${BODY}\n"
+    else
+      EMPTY_LINES=0
+      BODY="${BODY}${line}\n"
+    fi
+  done
+
+  cat > "$FILEPATH" << EOF
+---
+title: "${TITLE}"
+date: ${DATE}
+description: ""
+---
+
+$(echo -e "$BODY")
+EOF
+
+  echo ""
+  echo "  ✅ Posted: ${FILENAME}"
+  echo ""
+
+  # Auto-commit and push
+  cd "$SITE_DIR" || exit 1
+  git add "$FILEPATH"
+  git commit -m "New post: ${TITLE}" --quiet
+  git push --quiet 2>/dev/null &
+
+  echo "  🚀 Pushing to GitHub (Vercel will auto-deploy)"
+  echo ""
+  exit 0
+fi
+
+# --- Normal mode: create file and open editor ---
+cat > "$FILEPATH" << EOF
+---
+title: "${TITLE}"
+date: ${DATE}
+description: ""
+---
+
+EOF
+
+echo ""
+echo "  ✅ Created: content/writing/${FILENAME}"
+echo "  📝 Opening in your editor..."
+echo ""
+echo "  When you're done writing, run: newpost --publish"
+echo ""
+
+# Open in default editor (VS Code, or whatever $EDITOR is)
+${EDITOR:-code} "$FILEPATH"

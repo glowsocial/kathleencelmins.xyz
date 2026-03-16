@@ -1,0 +1,53 @@
+#!/bin/bash
+# =============================================================
+# publish — Commit and push all pending writing changes
+#
+# Usage:
+#   publish              → commits all changes and pushes
+#   publish "some note"  → adds a custom commit message
+# =============================================================
+
+SITE_DIR="$HOME/Code/kathleencelmins.xyz"
+cd "$SITE_DIR" || exit 1
+
+# Check for changes
+if git diff --quiet && git diff --cached --quiet; then
+  echo ""
+  echo "  ✨ Nothing new to publish. You're up to date."
+  echo ""
+  exit 0
+fi
+
+# Show what's changed
+echo ""
+echo "  📝 Changes to publish:"
+echo ""
+git status --short content/ | sed 's/^/  /'
+echo ""
+
+# Commit message
+if [[ -n "$1" ]]; then
+  MSG="$*"
+else
+  # Auto-generate from changed files
+  CHANGED=$(git diff --name-only content/ 2>/dev/null | head -1)
+  NEW=$(git ls-files --others --exclude-standard content/ 2>/dev/null | head -1)
+  
+  if [[ -n "$NEW" ]]; then
+    BASENAME=$(basename "$NEW" .md)
+    MSG="New post: ${BASENAME}"
+  elif [[ -n "$CHANGED" ]]; then
+    BASENAME=$(basename "$CHANGED" .md)
+    MSG="Update: ${BASENAME}"
+  else
+    MSG="Update writing"
+  fi
+fi
+
+git add -A
+git commit -m "$MSG" --quiet
+echo "  ✅ Committed: $MSG"
+
+git push --quiet 2>&1
+echo "  🚀 Pushed to GitHub — Vercel will deploy in ~30 seconds"
+echo ""
