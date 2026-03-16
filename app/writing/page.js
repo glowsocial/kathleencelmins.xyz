@@ -10,7 +10,7 @@ export default function WritingPage() {
   const posts = getAllPosts();
 
   return (
-    <div>
+    <div className="page-container">
       <div className="page-header">
         <h1 className="page-title">Writing</h1>
         <p className="page-description">

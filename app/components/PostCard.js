@@ -17,8 +17,11 @@ export default function PostCard({ post }) {
       {post.description && (
         <p className="post-card-excerpt">{post.description}</p>
       )}
-      <div className="post-card-meta">
-        <span>{post.readingTime}</span>
+      <div className="post-card-footer">
+        <div className="post-card-meta">
+          <span>{post.readingTime}</span>
+        </div>
+        <span className="post-card-arrow">→</span>
       </div>
     </Link>
   );
