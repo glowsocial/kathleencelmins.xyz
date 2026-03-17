@@ -1,81 +1,65 @@
 ---
-title: "The Untethered Soul"
+title: "The Untethered Soul – what I actually took from it"
 date: 2026-03-16
-description: "A synopsis of The Untethered Soul by Michael A. Singer — the parts I want to remember, written so I actually will."
+description: "A synopsis of The Untethered Soul by Michael A. Singer — the parts I want to remember, and the language it gave me for something I already knew."
 ---
 
-I read this book a while ago, and I keep coming back to it. Not the physical book — more the ideas in it. They sneak up on me in the middle of a hike, or when I'm staring at the ceiling at 5:47am, or when someone says something that shouldn't bother me but does and I can feel my chest tighten around it like a fist.
+I finished [this book](https://amzn.to/4sQvNnW) last week, thinking I was the last person to have read it, and I want to remember it. It feels like the lessons in it are worth remembering, and rereading, and coming back to when I feel like I've lost my way.
 
-So here's my attempt to write down what I took from it. Not a book report. More like the parts that stuck.
+I thought it might be some overly religious nonsense, but what it actually was was a different way to look at meditation and the experience of who we are as not a collection of our ideas or the places we've been, but the way that we sit in awareness as the person whose thoughts and ideas come to them. 
 
----
+## Every memory is an imprint on your heart
 
-## You are not your thoughts.
+This is the one that stopped me.
 
-This is the whole book, really. Everything else is commentary.
+Singer's argument is that every experience – every joy, every hurt, every moment that landed hard – leaves a mark. Not metaphorically. Functionally. Those imprints shape how you move through the world, what you reach for, what you flinch away from.
 
-There's a voice in your head that never shuts up. It narrates everything. It judges. It worries. It replays conversations from 2019 and rehearses ones that will never happen. Singer calls it your inner roommate, which I love, because it reframes the voice from "me" to "that annoying person who lives in my head and has opinions about everything."
+The problem isn't the imprints. It's what we do with them.
 
-If you had a roommate who talked to you the way your mind talks to you, you'd move out.
+Most of us build a life designed to protect the ones that hurt. We arrange our relationships, our routines, our entire personalities around making sure nothing touches those tender spots again. We think we're being smart. We think we're protecting ourselves.
 
-The point isn't to make the voice stop. It's to notice that you're the one *hearing* it. You're the awareness behind the voice, not the voice itself. That distinction sounds small, but it changes everything.
+We're not. We're just building smaller and smaller rooms.
 
-## The heart opens and closes. That's the whole game.
+## The thorn
 
-Singer talks about the heart like it's a literal door. Something happens — a compliment, a song, a sunset over South Mountain — and the heart opens. Energy flows. You feel alive.
+Here's the analogy I can't stop thinking about.
 
-Then something else happens — a weird look from someone, a rejection, a memory you'd rather not have — and the heart closes. You contract. You protect. You build walls that feel like safety but are actually just small, dark rooms you've locked yourself inside.
+Imagine you have a thorn lodged in your arm. It hurts. So you build a protective layer around it – you keep your arm close to your body, you flinch when anyone gets near, you engineer your whole life around making sure nobody bumps it.
 
-The practice, as he describes it, is to notice when you're closing and choose to stay open. Not because the thing that's bothering you doesn't matter. But because closing doesn't actually protect you from anything. It just keeps you from experiencing your life.
+This works, technically. The thorn never gets touched. You never feel that specific pain.
 
-This is harder than it sounds. It's maybe the hardest thing.
+But you've also given the thorn your whole life.
 
-## Energy is the real currency.
+The other option – the obvious option, the one that somehow never occurs to us – is to just take out the thorn. Feel the brief sharp sting of removing it. And then move freely.
 
-There's a chapter about inner energy that I think about constantly. The idea is that you have this enormous well of energy inside you — the same energy that makes you feel electric when you're excited, creative, in love, whatever. And most of the time, we block it.
+That's it. That's the whole thing.
 
-We block it by holding onto things. Grudges. Resentments. Old stories about who we are and what we deserve. Every time we clamp down on something — *I can't believe they said that* — we're spending energy to keep that thing suppressed.
+We choose the armor because we're afraid of the moment of removal. We forget that the armor costs more, every single day, than the sting ever would.
 
-Singer's argument is that if you just… let it pass through you, the energy stays. You don't have to process everything. You don't have to "deal with it." You can just let it go, the way you'd let a leaf float past you on a stream. The leaf doesn't need your analysis. It just needs to keep moving.
+## Open the windows
 
-## Stored pain is the root of almost everything.
+The other image that stayed with me: a house with all its windows shut.
 
-He calls them *samskaras*, borrowing from the yogic tradition, but the concept is simple: we store old pain. Things happen to us — heartbreak, embarrassment, loss — and instead of letting them move through us, we push them down and build our personality around avoiding them.
+You can control the temperature that way. Nothing gets in that you didn't invite. It feels safe.
 
-Then something in the present brushes up against one of those stored experiences, and we react way out of proportion. Someone cancels plans and suddenly we're spiraling about being abandoned. Someone gives us constructive feedback and we feel like we're nine years old getting scolded.
+But nothing gets in. No light. No air. No surprise warmth from an unexpected direction.
 
-The work, Singer says, is to let those old things come up when they come up. Feel the discomfort. Don't run from it, don't analyze it to death, don't distract yourself with your phone. Just let it rise, and let it pass. That's how you get free of it.
+Singer talks about the heart the same way – it opens and closes. And the practice, if you can call it that, is to notice when you're closing and choose to stay open instead. Not because the thing that scared you doesn't matter. But because a closed heart can't actually protect you. It just cuts you off from your own life.
 
-It's the opposite of what most of us do. Most of us build elaborate systems to make sure we never have to feel the thing.
+Open the windows. Let in the light.
 
-## Death is the teacher.
+It sounds easy. It's maybe the hardest thing I know how to do.
 
-There's a chapter near the end that basically says: what if you lived every day knowing it was finite? Not in a morbid way. In a "don't waste this on petty nonsense" way.
+## What I tell my kids
 
-The question isn't *what would you do if you had six months to live.* It's more like: *would you really spend this afternoon being upset about that email?*
+When my kids get upset – really upset, the kind where you can see them contracting around something – I tell them to open their heart.
 
-When you bring death into the frame, the things that consume most of your mental energy start to look absurd. The grudge you've been holding, the worry about what someone thinks of you, the hours spent scrolling — none of it survives the lens of "I'm actually going to die someday."
+*It's hard, Mommy,* they say.
 
-I don't write that to be dark. I write it because it's clarifying. It cuts through so much noise.
+I know. It is hard.
 
-## The seat of the witness.
+But every time I manage it, I feel warm inside. Not fixed, not resolved – warm. Like something that was clenched finally let go.
 
-Singer comes back again and again to this idea of the *seat of the witness* — the place inside you that just watches. It watches your thoughts. It watches your emotions. It watches your body sensations. It watches the world.
+That's what I'm after. That's what the book gave me a language for.
 
-It doesn't judge. It doesn't react. It just observes.
-
-And *that's* you. Not the drama. Not the stories. Not the fear. The awareness behind all of it.
-
-He describes it like sitting in the center of your being and just resting there. Letting everything happen around you without getting pulled into it. It sounds passive, but it's actually the most powerful thing you can do. Because from that seat, you can choose. You're not reacting anymore. You're responding.
-
----
-
-## What I take from it.
-
-Honestly, the thing I keep coming back to is the inner roommate metaphor. The idea that my thoughts are not *me*, they're just a noisy companion that I've been mistaking for myself for my entire life.
-
-I can hear the voice and not obey it. I can feel the tightness in my chest and choose to stay open anyway. I can watch the old pain come up and let it pass instead of building a fortress around it.
-
-It doesn't mean I'm good at this. It means I know the door is there, even when I forget to walk through it.
-
-That feels like enough for now.
+The door is there, even when I forget to walk through it.
