@@ -10,7 +10,7 @@ Every Monday, I look back at the week and talk about what actually got done. Not
 
 ---
 
-## 🚀 Glow Social (the app)
+## Glow Social (the app)
 
 ### The big one: Smart Auto-Approve
 
@@ -72,7 +72,7 @@ Reddit was listed as a supported platform but never actually worked. We cleaned 
 
 ---
 
-## 📝 Glow Social (the website)
+## Glow Social (the website)
 
 ![SEO content and search growth efforts](/images/seo-growth.jpg)
 
@@ -80,7 +80,7 @@ Reddit was listed as a supported platform but never actually worked. We cleaned 
 
 This was a content-heavy week for glowsocial.com:
 
-- **Expanded 15 thin blog posts** from ~500 words each to 1,500–2,200 words with FAQ schema, internal links, and comparison tables
+- **Expanded 15 thin blog posts** from ~500 words each to 1,500-2,200 words with FAQ schema, internal links, and comparison tables
 - **Removed 9 duplicate/stub posts** and set up proper 301 redirects
 - **Consolidated 6 cannibalized "time spent on social media" posts** into one authoritative page
 - **Rewrote titles on high-traffic pages** that had thousands of impressions but almost no clicks
@@ -91,25 +91,25 @@ This was a content-heavy week for glowsocial.com:
 
 ---
 
-## 🏠 Client work: Schrock Construction
+## Client work: Schrock Construction
 
 Built and shipped a complete website redesign for a Kitsap County remodeling/handyman company. Contact form hooked up, Facebook linked, favicon done. From zero to live in a day.
 
 ---
 
-## ✍️ kathleencelmins.xyz
+## kathleencelmins.xyz
 
 Launched this very site! Journal-style with Playfair Display headings, Courier Prime body text (typewriter vibe), warm cream/brown palette. Wrote up my own take on *The Untethered Soul*. Built a `newpost` script so I can publish a thought from the terminal in seconds.
 
 ---
 
-## 👤 Client work: Phil's Random Thoughts
+## Client work: Phil's Random Thoughts
 
 Stood up a personal blog for a client. Card layout, sans-serif typography, fun scramble animation on the "Random" header. Simple but it's *his*.
 
 ---
 
-## 🏗 The Well-Paid Expert
+## The Well-Paid Expert
 
 - Recovered 356 blog posts from the Wayback Machine (the old WordPress site was gone)
 - Redesigned the whole thing with the original editorial branding
