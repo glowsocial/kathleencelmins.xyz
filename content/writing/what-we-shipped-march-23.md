@@ -40,8 +40,6 @@ We rewrote every major error state. "Your dashboard could not load — your cont
 
 I also found a race condition in how we were handling some behind-the-scenes database writes. On serverless infrastructure, the function can shut down immediately after sending a response — any async work that was happening after that point was failing and logging as a hard error, which was triggering Sentry alerts that weren't real alerts. Demoted it to a warning. Something failing silently is bad; something alerting incorrectly is a different kind of bad.
 
-![A social media dashboard with analytics and scheduled posts — what we're building](/images/shipped-analytics-march-23.jpg)
-
 ### Security audit: zero findings
 
 We ran the Supabase security linter. Three findings came back — two database views that had too much permission, and a stored function with a configuration issue. All fixed. The linter now returns nothing.
@@ -52,15 +50,17 @@ At the same time, the test suite went from 15 passing to 20 of 20. An audit week
 
 ## Glow Social (the website)
 
-![A site being rebuilt from the ground up](/images/shipped-website-march-23.jpg)
-
 ### The homepage finally looks like a real product
+
+![The new Glow Social homepage — dark navy, grid texture, and copy that doesn't apologize for itself](/images/shipped-website-march-23.jpg)
 
 The hero section had been bothering me for months. It was soft. Gradient-heavy in a way that felt more "startup template" than "thing you should trust with your marketing." The copy was good — I've always liked the copy — but the design wasn't holding up its end.
 
 This week we replaced it with a dark navy background, floating platform icons, a subtle grid overlay, and social proof that actually exists. We also removed the fake customer count. It was a placeholder from an early version and it had just... stayed there. Gone now.
 
 ### The preview tool lives on the right domain now
+
+![The Glow Social preview tool — a URL and email form, now living natively on glowsocial.com instead of being reverse-proxied](/images/shipped-analytics-march-23.jpg)
 
 This is the one I'm most proud of this week, even though it's invisible to 99% of people.
 
