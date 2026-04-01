@@ -1,89 +1,97 @@
 ---
 title: "What We Shipped This Week (March 23–29, 2026)"
 date: 2026-03-30
-description: "A look at what actually got done this week — analytics fixes, a new preview tool on the marketing site, a hero overhaul, and plugging a Stripe checkout hole."
+description: "Analytics that were lying, a homepage that finally looks like a real product, and a checkout that was silently failing. Here's the week."
 ---
 
-Every Monday, I look back at the week and talk about what actually got done. Not in engineering-speak — just what changed for Glow Social customers, for my other projects, and for the business. Here's this week.
+![Monday workspace — another week shipped](/images/shipped-hero-march-23.jpg)
 
-![A tidy workspace with a MacBook showing a dashboard, coffee, and a notebook — the default Monday setup](/images/shipped-hero-march-23.jpg)
+Every Monday, I look back at the week and talk about what actually got done. Not in engineering-speak — just what changed for Glow Social customers, for my other projects, and for the business. Here's this week.
 
 ---
 
 ## Glow Social (the app)
 
-### Analytics numbers were lying — now they're not
+### The analytics were lying
 
-Glow Social shows customers their impression counts — how many people have seen their posts. For a while, those numbers were stale. A sync bug was skipping any post that didn't have a platform value attached, which sounds like a narrow edge case but wasn't. A lot of older imported posts had exactly that problem.
+This one stings a little because it's been wrong for a while and I didn't know.
 
-We fixed the bug and rewrote the filter logic so that posts without platform data are handled gracefully instead of silently skipped. Then we went back and backfilled 34 historical posts that had been stuck with bad counts. Customers who've been using Glow Social since the early days should see more accurate numbers if they look at their analytics now.
+Glow Social shows customers their impression counts — how many times their posts have been seen across platforms. That number should go up as posts age and accumulate views. For some customers, it wasn't. The sync was skipping any post that didn't have a platform value stored on it, which sounds like a very specific edge case until you realize that describes most posts imported before a certain date.
 
-![A social media scheduling dashboard with charts and platform icons — what we're building toward](/images/shipped-analytics-march-23.jpg)
+We fixed the filter, then went back and re-synced 34 posts that had been stuck with wrong numbers. If you've been a customer for a while and your analytics looked oddly flat, that's why.
 
-### The preview tool now works for any kind of business
+### The preview tool works for any business now
 
-We shipped a new `/preview` route in the app. Previously, the brand discovery and preview flow was tightly coupled to specific industry categories — it assumed certain things about the business type. This week we decoupled it, so any business, regardless of niche, can go through the preview experience.
+The brand discovery flow — where a new customer puts in their website and we generate a preview of what their content would look like — was quietly assuming certain things about what kind of business you were. Industry categories were baked in. It made sense when we were targeting specific niches, but the tool is increasingly the thing that turns a curious visitor into a paying customer, and narrow assumptions are the enemy of that.
 
-This matters because the preview tool is increasingly becoming our top-of-funnel entry point. The less friction there is, the more it can do its job.
+We rebuilt the `/preview` route to be industry-agnostic. Any business, any niche. You put in your URL, we show you something real.
 
-### Scheduling slots now actually respect your plan
+### Scheduling slots weren't matching what people paid for
 
-There was a quiet bug where legacy "unlimited" plan subscribers — including agency customers — were being capped at fewer scheduling slots than their plan promised. They could be on a plan that allowed 30 posts per day but were hitting an artificial wall they couldn't see.
+Legacy unlimited subscribers — including our agency customers — were hitting an invisible wall where they'd run out of scheduling slots before they should have. They were on plans that promised 30 posts per day. They were getting less.
 
-We fixed the slot calculation and also added a "Founding" tier to the agency checkout configuration to support the pricing work we've been doing alongside this. Existing unlimited subscribers should now see their full slot capacity.
+Fixed. And while we were in there, we also added a Founding tier to the agency checkout configuration, which feeds the pricing work we've been doing separately.
 
-### Error messages that are actually helpful
+### Error messages that are actually honest
 
-This one is small but it matters a lot. When things went wrong in Glow Social — failed carousels, checkout errors, dashboard load failures — users were seeing "Something went wrong." That's useless.
+This is the kind of thing that's embarrassing to admit, but: when something broke in Glow Social, users were seeing "Something went wrong." That's it. No context, no reassurance, nothing.
 
-We rewrote every major error state in the product with specific, human messages. "Your dashboard could not load — your content is safe" instead of a generic error. "The payment form could not load — your info is secure" instead of an alarming blank screen. Modals that silently failed now surface a toast notification so people know something actually happened.
+We rewrote every major error state. "Your dashboard could not load — your content is safe." "The payment form could not load — your info is secure." Carousel and video modals that used to silently fail now surface a message people can actually act on.
 
-It also turns out we had a race condition in how we were fire-and-forgetting some database writes on our serverless backend. When Vercel shuts down a function immediately after the response is sent, any pending async operations can fail. We were logging those as hard errors, which was triggering false Sentry alerts. Demoted to a warning with a note that it self-heals on the next load.
+I also found a race condition in how we were handling some behind-the-scenes database writes. On serverless infrastructure, the function can shut down immediately after sending a response — any async work that was happening after that point was failing and logging as a hard error, which was triggering Sentry alerts that weren't real alerts. Demoted it to a warning. Something failing silently is bad; something alerting incorrectly is a different kind of bad.
 
-### Full security audit: 0 findings
+![A social media dashboard with analytics and scheduled posts — what we're building](/images/shipped-analytics-march-23.jpg)
 
-We ran an audit of the database security configuration. Found three issues — SECURITY DEFINER views that should have been SECURITY INVOKER, and a stored function with a mutable search path. All three are now fixed. Supabase's security linter reports zero findings.
+### Security audit: zero findings
 
-Test suite went from 15/20 passing to 20/20 at the same time.
+We ran the Supabase security linter. Three findings came back — two database views that had too much permission, and a stored function with a configuration issue. All fixed. The linter now returns nothing.
+
+At the same time, the test suite went from 15 passing to 20 of 20. An audit week is never the most exciting week, but it's the kind of week future-me is grateful for.
 
 ---
 
 ## Glow Social (the website)
 
-![Abstract illustration of a website hero section being redesigned — grid lines, floating shapes, dark navy](/images/shipped-website-march-23.jpg)
+![A site being rebuilt from the ground up](/images/shipped-website-march-23.jpg)
 
-### The homepage looks like a real product now
+### The homepage finally looks like a real product
 
-The hero section got a full overhaul. We had a gradient-heavy, somewhat soft design that wasn't doing the product justice. This week we replaced it with a dark navy background, floating platform icons, a subtle grid texture, and social proof elements that feel earned rather than generic.
+The hero section had been bothering me for months. It was soft. Gradient-heavy in a way that felt more "startup template" than "thing you should trust with your marketing." The copy was good — I've always liked the copy — but the design wasn't holding up its end.
 
-We also removed the fake customer count that had been there since launch. It's more honest this way.
+This week we replaced it with a dark navy background, floating platform icons, a subtle grid overlay, and social proof that actually exists. We also removed the fake customer count. It was a placeholder from an early version and it had just... stayed there. Gone now.
 
-### The preview tool lives on glowsocial.com now
+### The preview tool lives on the right domain now
 
-This is a bigger architectural win than it sounds. Before this week, the preview tool on the marketing site was a reverse-proxy hack — it was secretly loading the app and injecting it into the marketing page, which caused broken styles and unpredictable behavior.
+This is the one I'm most proud of this week, even though it's invisible to 99% of people.
 
-We rebuilt it from scratch as a native component that lives on the marketing site itself. The form submits on the right domain, the styles are consistent, and the experience is seamless. This matters because the preview tool is how most new users first encounter the product — it needed to actually work.
+The preview tool on the marketing site was a hack. It was reverse-proxying the app and injecting it into the marketing page, which meant the styles were always slightly off and form submissions behaved unpredictably depending on which browser cache you hit. I knew it was fragile the day we shipped it and I shipped it anyway because we needed something.
+
+We rebuilt it as a native component that actually lives on glowsocial.com. Same domain, same styles, form submissions that work correctly every time. It's the front door to the product. It needed to actually work.
 
 ---
 
 ## The Well-Paid Expert
 
-### Stripe checkout was silently failing
+### The Stripe checkout was silently failing
 
-There was a checkout failure that had been lurking for a while on the Agency Blueprint page. The Stripe SDK was being initialized eagerly — too early, before the environment was fully ready — which caused connection errors that looked like they came from nowhere.
+There was a checkout bug on the Agency Blueprint page. The error was a connection failure, which is the vague kind that points at several possible causes, and for a while it was hard to pin down.
 
-The fix was to switch to lazy initialization: load Stripe only when someone actually clicks checkout, not before. We also rebuilt the session ID storage using `sessionStorage` instead of relying on a URL parameter, which was getting mangled in some environments. Both fixes together eliminated the checkout error. The upsell flow works reliably now.
+The root issue was that we were initializing Stripe too early — before the environment was fully ready. The fix was lazy initialization: load Stripe only when someone actually clicks the checkout button, not before. We also rebuilt how the session ID gets stored. It was in the URL, which got mangled in certain browsers. It's in `sessionStorage` now, which is boring but correct.
 
-### Two new posts published
+The upsell flow works reliably now. Checkout failures that looked random were actually systematic, and now they're gone.
 
-We published two new sponsored posts to the site. More content, more entry points, more chances for the right person to find the funnel.
+### Two new posts went up
+
+Published two new pieces on the site. More surface area for the right person to find their way in.
 
 ---
 
 ## The theme
 
-This week was mostly about closing gaps. The kind of gaps that don't show up as features but that silently erode trust — wrong analytics numbers, invisible scheduling limits, confusing error messages, a checkout that failed quietly.
+The things I shipped this week don't make for a great demo. You can't show someone "analytics that are accurate now" or "an error message that actually explains something" and have them be wowed by it.
 
-This is the unglamorous part of building software. None of these fixes make for a dramatic demo. But they're the difference between a product that feels broken and one that feels like it's on your side. The goal this week was to be worthy of the trust that's already been placed in it.
+But this is the work that makes the difference between software that users tolerate and software they trust. The front door gets a facelift and actually works. Numbers stop lying. Things that broke tell you something useful instead of shrugging.
 
-The preview tool work is the piece I'm most excited about. Getting that experience right — native, seamless, on the right domain — is the thing that makes everything upstack work better. It's the front door. We finally built one worth walking through.
+I've been thinking a lot about trust lately — what earns it, what erodes it quietly over time. Wrong analytics erode it. Generic error messages erode it. A checkout that fails with no explanation erodes it. None of those are dramatic collapses. They're just small disappointments that accumulate.
+
+This week was about paying down that debt.
