@@ -1,0 +1,59 @@
+#!/bin/bash
+# =============================================================
+# write-prompt — Daily writing nudge for kathleencelmins.xyz
+#
+# Triggered by launchd at your chosen time.
+# Shows a notification, and if you click it, opens a fresh post.
+# =============================================================
+
+CONTENT_DIR="$HOME/Code/kathleencelmins.xyz/content/writing"
+SCRIPTS_DIR="$HOME/Code/kathleencelmins.xyz/scripts"
+
+# Show a macOS notification
+osascript -e 'display notification "5 minutes. One thought. Go." with title "✏️ Time to write" subtitle "What are you noticing today?" sound name "Purr"'
+
+# Wait a beat, then open a dialog asking if they want to write
+RESPONSE=$(osascript -e '
+tell application "System Events"
+  display dialog "You have thoughts. This is your nudge to get one of them out of your head and onto a page.
+
+5 minutes. One thought. No pressure." buttons {"Not today", "Let'\''s go"} default button "Let'\''s go" with title "Time to write ✏️" with icon note giving up after 300
+end tell
+' 2>/dev/null)
+
+if echo "$RESPONSE" | grep -q "Let's go"; then
+  # Generate a date-based filename as default
+  DATE=$(date +%Y-%m-%d)
+  DEFAULT_TITLE=$(date +"thoughts-%-m-%-d")
+  
+  # Ask for a title (or use default)
+  TITLE=$(osascript -e '
+  tell application "System Events"
+    set theResponse to display dialog "Give it a title (or leave this and just start writing):" default answer "'"$DEFAULT_TITLE"'" with title "New Post" buttons {"Cancel", "Go"} default button "Go"
+    return text returned of theResponse
+  end tell
+  ' 2>/dev/null)
+  
+  if [[ -z "$TITLE" ]]; then
+    TITLE="$DEFAULT_TITLE"
+  fi
+  
+  # Create the post
+  SLUG=$(echo "$TITLE" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-//;s/-$//')
+  FILEPATH="${CONTENT_DIR}/${SLUG}.md"
+  
+  if [[ ! -f "$FILEPATH" ]]; then
+    mkdir -p "$CONTENT_DIR"
+    cat > "$FILEPATH" << EOF
+---
+title: "${TITLE}"
+date: ${DATE}
+description: ""
+---
+
+EOF
+  fi
+  
+  # Open in Antigravity
+  open -a "Antigravity" "$FILEPATH"
+fi

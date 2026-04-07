@@ -25,7 +25,7 @@ export const metadata = {
     template: "%s — Kathleen Celmins",
   },
   description:
-    "Thoughts, essays, and reflections by Kathleen Celmins.",
+    "Everything, out loud. Writing by Kathleen Celmins.",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -33,7 +33,7 @@ export const metadata = {
     siteName: "Kathleen Celmins",
     title: "Kathleen Celmins",
     description:
-      "Thoughts, essays, and reflections by Kathleen Celmins.",
+      "Everything, out loud. Writing by Kathleen Celmins.",
   },
   twitter: {
     card: "summary",

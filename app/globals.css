@@ -23,8 +23,8 @@
   --color-ink: #3E2A1F;
   --color-ink-light: #6B5546;
   --color-ink-muted: #9C8A7A;
-  --color-accent: #7BB8E0;
-  --color-accent-hover: #5FA3D0;
+  --color-accent: #D4A853;
+  --color-accent-hover: #C49A47;
   --color-accent-warm: #C4733B;
   --color-border: #DDD5C9;
   --color-border-light: #E8E1D6;
@@ -43,7 +43,7 @@
   --text-2xl: 2.25rem;
   --text-3xl: 3rem;
   --text-4xl: 3.75rem;
-  --text-hero: clamp(2.5rem, 5vw, 4.5rem);
+  --text-hero: clamp(3rem, 7vw, 5.5rem);
 
   --leading-tight: 1.2;
   --leading-normal: 1.8;
@@ -305,44 +305,41 @@ main {
 .home-hero {
   background: var(--color-hero);
   color: var(--color-hero-text);
-  text-align: center;
+  text-align: left;
   padding: var(--space-5xl) var(--space-xl) var(--space-4xl);
   position: relative;
 }
 
 .home-hero-content {
-  max-width: 800px;
+  max-width: var(--max-width-full);
   margin: 0 auto;
+  padding: 0 var(--space-xl);
 }
 
 .home-greeting {
   font-family: var(--font-heading);
   font-size: var(--text-hero);
-  font-weight: 700;
-  line-height: var(--leading-manifesto);
-  margin-bottom: var(--space-2xl);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0;
   color: var(--color-hero-text);
   letter-spacing: -0.03em;
+}
+
+.hero-rule {
+  width: 80px;
+  height: 3px;
+  background: var(--color-accent);
+  margin: var(--space-xl) 0;
+  border-radius: 2px;
 }
 
 .home-bio {
   font-size: var(--text-lg);
   color: var(--color-hero-muted);
   line-height: var(--leading-relaxed);
-  max-width: 520px;
-  margin: 0 auto;
-}
-
-/* Wave transition from hero to content */
-.hero-wave {
-  position: relative;
-  margin-top: -1px;
-}
-
-.hero-wave svg {
-  display: block;
-  width: 100%;
-  height: 60px;
+  max-width: 540px;
+  margin: 0;
 }
 
 /* --- Posts section --- */
@@ -667,12 +664,7 @@ main {
   background: var(--color-hero);
   color: var(--color-hero-muted);
   margin-top: auto;
-}
-
-.footer-wave svg {
-  display: block;
-  width: 100%;
-  height: 50px;
+  border-top: 3px solid var(--color-accent);
 }
 
 .site-footer-inner {
@@ -695,6 +687,7 @@ main {
   font-size: var(--text-lg);
   color: var(--color-hero-text);
   font-weight: 600;
+  font-style: italic;
 }
 
 /* --- Empty state --- */
@@ -755,6 +748,11 @@ main {
 
   .home-hero {
     padding: var(--space-3xl) var(--space-lg) var(--space-2xl);
+    text-align: left;
+  }
+
+  .home-hero-content {
+    padding: 0;
   }
 
   .home-greeting {
