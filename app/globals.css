@@ -1,6 +1,6 @@
 /* ================================================================
-   KathleenCelmins.xyz — Journal Design System v2
-   Warm, personal, literary — with personality
+   KathleenCelmins.xyz — Dark Editorial v3
+   Everything, out loud.
    ================================================================ */
 
 /* --- Reset & Base --- */
@@ -13,22 +13,22 @@
 }
 
 :root {
-  /* Warm palette — aged paper, fresh ink, and a pop of sky */
-  --color-bg: #F5F1EB;
-  --color-bg-warm: #EDE7DD;
-  --color-surface: #FDFAF6;
-  --color-hero: #3E2A1F;
-  --color-hero-text: #F5F1EB;
-  --color-hero-muted: rgba(245, 241, 235, 0.6);
-  --color-ink: #3E2A1F;
-  --color-ink-light: #6B5546;
-  --color-ink-muted: #9C8A7A;
+  /* Dark editorial palette — warm dark, clean type, gold accents */
+  --color-bg: #1A1A1A;
+  --color-bg-warm: #222222;
+  --color-surface: #252525;
+  --color-hero: #141414;
+  --color-hero-text: #F0EDE8;
+  --color-hero-muted: rgba(240, 237, 232, 0.5);
+  --color-ink: #F0EDE8;
+  --color-ink-light: #B8B0A4;
+  --color-ink-muted: #7A7368;
   --color-accent: #D4A853;
-  --color-accent-hover: #C49A47;
-  --color-accent-warm: #C4733B;
-  --color-border: #DDD5C9;
-  --color-border-light: #E8E1D6;
-  --color-highlight: #F5E6C8;
+  --color-accent-hover: #E0B965;
+  --color-accent-warm: #D4A853;
+  --color-border: #333333;
+  --color-border-light: #2A2A2A;
+  --color-highlight: rgba(212, 168, 83, 0.15);
 
   /* Typography scale */
   --font-heading: var(--font-playfair), 'Playfair Display', 'Georgia', serif;
@@ -70,9 +70,9 @@
   --transition-fast: 150ms ease;
   --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
-  --shadow-sm: 0 1px 3px rgba(62, 42, 31, 0.06);
-  --shadow-md: 0 4px 16px rgba(62, 42, 31, 0.08);
-  --shadow-warm: 0 8px 30px rgba(62, 42, 31, 0.12);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --shadow-warm: 0 8px 30px rgba(0, 0, 0, 0.4);
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 16px;
@@ -129,17 +129,17 @@ p {
 }
 
 a {
-  color: var(--color-accent-warm);
+  color: var(--color-accent);
   text-decoration: underline;
-  text-decoration-color: rgba(196, 115, 59, 0.3);
+  text-decoration-color: rgba(212, 168, 83, 0.3);
   text-underline-offset: 3px;
   transition: text-decoration-color var(--transition-fast),
               color var(--transition-fast);
 }
 
 a:hover {
-  color: var(--color-ink);
-  text-decoration-color: var(--color-ink);
+  color: var(--color-accent-hover);
+  text-decoration-color: var(--color-accent-hover);
 }
 
 blockquote {
@@ -171,15 +171,15 @@ hr {
 code {
   font-family: var(--font-mono);
   font-size: 0.9em;
-  background: var(--color-bg-warm);
+  background: var(--color-surface);
   padding: 2px 6px;
   border-radius: var(--radius-sm);
-  color: var(--color-ink-light);
+  color: var(--color-accent);
 }
 
 pre {
-  background: var(--color-hero);
-  color: var(--color-bg);
+  background: #111111;
+  color: var(--color-ink);
   padding: var(--space-xl);
   border-radius: var(--radius-md);
   overflow-x: auto;
@@ -202,7 +202,7 @@ img {
 
 ::selection {
   background: var(--color-accent);
-  color: white;
+  color: #1A1A1A;
 }
 
 /* --- Wave divider SVG --- */
@@ -395,10 +395,11 @@ main {
   background: var(--color-surface);
   transform: translateY(-2px);
   box-shadow: var(--shadow-warm);
+  border-radius: var(--radius-md);
 }
 
 .post-card:hover .post-card-title {
-  color: var(--color-accent-warm);
+  color: var(--color-accent);
 }
 
 .post-card:hover .post-card-arrow {
@@ -530,7 +531,7 @@ main {
   margin: var(--space-2xl) 0;
   padding: var(--space-lg) var(--space-xl);
   border-left: 3px solid var(--color-accent);
-  background: rgba(123, 184, 224, 0.06);
+  background: rgba(212, 168, 83, 0.06);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
@@ -546,7 +547,7 @@ main {
   line-height: 0.78;
   padding-right: 0.1em;
   padding-top: 0.05em;
-  color: var(--color-hero);
+  color: var(--color-accent);
   font-weight: 800;
 }
 
@@ -588,8 +589,8 @@ main {
 }
 
 .back-link:hover {
-  color: var(--color-ink);
-  background: var(--color-bg-warm);
+  color: var(--color-accent);
+  background: var(--color-surface);
   text-decoration: none;
 }
 
@@ -664,7 +665,7 @@ main {
   background: var(--color-hero);
   color: var(--color-hero-muted);
   margin-top: auto;
-  border-top: 3px solid var(--color-accent);
+  border-top: 1px solid var(--color-border);
 }
 
 .site-footer-inner {
