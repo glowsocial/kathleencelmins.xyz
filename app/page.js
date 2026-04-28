@@ -19,6 +19,16 @@ export default function Home() {
             I notice, and I stopped waiting for permission.
           </p>
         </div>
+        <div className="fireflies">
+          <span className="firefly" />
+          <span className="firefly" />
+          <span className="firefly" />
+          <span className="firefly" />
+          <span className="firefly" />
+          <span className="firefly" />
+          <span className="firefly" />
+          <span className="firefly" />
+        </div>
         <div className="scroll-hint animate-in animate-in-delay-4">
           <span className="scroll-hint-dot" />
         </div>
