@@ -1,39 +1,44 @@
-import { Playfair_Display, Courier_Prime } from "next/font/google";
+import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-const playfair = Playfair_Display({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-playfair",
-  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-fraunces",
+  weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
-const courierPrime = Courier_Prime({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-courier",
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500"],
   display: "swap",
 });
 
 export const metadata = {
   metadataBase: new URL("https://kathleencelmins.xyz"),
   title: {
-    default: "Kathleen Celmins",
+    default: "Kathleen Celmins — Everything, out loud.",
     template: "%s — Kathleen Celmins",
   },
   description:
-    "Everything, out loud. Writing by Kathleen Celmins.",
+    "Everything, out loud. Writing, building, and noticing — by Kathleen Celmins.",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://kathleencelmins.xyz",
     siteName: "Kathleen Celmins",
-    title: "Kathleen Celmins",
+    title: "Kathleen Celmins — Everything, out loud.",
     description:
-      "Everything, out loud. Writing by Kathleen Celmins.",
+      "Everything, out loud. Writing, building, and noticing — by Kathleen Celmins.",
   },
   twitter: {
     card: "summary",
@@ -46,7 +51,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${courierPrime.variable}`}>
+    <html lang="en" className={`${fraunces.variable} ${inter.variable} ${jetbrains.variable}`}>
       <body>
         <Header />
         <main>{children}</main>

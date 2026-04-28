@@ -7,10 +7,10 @@ export default function Home() {
 
   return (
     <div>
-      {/* Hero — the unshrunk version */}
+      {/* Hero — stepping into the forest */}
       <section className="home-hero">
         <div className="home-hero-content">
-          <h1 className="home-greeting animate-in">
+          <h1 className="home-greeting animate-glow">
             Everything,<br />out loud.
           </h1>
           <div className="hero-rule animate-in animate-in-delay-1" />
@@ -18,6 +18,9 @@ export default function Home() {
             I&rsquo;m Kathleen. I build software, I write about what
             I notice, and I stopped waiting for permission.
           </p>
+        </div>
+        <div className="scroll-hint animate-in animate-in-delay-4">
+          <span className="scroll-hint-dot" />
         </div>
       </section>
 
