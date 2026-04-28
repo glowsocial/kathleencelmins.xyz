@@ -16,7 +16,7 @@ This is the big one. A month ago, Glow Social couldn't make videos. Now it can.
 
 The pipeline went through five complete rewrites before I stopped counting. Here's what landed:
 
-**The system:** You give it a hook. It writes a script (5-8 words per sentence, conversational, not choppy). It generates a background image with Flux, zooms it with Ken Burns, layers in captions, and publishes a 25-30 second video to your connected accounts.
+**The system:** You give it a hook. It writes a script, generates a background image with Flux, zooms it with Ken Burns, layers in captions, and publishes a 6.1-second video to your connected accounts. Short, punchy, scroll-stopping.
 
 **What I had to fix to get there:**
 - Switched from b-roll footage to Flux-generated images + Ken Burns zoom — more visually interesting, more on-brand
