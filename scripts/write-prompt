@@ -1,59 +1,56 @@
 #!/bin/bash
 # =============================================================
-# write-prompt — Daily writing nudge for kathleencelmins.xyz
+# write-prompt - Daily private writing nudge for kathleencelmins.xyz
 #
 # Triggered by launchd at your chosen time.
-# Shows a notification, and if you click it, opens a fresh post.
+# Shows a notification, and if you click it, opens the voice inbox.
 # =============================================================
 
-CONTENT_DIR="$HOME/Code/kathleencelmins.xyz/content/writing"
-SCRIPTS_DIR="$HOME/Code/kathleencelmins.xyz/scripts"
+SITE_DIR="$HOME/Code/kathleencelmins.xyz"
+WORKBENCH_DIR="$SITE_DIR/writing-workbench"
+VOICE_INBOX="$WORKBENCH_DIR/inbox/voice-inbox.md"
 
-# Show a macOS notification
-osascript -e 'display notification "5 minutes. One thought. Go." with title "✏️ Time to write" subtitle "What are you noticing today?" sound name "Purr"'
+mkdir -p "$WORKBENCH_DIR/inbox" "$WORKBENCH_DIR/drafts" "$WORKBENCH_DIR/fragments" "$WORKBENCH_DIR/archive"
 
-# Wait a beat, then open a dialog asking if they want to write
+TODAY=$(date +%Y-%m-%d)
+
+if [[ ! -f "$VOICE_INBOX" ]]; then
+  cat > "$VOICE_INBOX" << EOF
+# Voice Inbox
+
+EOF
+fi
+
+if ! grep -q "^## ${TODAY}$" "$VOICE_INBOX"; then
+  cat >> "$VOICE_INBOX" << EOF
+
+## ${TODAY}
+
+Topic:
+
+What happened?
+
+What I noticed:
+
+Why it matters:
+
+The line I want to remember:
+
+Possible title:
+EOF
+fi
+
+# Show a macOS notification.
+osascript -e 'display notification "5 minutes. One thought. Private first." with title "Time to write" subtitle "Open the voice inbox?" sound name "Purr"'
+
 RESPONSE=$(osascript -e '
 tell application "System Events"
-  display dialog "You have thoughts. This is your nudge to get one of them out of your head and onto a page.
+  display dialog "Start in the private voice inbox.
 
-5 minutes. One thought. No pressure." buttons {"Not today", "Let'\''s go"} default button "Let'\''s go" with title "Time to write ✏️" with icon note giving up after 300
+Capture the raw thought first. Publishing is a separate decision." buttons {"Not today", "Open inbox"} default button "Open inbox" with title "Time to write" with icon note giving up after 300
 end tell
 ' 2>/dev/null)
 
-if echo "$RESPONSE" | grep -q "Let's go"; then
-  # Generate a date-based filename as default
-  DATE=$(date +%Y-%m-%d)
-  DEFAULT_TITLE=$(date +"thoughts-%-m-%-d")
-  
-  # Ask for a title (or use default)
-  TITLE=$(osascript -e '
-  tell application "System Events"
-    set theResponse to display dialog "Give it a title (or leave this and just start writing):" default answer "'"$DEFAULT_TITLE"'" with title "New Post" buttons {"Cancel", "Go"} default button "Go"
-    return text returned of theResponse
-  end tell
-  ' 2>/dev/null)
-  
-  if [[ -z "$TITLE" ]]; then
-    TITLE="$DEFAULT_TITLE"
-  fi
-  
-  # Create the post
-  SLUG=$(echo "$TITLE" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-//;s/-$//')
-  FILEPATH="${CONTENT_DIR}/${SLUG}.md"
-  
-  if [[ ! -f "$FILEPATH" ]]; then
-    mkdir -p "$CONTENT_DIR"
-    cat > "$FILEPATH" << EOF
----
-title: "${TITLE}"
-date: ${DATE}
-description: ""
----
-
-EOF
-  fi
-  
-  # Open in Antigravity
-  open -a "Antigravity" "$FILEPATH"
+if echo "$RESPONSE" | grep -q "Open inbox"; then
+  open -a "Antigravity" "$VOICE_INBOX" || ${EDITOR:-code} "$VOICE_INBOX"
 fi

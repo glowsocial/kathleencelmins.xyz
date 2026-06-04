@@ -1,0 +1,10 @@
+# Keep workbench writing private. Track only folder placeholders.
+inbox/**
+drafts/**
+fragments/**
+archive/**
+
+!inbox/.gitkeep
+!drafts/.gitkeep
+!fragments/.gitkeep
+!archive/.gitkeep

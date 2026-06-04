@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# kathleencelmins.xyz
 
-## Getting Started
+Personal writing repo and private voice-writing workbench.
 
-First, run the development server:
+This project has two separate writing zones:
+
+- `writing-workbench/` is private raw material: dictated notes, messy drafts, fragments, and unfinished pieces.
+- `content/writing/` is public writing: polished pieces that are ready for the site.
+
+Do not move anything from `writing-workbench/` into `content/writing/` unless Kathleen explicitly says it is ready to publish.
+
+## Writing Workflow
+
+1. Dictated notes start in `writing-workbench/inbox/voice-inbox.md`.
+2. Rough pieces with a shape move to `writing-workbench/drafts/`.
+3. Loose lines, memories, images, and stray ideas go to `writing-workbench/fragments/`.
+4. Finished private pieces can move to `writing-workbench/archive/`.
+5. Public pieces go to `content/writing/` only after an explicit publish-ready decision.
+
+The workbench folders are ignored by git except for the folder placeholders and workflow docs, so private notes do not get swept into normal publish commits.
+
+## Voice Cleanup
+
+When cleaning dictated notes:
+
+- Preserve the phrasing that sounds like Kathleen.
+- Cut repetition, filler, and false starts.
+- Keep the piece personal, specific, and alive.
+- Do not make it corporate, generic, LinkedIn-polished, or artificially tidy.
+- Find the point before deciding the format.
+- Suggest what the note might become: essay, short post, fragment, title idea, story seed, or private journal entry.
+
+Default response shape for a dictated note:
+
+1. Cleaned draft
+2. What this seems to be about
+3. Lines worth keeping
+4. What it could become
+
+## Publishing
+
+Published posts live in `content/writing/` as Markdown or MDX with frontmatter:
+
+```md
+---
+title: "Title"
+date: 2026-06-04
+description: "Short description"
+---
+```
+
+Useful commands:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+scripts/newpost "Title"
+scripts/publish "New post: Title"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`scripts/newpost` is for public, publish-ready writing. Use the workbench first for dictated notes, rough drafts, and fragments.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Development
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+npm run build
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:3000](http://localhost:3000) to view the site locally.

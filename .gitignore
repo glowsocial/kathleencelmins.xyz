@@ -33,6 +33,16 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# private writing workbench material
+/writing-workbench/inbox/**
+/writing-workbench/drafts/**
+/writing-workbench/fragments/**
+/writing-workbench/archive/**
+!/writing-workbench/inbox/.gitkeep
+!/writing-workbench/drafts/.gitkeep
+!/writing-workbench/fragments/.gitkeep
+!/writing-workbench/archive/.gitkeep
+
 # vercel
 .vercel
 

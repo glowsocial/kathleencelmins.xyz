@@ -1,6 +1,9 @@
 #!/bin/bash
 # =============================================================
-# newpost — Zero-friction publishing for kathleencelmins.xyz
+# newpost — Public-post publishing for kathleencelmins.xyz
+#
+# Use this only after a piece is ready for content/writing.
+# Raw voice notes and rough drafts belong in writing-workbench/.
 #
 # Usage:
 #   newpost                    → prompts for a title

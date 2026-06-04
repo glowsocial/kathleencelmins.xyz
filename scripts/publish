@@ -1,17 +1,18 @@
 #!/bin/bash
 # =============================================================
-# publish — Commit and push all pending writing changes
+# publish — Commit and push public writing changes
 #
 # Usage:
-#   publish              → commits all changes and pushes
+#   publish              → commits public writing changes and pushes
 #   publish "some note"  → adds a custom commit message
 # =============================================================
 
 SITE_DIR="$HOME/Code/kathleencelmins.xyz"
 cd "$SITE_DIR" || exit 1
 
-# Check for changes
-if git diff --quiet && git diff --cached --quiet; then
+# Check for public writing changes only
+UNTRACKED_CONTENT=$(git ls-files --others --exclude-standard content/)
+if git diff --quiet -- content/ && git diff --cached --quiet -- content/ && [[ -z "$UNTRACKED_CONTENT" ]]; then
   echo ""
   echo "  ✨ Nothing new to publish. You're up to date."
   echo ""
@@ -44,8 +45,8 @@ else
   fi
 fi
 
-git add -A
-git commit -m "$MSG" --quiet
+git add -A content/
+git commit -m "$MSG" --quiet -- content/
 echo "  ✅ Committed: $MSG"
 
 git push --quiet 2>&1
