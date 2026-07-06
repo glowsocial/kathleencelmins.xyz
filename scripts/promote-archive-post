@@ -1,0 +1,113 @@
+#!/usr/bin/env node
+
+import fs from "node:fs";
+import path from "node:path";
+import process from "node:process";
+import matter from "gray-matter";
+
+const ROOT = process.cwd();
+const STAGING_DIR = path.join(ROOT, "writing-workbench", "archive-recovery", "raw");
+const ARCHIVE_DIR = path.join(ROOT, "content", "archive");
+
+const args = parseArgs(process.argv.slice(2));
+
+if (args.help) {
+  printHelp();
+  process.exit(0);
+}
+
+if (!args.source || !args.slug) {
+  printHelp();
+  process.exit(1);
+}
+
+const inputPath = path.join(STAGING_DIR, args.source, `${args.slug}.md`);
+const outputDir = path.join(ARCHIVE_DIR, args.source);
+const outputPath = path.join(outputDir, `${args.slug}.md`);
+
+if (!fs.existsSync(inputPath)) {
+  console.error(`Staged post not found: ${path.relative(ROOT, inputPath)}`);
+  process.exit(1);
+}
+
+if (fs.existsSync(outputPath) && !args.force) {
+  console.error(`Public post already exists: ${path.relative(ROOT, outputPath)}`);
+  console.error("Use --force to overwrite it.");
+  process.exit(1);
+}
+
+const raw = fs.readFileSync(inputPath, "utf-8");
+const { data, content } = matter(raw);
+const cleanedContent = cleanContent(content);
+
+const promoted = matter.stringify(cleanedContent, {
+  ...data,
+  curated: true,
+  needsReview: false,
+  curationNote: args.note,
+});
+
+fs.mkdirSync(outputDir, { recursive: true });
+fs.writeFileSync(outputPath, promoted, "utf-8");
+console.log(`Promoted ${args.source}/${args.slug}`);
+console.log(`Wrote ${path.relative(ROOT, outputPath)}`);
+
+function parseArgs(argv) {
+  const parsed = {
+    source: "",
+    slug: "",
+    note:
+      "Selected during manual archive quality pass for strong first-person writing and clean authorship.",
+    force: false,
+    help: false,
+  };
+
+  const positional = [];
+
+  for (let index = 0; index < argv.length; index += 1) {
+    const value = argv[index];
+    if (value === "--help" || value === "-h") parsed.help = true;
+    else if (value === "--force") parsed.force = true;
+    else if (value === "--note") parsed.note = argv[++index];
+    else positional.push(value);
+  }
+
+  if (positional[0]) {
+    if (positional[0].includes("/")) {
+      const [source, ...slugParts] = positional[0].split("/");
+      parsed.source = source;
+      parsed.slug = slugParts.join("/");
+    } else {
+      parsed.source = positional[0];
+      parsed.slug = positional[1] || "";
+    }
+  }
+
+  return parsed;
+}
+
+function printHelp() {
+  console.log(`Usage:
+  scripts/promote-archive-post kathleencelmins-com/2018-in-review
+  scripts/promote-archive-post frugal-portland 2014-new-years-resolutions --note "Why this belongs"
+
+Copies one ignored staged post into content/archive/<source>/, marks it public,
+and trims known extraction cruft.
+`);
+}
+
+function cleanContent(content) {
+  let cleaned = content.trim();
+
+  const cutoffPatterns = [
+    /\n- {3}\[Author\]\([^)]+\)[\s\S]*$/i,
+    /\n### Want more like this\?[\s\S]*$/i,
+    /\nBecome a \*\*For-Profit Blogging\*\*[\s\S]*$/i,
+  ];
+
+  for (const pattern of cutoffPatterns) {
+    cleaned = cleaned.replace(pattern, "");
+  }
+
+  return `${cleaned.trim()}\n`;
+}

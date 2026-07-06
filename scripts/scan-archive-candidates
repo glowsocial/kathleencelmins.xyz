@@ -1,0 +1,225 @@
+#!/usr/bin/env node
+
+import fs from "node:fs";
+import path from "node:path";
+import process from "node:process";
+import matter from "gray-matter";
+
+const ROOT = process.cwd();
+const DEFAULT_INPUT_DIR = path.join(
+  ROOT,
+  "writing-workbench",
+  "archive-recovery",
+  "raw"
+);
+const DEFAULT_REPORT_DIR = path.join(
+  ROOT,
+  "writing-workbench",
+  "archive-recovery",
+  "reports"
+);
+
+const args = parseArgs(process.argv.slice(2));
+
+if (args.help) {
+  printHelp();
+  process.exit(0);
+}
+
+const posts = readPosts(args.inputDir, args.source);
+const analyzed = posts.map(analyzePost).sort((a, b) => b.score - a.score);
+const report = buildReport(analyzed, args);
+
+fs.mkdirSync(args.reportDir, { recursive: true });
+fs.writeFileSync(args.output, report, "utf-8");
+console.log(`Scanned ${posts.length} staged posts`);
+console.log(`Wrote ${args.output}`);
+
+function parseArgs(argv) {
+  const parsed = {
+    inputDir: DEFAULT_INPUT_DIR,
+    reportDir: DEFAULT_REPORT_DIR,
+    source: "all",
+    help: false,
+  };
+
+  for (let index = 0; index < argv.length; index += 1) {
+    const value = argv[index];
+    if (value === "--help" || value === "-h") parsed.help = true;
+    else if (value === "--source") parsed.source = argv[++index];
+    else if (value === "--input") parsed.inputDir = path.resolve(argv[++index]);
+    else if (value === "--report-dir") parsed.reportDir = path.resolve(argv[++index]);
+  }
+
+  const date = new Date().toISOString().slice(0, 10);
+  const suffix = parsed.source === "all" ? "all" : parsed.source;
+  parsed.output = path.join(parsed.reportDir, `${date}-${suffix}.md`);
+  return parsed;
+}
+
+function printHelp() {
+  console.log(`Usage:
+  scripts/scan-archive-candidates --source frugal-portland
+  scripts/scan-archive-candidates --source all
+
+Reads ignored staged recoveries from:
+  writing-workbench/archive-recovery/raw/
+
+Writes a Markdown triage report to:
+  writing-workbench/archive-recovery/reports/
+`);
+}
+
+function readPosts(inputDir, source) {
+  if (!fs.existsSync(inputDir)) return [];
+
+  const sourceDirs =
+    source === "all"
+      ? fs
+          .readdirSync(inputDir, { withFileTypes: true })
+          .filter((entry) => entry.isDirectory())
+          .map((entry) => entry.name)
+      : [source];
+
+  return sourceDirs.flatMap((sourceId) => {
+    const dir = path.join(inputDir, sourceId);
+    if (!fs.existsSync(dir)) return [];
+
+    return fs
+      .readdirSync(dir)
+      .filter((filename) => /\.(md|mdx)$/.test(filename))
+      .map((filename) => {
+        const filePath = path.join(dir, filename);
+        const raw = fs.readFileSync(filePath, "utf-8");
+        const { data, content } = matter(raw);
+        return {
+          sourceId,
+          filename,
+          slug: filename.replace(/\.(md|mdx)$/, ""),
+          filePath,
+          data,
+          content,
+        };
+      });
+  });
+}
+
+function analyzePost(post) {
+  const text = post.content.replace(/\s+/g, " ").trim();
+  const lower = text.toLowerCase();
+  const flags = [];
+  const strengths = [];
+  let score = 0;
+
+  const wordCount = text ? text.split(/\s+/).length : 0;
+  if (wordCount < 500) {
+    flags.push(`thin extraction (${wordCount} words)`);
+    score -= 4;
+  } else if (wordCount > 900) {
+    strengths.push(`${wordCount} words`);
+    score += 1;
+  }
+
+  if (/\bTK\b|Reader Interactions|Leave a Reply|Skip to primary/i.test(post.content)) {
+    flags.push("cleanup artifact");
+    score -= 4;
+  }
+  if (
+    /guest post|staff writer|sponsored post|this post is sponsored|please welcome|take it away|author bio:/i.test(
+      `${post.data.title || ""}\n${post.content}`
+    )
+  ) {
+    flags.push("authorship or sponsorship risk");
+    score -= 6;
+  }
+  if (/affiliate links?|tracking\.|groupon|tag=|utm_campaign/i.test(post.content)) {
+    flags.push("commercial/affiliate residue");
+    score -= 3;
+  }
+  if (/^\s*!\[/.test(post.content.trim())) {
+    flags.push("starts with image");
+    score -= 1;
+  }
+  if (/\bI\b|\bmy\b|\bwe\b|\bour\b/.test(text)) {
+    strengths.push("first-person voice");
+    score += 2;
+  }
+  if (/debt|money|Portland|blogging|writing|story|neighbor|friend|remember|felt|learned/i.test(text)) {
+    strengths.push("personal/contextual topic");
+    score += 1;
+  }
+  if (lower.includes("my readers trust me") || lower.includes("i'm a writer")) {
+    strengths.push("strong authorship signal");
+    score += 4;
+  }
+
+  const verdict =
+    score >= 4 && flags.length === 0
+      ? "review first"
+      : score >= 2 && !flags.some((flag) => flag.includes("authorship"))
+        ? "maybe"
+        : "hide";
+
+  return {
+    ...post,
+    wordCount,
+    flags,
+    strengths,
+    score,
+    verdict,
+  };
+}
+
+function buildReport(posts, args) {
+  const groups = {
+    "review first": posts.filter((post) => post.verdict === "review first"),
+    maybe: posts.filter((post) => post.verdict === "maybe"),
+    hide: posts.filter((post) => post.verdict === "hide"),
+  };
+
+  return [
+    `# Archive Candidate Scan: ${args.source}`,
+    "",
+    `Generated: ${new Date().toISOString()}`,
+    "",
+    `Scanned ${posts.length} staged posts.`,
+    "",
+    `- Review first: ${groups["review first"].length}`,
+    `- Maybe: ${groups.maybe.length}`,
+    `- Hide: ${groups.hide.length}`,
+    "",
+    ...Object.entries(groups).flatMap(([label, items]) => [
+      `## ${titleCase(label)}`,
+      "",
+      ...(items.length
+        ? items.map(formatPost)
+        : ["Nothing in this bucket."]),
+      "",
+    ]),
+  ].join("\n");
+}
+
+function formatPost(post) {
+  const flags = post.flags.length ? post.flags.join("; ") : "none";
+  const strengths = post.strengths.length ? post.strengths.join("; ") : "none";
+  return [
+    `### ${post.data.title || post.slug}`,
+    "",
+    `- Source: ${post.sourceId}`,
+    `- Slug: ${post.slug}`,
+    `- Score: ${post.score}`,
+    `- Words: ${post.wordCount}`,
+    `- Flags: ${flags}`,
+    `- Strengths: ${strengths}`,
+    `- Staged file: ${path.relative(ROOT, post.filePath)}`,
+    `- Original: ${post.data.originalUrl || "unknown"}`,
+    "",
+  ].join("\n");
+}
+
+function titleCase(value) {
+  return value
+    .split(" ")
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ");
+}

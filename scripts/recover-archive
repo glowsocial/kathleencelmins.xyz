@@ -9,6 +9,7 @@ import TurndownService from "turndown";
 
 const ROOT = process.cwd();
 const ARCHIVE_DIR = path.join(ROOT, "content", "archive");
+const STAGING_DIR = path.join(ROOT, "writing-workbench", "archive-recovery", "raw");
 const SOURCES_FILE = path.join(ARCHIVE_DIR, "sources.json");
 
 const args = parseArgs(process.argv.slice(2));
@@ -37,6 +38,7 @@ function parseArgs(argv) {
   const parsed = {
     source: "frugal-portland",
     limit: 10,
+    output: "staging",
     inventoryOnly: false,
     force: false,
     help: false,
@@ -49,6 +51,12 @@ function parseArgs(argv) {
     else if (value === "--force") parsed.force = true;
     else if (value === "--source") parsed.source = argv[++index];
     else if (value === "--limit") parsed.limit = Number(argv[++index]);
+    else if (value === "--output") parsed.output = argv[++index];
+  }
+
+  if (!["staging", "archive"].includes(parsed.output)) {
+    console.error(`Invalid --output ${parsed.output}. Use "staging" or "archive".`);
+    process.exit(1);
   }
 
   return parsed;
@@ -59,19 +67,26 @@ function printHelp() {
   scripts/recover-archive --source frugal-portland --limit 25
   scripts/recover-archive --source all --limit 5
   scripts/recover-archive --source kathleencelmins-com --inventory-only
+  scripts/recover-archive --source frugal-portland --limit 1 --output archive
 
 Options:
   --source          Source id from content/archive/sources.json, or "all".
   --limit           Number of posts to import per source. Default: 10.
+  --output          "staging" (default) or "archive".
   --inventory-only  Write candidate inventory without fetching article bodies.
   --force           Overwrite existing recovered markdown files.
+
+Default output is the ignored staging workbench:
+  writing-workbench/archive-recovery/raw/
+
+Only use --output archive after manual curation.
 `);
 }
 
 async function recoverSource(source, options) {
   console.log(`\n== ${source.title} ==`);
   const candidates = await getWaybackCandidates(source);
-  const sourceDir = path.join(ARCHIVE_DIR, source.id);
+  const sourceDir = getOutputDir(source, options);
   fs.mkdirSync(sourceDir, { recursive: true });
 
   const inventoryPath = path.join(sourceDir, "_inventory.json");
@@ -109,6 +124,11 @@ async function recoverSource(source, options) {
   }
 
   console.log(`Imported ${imported}; skipped ${skipped}`);
+}
+
+function getOutputDir(source, options) {
+  const baseDir = options.output === "archive" ? ARCHIVE_DIR : STAGING_DIR;
+  return path.join(baseDir, source.id);
 }
 
 async function getWaybackCandidates(source) {
@@ -175,8 +195,12 @@ async function fetchWithRetry(url, options, attempts = 3) {
 }
 
 function readCachedCandidates(source) {
-  const inventoryPath = path.join(ARCHIVE_DIR, source.id, "_inventory.json");
-  if (!fs.existsSync(inventoryPath)) return [];
+  const paths = [
+    path.join(STAGING_DIR, source.id, "_inventory.json"),
+    path.join(ARCHIVE_DIR, source.id, "_inventory.json"),
+  ];
+  const inventoryPath = paths.find((candidatePath) => fs.existsSync(candidatePath));
+  if (!inventoryPath) return [];
 
   const cached = JSON.parse(fs.readFileSync(inventoryPath, "utf-8"));
   const bySlug = new Map();
