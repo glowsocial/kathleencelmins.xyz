@@ -1,0 +1,92 @@
+[
+  {
+    "id": "frugal-portland",
+    "title": "Frugal Portland",
+    "domain": "frugalportland.com",
+    "originalByline": "Kathleen O'Malley",
+    "activeYears": "2012-2016",
+    "status": "Wayback only",
+    "priority": "recover-first",
+    "estimatedPosts": "about 700",
+    "description": "Personal finance, debt, Portland, and early personal-blogging essays from the Frugal Portland era.",
+    "retrieval": {
+      "type": "wayback",
+      "from": "20120101000000",
+      "to": "20180101000000",
+      "limit": 15000
+    }
+  },
+  {
+    "id": "for-profit-blogging",
+    "title": "For Profit Blogging",
+    "domain": "forprofitblogging.com",
+    "originalByline": "Kathleen O'Malley",
+    "activeYears": "2014-2017",
+    "status": "Wayback only",
+    "priority": "recover-first",
+    "estimatedPosts": "about 250",
+    "description": "Blogging, publishing, email, podcasting, and monetization work from the Stacking Benjamins era.",
+    "retrieval": {
+      "type": "wayback",
+      "from": "20140101000000",
+      "to": "20200101000000",
+      "limit": 8000
+    }
+  },
+  {
+    "id": "kathleencelmins-com",
+    "title": "KathleenCelmins.com",
+    "domain": "kathleencelmins.com",
+    "originalByline": "Kathleen Celmins",
+    "activeYears": "2018-2023",
+    "status": "Wayback only",
+    "priority": "recover-first",
+    "estimatedPosts": "350 plus",
+    "description": "Personal brand, yearly reviews, business essays, email marketing, goals, and offer-building writing.",
+    "retrieval": {
+      "type": "wayback",
+      "from": "20180101000000",
+      "to": "20240101000000",
+      "limit": 15000
+    }
+  },
+  {
+    "id": "amplifiednow",
+    "title": "AmplifiedNOW",
+    "domain": "amplifiednow.com",
+    "originalByline": "Kathleen Celmins",
+    "activeYears": "2020-2022",
+    "status": "Wayback only",
+    "priority": "recover-first",
+    "estimatedPosts": "150 to 300 hand-written pieces",
+    "description": "Early agency-era essays about video, content marketing, repurposing, and creator operations.",
+    "retrieval": {
+      "type": "wayback",
+      "from": "20200101000000",
+      "to": "20230101000000",
+      "limit": 15000
+    }
+  },
+  {
+    "id": "the-well-paid-expert",
+    "title": "The Well-Paid Expert",
+    "domain": "thewellpaidexpert.com",
+    "originalByline": "Kathleen Celmins",
+    "activeYears": "2022-present",
+    "status": "Live plus Wayback",
+    "priority": "review-first",
+    "estimatedPosts": "50 to 100 early voice-led pieces",
+    "description": "Expertise, offers, content assets, and book-era writing that should be curated before import."
+  },
+  {
+    "id": "third-party",
+    "title": "Third-party platforms",
+    "domain": "multiple",
+    "originalByline": "Kathleen Celmins",
+    "activeYears": "2014-present",
+    "status": "Exports required",
+    "priority": "manual-export",
+    "estimatedPosts": "3,000 plus LinkedIn posts, podcast appearances, guest bylines, and social posts",
+    "description": "LinkedIn, X/Twitter, Goodreads, podcast guest appearances, HubSpot/SCORE bylines, and other platform content."
+  }
+]

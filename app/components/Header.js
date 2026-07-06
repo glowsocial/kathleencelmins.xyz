@@ -13,6 +13,9 @@ export default function Header() {
               <Link href="/writing">writing</Link>
             </li>
             <li>
+              <Link href="/archive">archive</Link>
+            </li>
+            <li>
               <Link href="/goals">goals</Link>
             </li>
             <li>

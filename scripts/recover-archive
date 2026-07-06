@@ -1,0 +1,562 @@
+#!/usr/bin/env node
+
+import fs from "node:fs";
+import path from "node:path";
+import process from "node:process";
+import { JSDOM } from "jsdom";
+import { Readability } from "@mozilla/readability";
+import TurndownService from "turndown";
+
+const ROOT = process.cwd();
+const ARCHIVE_DIR = path.join(ROOT, "content", "archive");
+const SOURCES_FILE = path.join(ARCHIVE_DIR, "sources.json");
+
+const args = parseArgs(process.argv.slice(2));
+
+if (args.help) {
+  printHelp();
+  process.exit(0);
+}
+
+const sources = JSON.parse(fs.readFileSync(SOURCES_FILE, "utf-8"));
+const selected = sources.filter((source) => {
+  if (!source.retrieval || source.retrieval.type !== "wayback") return false;
+  return args.source === "all" || args.source === source.id;
+});
+
+if (!selected.length) {
+  console.error(`No Wayback source found for --source ${args.source}`);
+  process.exit(1);
+}
+
+for (const source of selected) {
+  await recoverSource(source, args);
+}
+
+function parseArgs(argv) {
+  const parsed = {
+    source: "frugal-portland",
+    limit: 10,
+    inventoryOnly: false,
+    force: false,
+    help: false,
+  };
+
+  for (let index = 0; index < argv.length; index += 1) {
+    const value = argv[index];
+    if (value === "--help" || value === "-h") parsed.help = true;
+    else if (value === "--inventory-only") parsed.inventoryOnly = true;
+    else if (value === "--force") parsed.force = true;
+    else if (value === "--source") parsed.source = argv[++index];
+    else if (value === "--limit") parsed.limit = Number(argv[++index]);
+  }
+
+  return parsed;
+}
+
+function printHelp() {
+  console.log(`Usage:
+  scripts/recover-archive --source frugal-portland --limit 25
+  scripts/recover-archive --source all --limit 5
+  scripts/recover-archive --source kathleencelmins-com --inventory-only
+
+Options:
+  --source          Source id from content/archive/sources.json, or "all".
+  --limit           Number of posts to import per source. Default: 10.
+  --inventory-only  Write candidate inventory without fetching article bodies.
+  --force           Overwrite existing recovered markdown files.
+`);
+}
+
+async function recoverSource(source, options) {
+  console.log(`\n== ${source.title} ==`);
+  const candidates = await getWaybackCandidates(source);
+  const sourceDir = path.join(ARCHIVE_DIR, source.id);
+  fs.mkdirSync(sourceDir, { recursive: true });
+
+  const inventoryPath = path.join(sourceDir, "_inventory.json");
+  fs.writeFileSync(
+    inventoryPath,
+    JSON.stringify(candidates, null, 2) + "\n",
+    "utf-8"
+  );
+  console.log(`Wrote ${candidates.length} candidates to ${inventoryPath}`);
+
+  if (options.inventoryOnly) return;
+
+  let imported = 0;
+  let skipped = 0;
+
+  for (const candidate of candidates) {
+    if (imported >= options.limit) break;
+
+    const filePath = path.join(sourceDir, `${candidate.slug}.md`);
+    if (!options.force && fs.existsSync(filePath)) {
+      skipped += 1;
+      continue;
+    }
+
+    try {
+      const markdown = await recoverPost(source, candidate);
+      fs.writeFileSync(filePath, markdown, "utf-8");
+      imported += 1;
+      console.log(`Imported ${source.id}/${candidate.slug}`);
+      await wait(350);
+    } catch (error) {
+      skipped += 1;
+      console.warn(`Skipped ${candidate.originalUrl}: ${error.message}`);
+    }
+  }
+
+  console.log(`Imported ${imported}; skipped ${skipped}`);
+}
+
+async function getWaybackCandidates(source) {
+  const params = new URLSearchParams({
+    url: `${source.domain}/*`,
+    output: "json",
+    collapse: "urlkey",
+    fl: "original,timestamp,statuscode,mimetype",
+    limit: String(source.retrieval.limit || 5000),
+  });
+  params.append("filter", "statuscode:200");
+  params.append("filter", "mimetype:text/html");
+  if (source.retrieval.from) params.set("from", source.retrieval.from);
+  if (source.retrieval.to) params.set("to", source.retrieval.to);
+
+  const response = await fetchWithRetry(
+    `https://web.archive.org/cdx/search/cdx?${params.toString()}`,
+    { headers: { "User-Agent": "kathleencelmins-archive-recovery/1.0" } }
+  );
+  if (!response.ok) {
+    const cached = readCachedCandidates(source);
+    if (cached.length) {
+      console.warn(
+        `CDX request failed with ${response.status}; using ${cached.length} cached candidates`
+      );
+      return cached;
+    }
+    throw new Error(`CDX request failed with ${response.status}`);
+  }
+
+  const rows = await response.json();
+  const [header, ...records] = rows;
+  const index = Object.fromEntries(header.map((name, i) => [name, i]));
+  const bySlug = new Map();
+
+  for (const record of records) {
+    const originalUrl = record[index.original];
+    const timestamp = record[index.timestamp];
+    const candidate = toCandidate(source, originalUrl, timestamp);
+    if (!candidate) continue;
+
+    const existing = bySlug.get(candidate.slug);
+    if (!existing || candidate.timestamp > existing.timestamp) {
+      bySlug.set(candidate.slug, candidate);
+    }
+  }
+
+  return [...bySlug.values()].sort((a, b) => {
+    if (a.dateHint && b.dateHint && a.dateHint !== b.dateHint) {
+      return a.dateHint.localeCompare(b.dateHint);
+    }
+    return a.slug.localeCompare(b.slug);
+  });
+}
+
+async function fetchWithRetry(url, options, attempts = 3) {
+  let response;
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    response = await fetch(url, options);
+    if (response.ok || response.status < 500) return response;
+    await wait(1000 * attempt);
+  }
+  return response;
+}
+
+function readCachedCandidates(source) {
+  const inventoryPath = path.join(ARCHIVE_DIR, source.id, "_inventory.json");
+  if (!fs.existsSync(inventoryPath)) return [];
+
+  const cached = JSON.parse(fs.readFileSync(inventoryPath, "utf-8"));
+  const bySlug = new Map();
+  for (const item of cached) {
+    const candidate = toCandidate(source, item.originalUrl, item.timestamp);
+    if (!candidate) continue;
+    const existing = bySlug.get(candidate.slug);
+    if (!existing || candidate.timestamp > existing.timestamp) {
+      bySlug.set(candidate.slug, candidate);
+    }
+  }
+
+  return [...bySlug.values()].sort((a, b) => a.slug.localeCompare(b.slug));
+}
+
+function toCandidate(source, originalUrl, timestamp) {
+  let parsed;
+  try {
+    parsed = new URL(originalUrl);
+  } catch {
+    return null;
+  }
+
+  const host = parsed.hostname.replace(/^www\./, "");
+  if (host !== source.domain) return null;
+
+  parsed.hash = "";
+  parsed.search = "";
+
+  const canonicalUrl = parsed.toString();
+  const rawPath = decodeURIComponent(parsed.pathname).replace(/\/+$/, "");
+  if (!rawPath || rawPath === "/") return null;
+  if (/\.(jpg|jpeg|png|gif|webp|svg|pdf|xml|json|css|js|ico|zip|mp3|mp4)$/i.test(rawPath)) {
+    return null;
+  }
+
+  const segments = rawPath.split("/").filter(Boolean);
+  if (segments.some(isRejectedSegment)) return null;
+
+  const dated = getDateInfoFromSegments(segments);
+  if (dated?.isAttachment) return null;
+  if (!dated && segments.length > 1) return null;
+
+  const slugSegment = dated
+    ? segments[dated.slugIndex]
+    : segments[segments.length - 1];
+  if (!slugSegment) return null;
+
+  const slug = normalizeSlug(slugSegment);
+  if (!slug || slug.length < 4 || /^\d+$/.test(slug)) return null;
+  if (isLikelyAttachmentSlug(slug)) return null;
+
+  return {
+    slug,
+    originalUrl: canonicalUrl,
+    timestamp,
+    archiveUrl: `https://web.archive.org/web/${timestamp}id_/${canonicalUrl}`,
+    dateHint: dated?.date || null,
+  };
+}
+
+function isRejectedSegment(segment) {
+  return [
+    "about",
+    "archives",
+    "author",
+    "category",
+    "comments",
+    "contact",
+    "feed",
+    "page",
+    "privacy-policy",
+    "search",
+    "tag",
+    "wp-admin",
+    "wp-content",
+    "wp-includes",
+    "wp-json",
+  ].includes(segment.toLowerCase());
+}
+
+function getDateInfoFromSegments(segments) {
+  if (!/^\d{4}$/.test(segments[0] || "") || !/^\d{2}$/.test(segments[1] || "")) {
+    return null;
+  }
+
+  if (/^\d{2}$/.test(segments[2] || "")) {
+    return {
+      date: `${segments[0]}-${segments[1]}-${segments[2]}`,
+      slugIndex: 3,
+      isAttachment: segments.length > 4,
+    };
+  }
+
+  return {
+    date: `${segments[0]}-${segments[1]}-01`,
+    slugIndex: 2,
+    isAttachment: segments.length > 3,
+  };
+}
+
+function normalizeSlug(value) {
+  return value
+    .toLowerCase()
+    .replace(/\.html?$/, "")
+    .replace(/[^a-z0-9-]+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+function isLikelyAttachmentSlug(slug) {
+  return /^(img|dsc|px|screen-shot|screenshot|photo|image|1280px|640px)-/i.test(slug);
+}
+
+async function recoverPost(source, candidate) {
+  const response = await fetch(candidate.archiveUrl, {
+    headers: { "User-Agent": "kathleencelmins-archive-recovery/1.0" },
+  });
+  if (!response.ok) {
+    throw new Error(`snapshot request failed with ${response.status}`);
+  }
+
+  const html = await response.text();
+  const dom = new JSDOM(html, { url: candidate.originalUrl });
+  const document = dom.window.document;
+  removeChrome(document);
+
+  const reader = new Readability(document);
+  const article = reader.parse();
+  if (!article || !article.content) {
+    throw new Error("could not extract article content");
+  }
+
+  const markdown = htmlToMarkdown(article.content, candidate);
+  if (markdown.replace(/\s+/g, " ").length < 500) {
+    throw new Error("extracted article was too short");
+  }
+  if (isNonKathleenPost(markdown)) {
+    throw new Error("post appears to be guest or staff content");
+  }
+
+  const title = cleanTitle(article.title || document.title || candidate.slug);
+  const date = detectDate(dom.window.document, candidate, markdown);
+  const description = makeDescription(markdown, source.title);
+
+  return [
+    "---",
+    `title: ${yamlString(title)}`,
+    `date: ${yamlString(date)}`,
+    `description: ${yamlString(description)}`,
+    `source: ${yamlString(source.title)}`,
+    `sourceId: ${yamlString(source.id)}`,
+    `originalByline: ${yamlString(source.originalByline)}`,
+    `originalUrl: ${yamlString(candidate.originalUrl)}`,
+    `archiveUrl: ${yamlString(candidate.archiveUrl)}`,
+    "curated: false",
+    "needsReview: true",
+    `importedAt: ${yamlString(new Date().toISOString())}`,
+    "---",
+    "",
+    markdown,
+    "",
+  ].join("\n");
+}
+
+function removeChrome(document) {
+  document
+    .querySelectorAll(
+      [
+        "script",
+        "style",
+        "noscript",
+        "iframe",
+        "form",
+        "nav",
+        "header",
+        "footer",
+        "aside",
+        "#comments",
+        ".comments",
+        ".comments-area",
+        ".navigation",
+        ".sharedaddy",
+        ".jp-relatedposts",
+        ".yarpp-related",
+        ".sidebar",
+        ".site-header",
+        ".site-footer",
+      ].join(",")
+    )
+    .forEach((node) => node.remove());
+}
+
+function htmlToMarkdown(html, candidate) {
+  const rewritten = rewriteArticleHtml(html, candidate);
+  const turndown = new TurndownService({
+    headingStyle: "atx",
+    bulletListMarker: "-",
+    codeBlockStyle: "fenced",
+  });
+
+  return cleanMarkdown(
+    turndown
+      .turndown(rewritten)
+      .replace(/\n{3,}/g, "\n\n")
+      .trim()
+  );
+}
+
+function rewriteArticleHtml(html, candidate) {
+  const dom = new JSDOM(`<main>${html}</main>`, { url: candidate.originalUrl });
+  const document = dom.window.document;
+
+  document.querySelectorAll("img[src]").forEach((image) => {
+    const original = absoluteUrl(image.getAttribute("src"), candidate.originalUrl);
+    if (!original || original.startsWith("data:")) return;
+    image.setAttribute(
+      "src",
+      `https://web.archive.org/web/${candidate.timestamp}im_/${original}`
+    );
+  });
+
+  document.querySelectorAll("a[href]").forEach((link) => {
+    const original = cleanWaybackHref(
+      absoluteUrl(link.getAttribute("href"), candidate.originalUrl)
+    );
+    if (original) link.setAttribute("href", original);
+  });
+
+  return document.querySelector("main").innerHTML;
+}
+
+function absoluteUrl(value, baseUrl) {
+  try {
+    return new URL(value, baseUrl).href;
+  } catch {
+    return null;
+  }
+}
+
+function cleanWaybackHref(value) {
+  return value.replace(
+    /^https?:\/\/web\.archive\.org\/web\/\d+(?:id_|im_)?\/(https?:\/\/.*)$/i,
+    "$1"
+  );
+}
+
+function cleanMarkdown(markdown) {
+  return markdown
+    .split("\n")
+    .filter((line) => !isBoilerplateLine(line))
+    .join("\n")
+    .replace(/\n## Reader Interactions[\s\S]*$/i, "")
+    .replace(/\n### Leave a Reply[\s\S]*$/i, "")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+function isBoilerplateLine(line) {
+  const value = line.trim();
+  if (!value) return false;
+  if (/^use your .*arrow.* keys to browse$/i.test(value)) return true;
+  if (/ad\.linksynergy\.com/i.test(value)) return true;
+  if (/^share this:$/i.test(value)) return true;
+  if (/^like this:$/i.test(value)) return true;
+  if (/^related$/i.test(value)) return true;
+  return false;
+}
+
+function isNonKathleenPost(markdown) {
+  const lower = markdown.toLowerCase();
+  const opening = lower.slice(0, 1500);
+
+  return (
+    /the following is from (our )?new staff writer/.test(opening) ||
+    /today'?s guest post/.test(opening) ||
+    /this is a guest post/.test(opening) ||
+    /guest post by/.test(opening) ||
+    /category\/guest-post|view all posts in guest post|\[guest post\]/.test(lower)
+  );
+}
+
+function cleanTitle(title) {
+  return title
+    .replace(/\s+[-|]\s+(Frugal Portland|For Profit Blogging|Kathleen Celmins|AmplifiedNOW).*$/i, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function detectDate(document, candidate, markdown) {
+  const markdownDate = detectDateFromMarkdown(markdown);
+  if (markdownDate) return markdownDate;
+
+  const selectors = [
+    'meta[property="article:published_time"]',
+    'meta[name="date"]',
+    'meta[name="pubdate"]',
+    "time[datetime]",
+  ];
+
+  for (const selector of selectors) {
+    const node = document.querySelector(selector);
+    const value =
+      node?.getAttribute("content") || node?.getAttribute("datetime") || "";
+    const normalized = normalizeDate(value);
+    if (normalized) return normalized;
+  }
+
+  if (candidate.dateHint) return candidate.dateHint;
+  return `${candidate.timestamp.slice(0, 4)}-${candidate.timestamp.slice(4, 6)}-${candidate.timestamp.slice(6, 8)}`;
+}
+
+function detectDateFromMarkdown(markdown) {
+  const match = markdown.match(
+    /\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),\s+(\d{4})\b/
+  );
+  if (!match) return null;
+
+  const month = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ].indexOf(match[1]);
+
+  if (month < 0) return null;
+  const date = new Date(Date.UTC(Number(match[3]), month, Number(match[2])));
+  return date.toISOString().slice(0, 10);
+}
+
+function normalizeDate(value) {
+  const match = String(value).match(/(\d{4})[-/](\d{2})[-/](\d{2})/);
+  if (!match) return null;
+  return `${match[1]}-${match[2]}-${match[3]}`;
+}
+
+function makeDescription(markdown, sourceTitle) {
+  const line =
+    markdown
+      .split("\n")
+      .map((item) => item.trim())
+      .find(
+        (item) =>
+          item &&
+          !item.startsWith("#") &&
+          !item.startsWith("![") &&
+          !item.includes("![") &&
+          !/^use your .*arrow.* keys to browse$/i.test(item)
+      ) ||
+    `Recovered from ${sourceTitle}.`;
+
+  return truncate(stripMarkdown(line).replace(/\s+/g, " ").trim(), 180);
+}
+
+function stripMarkdown(value) {
+  return value
+    .replace(/!\[[^\]]*]\([^)]+\)/g, "")
+    .replace(/\[([^\]]+)]\([^)]+\)/g, "$1")
+    .replace(/[*_`>#]/g, "")
+    .trim();
+}
+
+function truncate(value, length) {
+  if (value.length <= length) return value;
+  const clipped = value.slice(0, length);
+  return clipped.slice(0, clipped.lastIndexOf(" ")).trim();
+}
+
+function yamlString(value) {
+  return JSON.stringify(String(value || ""));
+}
+
+function wait(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}

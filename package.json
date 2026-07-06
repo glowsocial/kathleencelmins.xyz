@@ -9,9 +9,17 @@
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
-    "next": "16.1.6",
+    "next": "16.2.10",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "reading-time": "^1.5.0"
+  },
+  "devDependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "jsdom": "^29.1.1",
+    "turndown": "^7.2.4"
+  },
+  "overrides": {
+    "postcss": "8.5.16"
   }
 }

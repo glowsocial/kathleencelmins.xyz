@@ -24,7 +24,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://kathleencelmins.xyz"),
+  metadataBase: new URL("https://www.kathleencelmins.xyz"),
   title: {
     default: "Kathleen Celmins — Everything, out loud.",
     template: "%s — Kathleen Celmins",
@@ -34,7 +34,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://kathleencelmins.xyz",
+    url: "https://www.kathleencelmins.xyz",
     siteName: "Kathleen Celmins",
     title: "Kathleen Celmins — Everything, out loud.",
     description:

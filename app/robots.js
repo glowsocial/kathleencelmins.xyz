@@ -6,6 +6,6 @@ export default function robots() {
         allow: "/",
       },
     ],
-    sitemap: "https://kathleencelmins.xyz/sitemap.xml",
+    sitemap: "https://www.kathleencelmins.xyz/sitemap.xml",
   };
 }

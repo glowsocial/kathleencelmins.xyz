@@ -43,6 +43,9 @@ yarn-error.log*
 !/writing-workbench/fragments/.gitkeep
 !/writing-workbench/archive/.gitkeep
 
+# generated archive recovery inventories
+/content/archive/**/_inventory.json
+
 # vercel
 .vercel
 
