@@ -63,28 +63,33 @@ export default async function ArchiveSourcePage({ params }) {
 
       {posts.length > 0 ? (
         <div className="posts-list">
-          {posts.map((post) => (
+          {posts.map((post, i) => (
             <Link
               href={`/archive/${source.id}/${post.slug}`}
               className="post-card"
               key={post.slug}
             >
-              <p className="post-card-date">
-                {new Date(post.date).toLocaleDateString("en-US", {
-                  timeZone: "UTC",
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </p>
-              <h2 className="post-card-title">{post.title}</h2>
-              <p className="post-card-excerpt">{post.description}</p>
-              <div className="post-card-footer">
-                <div className="post-card-meta">
-                  <span>{post.readingTime}</span>
-                  {post.needsReview ? <span>needs review</span> : null}
+              <span className="post-card-index" aria-hidden="true">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <div className="post-card-body">
+                <p className="post-card-date">
+                  {new Date(post.date).toLocaleDateString("en-US", {
+                    timeZone: "UTC",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </p>
+                <h2 className="post-card-title">{post.title}</h2>
+                <p className="post-card-excerpt">{post.description}</p>
+                <div className="post-card-footer">
+                  <div className="post-card-meta">
+                    <span>{post.readingTime}</span>
+                    {post.needsReview ? <span>needs review</span> : null}
+                  </div>
+                  <span className="post-card-arrow">Read</span>
                 </div>
-                <span className="post-card-arrow">Read</span>
               </div>
             </Link>
           ))}

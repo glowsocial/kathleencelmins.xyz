@@ -10,7 +10,7 @@ export default function Home() {
       <section className="home-hero">
         <div className="home-hero-content">
           <h1 className="home-greeting">
-            Everything,<br />out loud.
+            Everything,<br /><em>out loud.</em>
           </h1>
           <div className="hero-rule" />
           <p className="home-bio">
@@ -25,8 +25,8 @@ export default function Home() {
         <section className="posts-section">
           <p className="section-label">Writing</p>
           <div className="posts-list">
-            {recentPosts.map((post) => (
-              <PostCard key={post.slug} post={post} />
+            {recentPosts.map((post, i) => (
+              <PostCard key={post.slug} post={post} index={i} />
             ))}
           </div>
         </section>
