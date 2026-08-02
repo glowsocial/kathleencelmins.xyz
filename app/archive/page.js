@@ -10,6 +10,9 @@ export default function ArchivePage() {
   const sources = getArchiveSources();
   const posts = getAllArchivePosts();
 
+  const published = sources.filter((source) => source.postCount > 0);
+  const pending = sources.filter((source) => source.postCount === 0);
+
   return (
     <div className="page-container">
       <div className="page-header">
@@ -23,33 +26,54 @@ export default function ArchivePage() {
       <div className="archive-stats" aria-label="Archive totals">
         <div className="archive-stat">
           <span className="archive-stat-number">{posts.length}</span>
-          <span className="archive-stat-label">curated</span>
+          <span className="archive-stat-label">published here</span>
         </div>
         <div className="archive-stat">
-          <span className="archive-stat-number">{sources.length}</span>
-          <span className="archive-stat-label">sources</span>
+          <span className="archive-stat-number">{published.length}</span>
+          <span className="archive-stat-label">
+            {published.length === 1 ? "source" : "sources"}
+          </span>
         </div>
       </div>
 
-      <div className="archive-sources">
-        {sources.map((source) => (
-          <Link
-            href={`/archive/${source.id}`}
-            className="archive-source-card"
-            key={source.id}
-          >
-            <p className="archive-source-meta">
-              {source.activeYears} / {source.status}
-            </p>
-            <h2 className="archive-source-title">{source.title}</h2>
-            <p className="archive-source-description">{source.description}</p>
-          <div className="archive-source-footer">
-              <span>{source.postCount} curated</span>
-              <span>{source.estimatedPosts}</span>
-            </div>
-          </Link>
-        ))}
-      </div>
+      {published.length > 0 ? (
+        <div className="archive-sources">
+          {published.map((source) => (
+            <Link
+              href={`/archive/${source.id}`}
+              className="archive-source-card"
+              key={source.id}
+            >
+              <p className="archive-source-meta">
+                {source.activeYears} / {source.domain}
+              </p>
+              <h2 className="archive-source-title">{source.title}</h2>
+              <p className="archive-source-description">{source.description}</p>
+              <div className="archive-source-footer">
+                <span>{source.postCount} here</span>
+                <span>{source.estimatedPosts} written</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      ) : (
+        <div className="empty-state">
+          <p>Nothing has been published from the archive yet.</p>
+        </div>
+      )}
+
+      {pending.length > 0 && (
+        <p className="archive-pending">
+          Still being recovered:{" "}
+          {pending.map((source, i) => (
+            <span key={source.id}>
+              {i > 0 && ", "}
+              {source.title} ({source.activeYears})
+            </span>
+          ))}
+          .
+        </p>
+      )}
     </div>
   );
 }

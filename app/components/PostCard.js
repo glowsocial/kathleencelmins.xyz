@@ -21,7 +21,6 @@ export default function PostCard({ post }) {
         <div className="post-card-meta">
           <span>{post.readingTime}</span>
         </div>
-        <span className="post-card-arrow">→</span>
       </div>
     </Link>
   );
