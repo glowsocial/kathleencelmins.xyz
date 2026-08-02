@@ -30,6 +30,7 @@ export default async function WritingPost({ params }) {
   const contentHtml = markdownToHtml(post.content);
   const formattedDate = post.date
     ? new Date(post.date).toLocaleDateString("en-US", {
+        timeZone: "UTC",
         year: "numeric",
         month: "long",
         day: "numeric",

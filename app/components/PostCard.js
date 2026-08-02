@@ -3,6 +3,7 @@ import Link from "next/link";
 function formatDate(dateStr) {
   if (!dateStr) return "";
   return new Date(dateStr).toLocaleDateString("en-US", {
+    timeZone: "UTC",
     year: "numeric",
     month: "long",
     day: "numeric",
