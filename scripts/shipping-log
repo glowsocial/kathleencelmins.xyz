@@ -58,7 +58,7 @@ if (args.help) {
 }
 
 const projects = discoverProjects()
-  .map((project) => readProject(project, args.since))
+  .map((project) => readProject(project, args.since, args.until))
   .filter((project) => project.commits.length > 0 || project.routine > 0)
   .sort((a, b) => b.commits.length - a.commits.length);
 
@@ -85,7 +85,7 @@ if (args.out === "-") {
 }
 
 fs.mkdirSync(DRAFTS_DIR, { recursive: true });
-const outPath = path.join(DRAFTS_DIR, `${today()}-shipping-log.md`);
+const outPath = path.join(DRAFTS_DIR, `${slugForWindow(args)}-shipping-log.md`);
 
 if (fs.existsSync(outPath) && !args.force) {
   console.error(`\n  A draft already exists: ${path.relative(SITE_DIR, outPath)}`);
@@ -112,12 +112,13 @@ console.log("");
 // ---------------------------------------------------------------
 
 function parseArgs(argv) {
-  const parsed = { since: "7 days ago", out: "draft", force: false, help: false };
+  const parsed = { since: "7 days ago", until: "", out: "draft", force: false, help: false };
   for (let i = 0; i < argv.length; i += 1) {
     const value = argv[i];
     if (value === "--help" || value === "-h") parsed.help = true;
     else if (value === "--force") parsed.force = true;
     else if (value === "--since") parsed.since = argv[++i];
+    else if (value === "--until") parsed.until = argv[++i];
     else if (value === "--out") parsed.out = argv[++i];
   }
   return parsed;
@@ -160,11 +161,12 @@ function git(dir, gitArgs) {
   }
 }
 
-function readProject(slug, since) {
+function readProject(slug, since, until) {
   const dir = path.join(WORKSPACES_DIR, slug);
   const raw = git(dir, [
     "log",
     `--since=${since}`,
+    ...(until ? [`--until=${until}`] : []),
     "--no-merges",
     "--pretty=format:%H%x1f%s%x1f%an%x1f%ad",
     "--date=short",
@@ -191,7 +193,7 @@ function readProject(slug, since) {
     commits: collapseRepeats(commits),
     routine,
     routineSubjects,
-    stat: readStat(dir, since),
+    stat: readStat(dir, since, until),
     authors: [...new Set(commits.map((c) => c.author))],
   };
 }
@@ -207,8 +209,10 @@ function collapseRepeats(commits) {
   return [...seen.values()];
 }
 
-function readStat(dir, since) {
-  const raw = git(dir, ["log", `--since=${since}`, "--no-merges", "--shortstat", "--pretty=format:"]);
+function readStat(dir, since, until) {
+  const raw = git(dir, ["log", `--since=${since}`,
+    ...(until ? [`--until=${until}`] : []),
+    "--no-merges", "--shortstat", "--pretty=format:"]);
   let files = 0;
   let insertions = 0;
   let deletions = 0;
@@ -227,8 +231,21 @@ function today() {
   return new Date().toISOString().slice(0, 10);
 }
 
-function windowLabel(since) {
-  const end = new Date();
+// An explicit window names itself; the rolling default is named for the day
+// it was taken.
+function slugForWindow(a) {
+  if (!a.until) return today();
+  return `${a.since}_${a.until}`.replace(/[^0-9a-zA-Z-]+/g, "-");
+}
+
+function windowLabel(since, until) {
+  const end = until ? new Date(`${until}T00:00:00Z`) : new Date();
+  if (until && /^\d{4}-\d{2}-\d{2}$/.test(since)) {
+    const start = new Date(`${since}T00:00:00Z`);
+    const fmt = (d) =>
+      d.toLocaleDateString("en-US", { timeZone: "UTC", month: "long", day: "numeric" });
+    return `${fmt(start)}–${fmt(end)}, ${end.getUTCFullYear()}`;
+  }
   const days = Number((since.match(/(\d+)\s*day/) || [])[1] || 7);
   const start = new Date(end.getTime() - days * 86400000);
   const fmt = (d) =>
@@ -237,7 +254,7 @@ function windowLabel(since) {
 }
 
 function renderDraft(projects, args) {
-  const label = windowLabel(args.since);
+  const label = windowLabel(args.since, args.until);
   const total = projects.reduce((n, p) => n + p.commits.length, 0);
 
   const lines = [];
