@@ -6,7 +6,10 @@
 # Shows a notification, and if you click it, opens the voice inbox.
 # =============================================================
 
-SITE_DIR="$HOME/Code/kathleencelmins.xyz"
+# Resolve the repo root from this script's own location, so the tools keep
+# working wherever the repo lives (it moved once already, into the Glitch
+# workspace tree, which silently broke every one of these scripts).
+SITE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 WORKBENCH_DIR="$SITE_DIR/writing-workbench"
 VOICE_INBOX="$WORKBENCH_DIR/inbox/voice-inbox.md"
 

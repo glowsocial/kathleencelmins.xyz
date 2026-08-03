@@ -7,7 +7,10 @@
 #   publish "some note"  → adds a custom commit message
 # =============================================================
 
-SITE_DIR="$HOME/Code/kathleencelmins.xyz"
+# Resolve the repo root from this script's own location, so the tools keep
+# working wherever the repo lives (it moved once already, into the Glitch
+# workspace tree, which silently broke every one of these scripts).
+SITE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$SITE_DIR" || exit 1
 
 # Check for public writing changes only
@@ -49,6 +52,9 @@ git add -A content/
 git commit -m "$MSG" --quiet -- content/
 echo "  ✅ Committed: $MSG"
 
-git push --quiet 2>&1
-echo "  🚀 Pushed to GitHub — Vercel will deploy in ~30 seconds"
+if git push --quiet; then
+  echo "  🚀 Pushed to GitHub — Vercel will deploy in ~30 seconds"
+else
+  echo "  ⚠️  Push failed. Your work is committed locally and safe."
+fi
 echo ""

@@ -13,8 +13,11 @@
 #                                without opening an editor
 # =============================================================
 
-CONTENT_DIR="$HOME/Code/kathleencelmins.xyz/content/writing"
-SITE_DIR="$HOME/Code/kathleencelmins.xyz"
+# Resolve the repo root from this script's own location, so the tools keep
+# working wherever the repo lives (it moved once already, into the Glitch
+# workspace tree, which silently broke every one of these scripts).
+SITE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+CONTENT_DIR="${SITE_DIR}/content/writing"
 
 # Ensure content directory exists
 mkdir -p "$CONTENT_DIR"
@@ -91,9 +94,12 @@ EOF
   cd "$SITE_DIR" || exit 1
   git add "$FILEPATH"
   git commit -m "New post: ${TITLE}" --quiet
-  git push --quiet 2>/dev/null &
-
-  echo "  🚀 Pushing to GitHub (Vercel will auto-deploy)"
+  echo "  🚀 Pushing to GitHub..."
+  if git push --quiet; then
+    echo "  ✅ Pushed — Vercel will deploy in ~30 seconds"
+  else
+    echo "  ⚠️  Push failed. The post is committed locally; run: scripts/publish"
+  fi
   echo ""
   exit 0
 fi
@@ -112,7 +118,7 @@ echo ""
 echo "  ✅ Created: content/writing/${FILENAME}"
 echo "  📝 Opening in your editor..."
 echo ""
-echo "  When you're done writing, run: newpost --publish"
+echo "  When you're done writing, run: scripts/publish"
 echo ""
 
 # Open in default editor (VS Code, or whatever $EDITOR is)
