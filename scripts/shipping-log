@@ -1,0 +1,297 @@
+#!/usr/bin/env node
+
+// =============================================================
+// shipping-log — assemble the week's real work into a draft
+//
+// The blank page is the bottleneck, not the writing. This reads the
+// actual commits across every project and lays them out under the
+// headings a "What We Shipped" post already uses, so the writing step
+// is editing rather than archaeology.
+//
+// It deliberately does NOT write prose. Gathering is deterministic;
+// deciding what mattered is judgment, and that part is yours.
+//
+// Usage:
+//   scripts/shipping-log                 → draft for the last 7 days
+//   scripts/shipping-log --since "14 days ago"
+//   scripts/shipping-log --out -         → print instead of writing
+//   scripts/shipping-log --force         → overwrite today's draft
+// =============================================================
+
+import fs from "node:fs";
+import path from "node:path";
+import process from "node:process";
+import { execFileSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
+
+let gitFailures = 0;
+const SITE_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const WORKSPACES_DIR = path.resolve(SITE_DIR, "..");
+const DRAFTS_DIR = path.join(SITE_DIR, "writing-workbench", "drafts");
+
+// Slug -> how it should read in a sentence. Anything unmapped falls back
+// to its directory name, so a new project still shows up.
+const PROJECT_NAMES = {
+  "boomp-app": "Boomp (the app)",
+  boomp: "Boomp (the website)",
+  "local-lift": "Outreach",
+  "venture-cafe": "Venture Café",
+  "wellpaidexpert-com": "The Well-Paid Expert",
+  "kathleencelmins-xyz": "This site",
+  affordablesocialmediamanagement: "Affordable Social (retired)",
+};
+
+// Routine plumbing. Kept conservative on purpose — it is better to leave a
+// borderline commit in the draft than to quietly hide the week's real work.
+const ROUTINE = [
+  /^(chore|ci|build)[(:]/i,
+  /^(bump|upgrade|update) (deps|dependencies|packages|lockfile)/i,
+  /^merge /i,
+  /^(formatting|lint|prettier|whitespace|typo)\b/i,
+  /^v?\d+\.\d+\.\d+$/,
+];
+
+const args = parseArgs(process.argv.slice(2));
+if (args.help) {
+  printHelp();
+  process.exit(0);
+}
+
+const projects = discoverProjects()
+  .map((project) => readProject(project, args.since))
+  .filter((project) => project.commits.length > 0 || project.routine > 0)
+  .sort((a, b) => b.commits.length - a.commits.length);
+
+if (gitFailures > 0) {
+  console.error(
+    `\n  ${gitFailures} git call(s) failed — the report below is INCOMPLETE.\n`
+  );
+}
+
+if (projects.length === 0) {
+  const why =
+    gitFailures > 0
+      ? "every git call failed — this is a bug, not a quiet week"
+      : "nothing to write up";
+  console.log(`\n  No commits since "${args.since}": ${why}.\n`);
+  process.exit(gitFailures > 0 ? 1 : 0);
+}
+
+const markdown = renderDraft(projects, args);
+
+if (args.out === "-") {
+  process.stdout.write(markdown);
+  process.exit(0);
+}
+
+fs.mkdirSync(DRAFTS_DIR, { recursive: true });
+const outPath = path.join(DRAFTS_DIR, `${today()}-shipping-log.md`);
+
+if (fs.existsSync(outPath) && !args.force) {
+  console.error(`\n  A draft already exists: ${path.relative(SITE_DIR, outPath)}`);
+  console.error(`  Re-run with --force to overwrite it.\n`);
+  process.exit(1);
+}
+
+fs.writeFileSync(outPath, markdown, "utf-8");
+
+const totalCommits = projects.reduce((n, p) => n + p.commits.length, 0);
+const totalRoutine = projects.reduce((n, p) => n + p.routine, 0);
+
+console.log("");
+console.log(`  ✅ ${path.relative(SITE_DIR, outPath)}`);
+console.log(`  ${totalCommits} commits across ${projects.length} projects, since ${args.since}`);
+if (totalRoutine > 0) {
+  console.log(`  (${totalRoutine} routine commits left out — listed at the bottom of the draft)`);
+}
+console.log("");
+console.log(`  It is a skeleton with the raw material parked under each heading.`);
+console.log(`  Write over it. When it is ready: scripts/newpost "<title>"`);
+console.log("");
+
+// ---------------------------------------------------------------
+
+function parseArgs(argv) {
+  const parsed = { since: "7 days ago", out: "draft", force: false, help: false };
+  for (let i = 0; i < argv.length; i += 1) {
+    const value = argv[i];
+    if (value === "--help" || value === "-h") parsed.help = true;
+    else if (value === "--force") parsed.force = true;
+    else if (value === "--since") parsed.since = argv[++i];
+    else if (value === "--out") parsed.out = argv[++i];
+  }
+  return parsed;
+}
+
+function printHelp() {
+  console.log(`Usage:
+  scripts/shipping-log
+  scripts/shipping-log --since "14 days ago"
+  scripts/shipping-log --out -
+  scripts/shipping-log --force
+
+Reads every git repo alongside this one and writes a draft into:
+  writing-workbench/drafts/
+
+It gathers; it does not write prose.
+`);
+}
+
+function discoverProjects() {
+  return fs
+    .readdirSync(WORKSPACES_DIR, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name)
+    .filter((name) => fs.existsSync(path.join(WORKSPACES_DIR, name, ".git")))
+    .sort();
+}
+
+function git(dir, gitArgs) {
+  try {
+    return execFileSync("git", ["-C", dir, ...gitArgs], {
+      encoding: "utf-8",
+      maxBuffer: 32 * 1024 * 1024,
+      stdio: ["ignore", "pipe", "ignore"],
+    });
+  } catch (error) {
+    console.error(`  ! git failed in ${path.basename(dir)}: ${error.message.split("\n")[0]}`);
+    gitFailures += 1;
+    return "";
+  }
+}
+
+function readProject(slug, since) {
+  const dir = path.join(WORKSPACES_DIR, slug);
+  const raw = git(dir, [
+    "log",
+    `--since=${since}`,
+    "--no-merges",
+    "--pretty=format:%H%x1f%s%x1f%an%x1f%ad",
+    "--date=short",
+  ]);
+
+  const commits = [];
+  let routine = 0;
+  const routineSubjects = [];
+
+  for (const line of raw.split("\n").filter(Boolean)) {
+    const [hash, subject, author, date] = line.split("\x1f");
+    if (!subject) continue;
+    if (ROUTINE.some((pattern) => pattern.test(subject.trim()))) {
+      routine += 1;
+      routineSubjects.push(subject.trim());
+      continue;
+    }
+    commits.push({ hash, subject: subject.trim(), author, date });
+  }
+
+  return {
+    slug,
+    name: PROJECT_NAMES[slug] || slug,
+    commits: collapseRepeats(commits),
+    routine,
+    routineSubjects,
+    stat: readStat(dir, since),
+    authors: [...new Set(commits.map((c) => c.author))],
+  };
+}
+
+// The same subject committed several times in a week is one story, not five.
+function collapseRepeats(commits) {
+  const seen = new Map();
+  for (const commit of commits) {
+    const key = commit.subject.toLowerCase();
+    if (seen.has(key)) seen.get(key).repeats += 1;
+    else seen.set(key, { ...commit, repeats: 1 });
+  }
+  return [...seen.values()];
+}
+
+function readStat(dir, since) {
+  const raw = git(dir, ["log", `--since=${since}`, "--no-merges", "--shortstat", "--pretty=format:"]);
+  let files = 0;
+  let insertions = 0;
+  let deletions = 0;
+  for (const line of raw.split("\n")) {
+    const f = line.match(/(\d+) files? changed/);
+    const i = line.match(/(\d+) insertions?/);
+    const d = line.match(/(\d+) deletions?/);
+    if (f) files += Number(f[1]);
+    if (i) insertions += Number(i[1]);
+    if (d) deletions += Number(d[1]);
+  }
+  return { files, insertions, deletions };
+}
+
+function today() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function windowLabel(since) {
+  const end = new Date();
+  const days = Number((since.match(/(\d+)\s*day/) || [])[1] || 7);
+  const start = new Date(end.getTime() - days * 86400000);
+  const fmt = (d) =>
+    d.toLocaleDateString("en-US", { timeZone: "UTC", month: "long", day: "numeric" });
+  return `${fmt(start)}–${fmt(end)}, ${end.getUTCFullYear()}`;
+}
+
+function renderDraft(projects, args) {
+  const label = windowLabel(args.since);
+  const total = projects.reduce((n, p) => n + p.commits.length, 0);
+
+  const lines = [];
+  lines.push("---");
+  lines.push(`title: "What We Shipped (${label})"`);
+  lines.push(`date: ${today()}`);
+  lines.push('description: ""');
+  lines.push("---");
+  lines.push("");
+  lines.push("<!-- DRAFT. Everything below is raw material, not writing.");
+  lines.push("     Keep the headings that carry a story, delete the rest,");
+  lines.push("     and replace the bullets with what actually happened.");
+  lines.push("     The description above is what shows on the site — write it last. -->");
+  lines.push("");
+  lines.push(
+    "Every so often I look back at what actually got done. Not in engineering-speak — just what changed for customers, for my other projects, and for the business. Here's the stretch."
+  );
+  lines.push("");
+  lines.push("---");
+  lines.push("");
+
+  for (const project of projects) {
+    lines.push(`## ${project.name}`);
+    lines.push("");
+    const s = project.stat;
+    lines.push(
+      `<!-- ${project.commits.length} commits · ${s.files} files · +${s.insertions}/−${s.deletions}` +
+        (project.authors.length > 1 ? ` · ${project.authors.join(", ")}` : "") +
+        " -->"
+    );
+    lines.push("");
+    lines.push("### <!-- headline -->");
+    lines.push("");
+    for (const commit of project.commits) {
+      const repeat = commit.repeats > 1 ? ` _(×${commit.repeats})_` : "";
+      lines.push(`- ${commit.subject}${repeat}`);
+    }
+    lines.push("");
+  }
+
+  const routineTotal = projects.reduce((n, p) => n + p.routine, 0);
+  if (routineTotal > 0) {
+    lines.push("---");
+    lines.push("");
+    lines.push(`<!-- ${routineTotal} routine commits were filtered out of the sections above.`);
+    lines.push("     Listed here so nothing is silently dropped — delete this block.");
+    for (const project of projects.filter((p) => p.routine > 0)) {
+      lines.push(`     ${project.name}: ${project.routineSubjects.join(" · ")}`);
+    }
+    lines.push("-->");
+    lines.push("");
+  }
+
+  lines.push(`<!-- ${total} commits total, since "${args.since}" -->`);
+  lines.push("");
+  return lines.join("\n");
+}

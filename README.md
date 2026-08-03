@@ -53,9 +53,15 @@ Useful commands:
 
 ```bash
 npm run dev
+scripts/shipping-log            # draft the week's work from real git history
 scripts/newpost "Title"
 scripts/publish "New post: Title"
 ```
+
+`scripts/shipping-log` reads the commits across every project alongside this
+one and writes a skeleton into `writing-workbench/drafts/`, with the raw
+material parked under each heading. It gathers; it does not write prose. Use
+it when the subject needs to arrive on its own.
 
 `scripts/newpost` is for public, publish-ready writing. Use the workbench first for dictated notes, rough drafts, and fragments.
 
