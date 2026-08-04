@@ -382,14 +382,14 @@ main{flex:1;width:100%}
 .subscribe-row input[type="email"]:focus{outline:none;border-bottom-color:var(--accent)}
 .subscribe-row button{
   flex-shrink:0;
-  background:var(--ink);color:var(--bone);
+  background:var(--accent);color:var(--bone);
   border:none;border-radius:0;cursor:pointer;
   font-family:var(--font-body);font-size:var(--text-xs);font-weight:700;
   letter-spacing:0.16em;text-transform:uppercase;
   padding:0 var(--space-lg);
   transition:background var(--transition);
 }
-.subscribe-row button:hover{background:var(--accent)}
+.subscribe-row button:hover{background:var(--accent-deep)}
 .subscribe-row button:disabled{opacity:0.55;cursor:default}
 .subscribe-status{
   font-size:var(--text-sm);font-weight:600;color:var(--accent-deep);
