@@ -364,9 +364,9 @@ main{flex:1;width:100%}
   padding:4px 10px;margin:0 0 var(--space-lg);
 }
 .subscribe-heading{
-  font-family:var(--font-display);font-size:var(--text-2xl);
-  font-weight:800;line-height:1.02;letter-spacing:-0.035em;color:var(--ink);
-  margin:0 0 var(--space-lg);max-width:18em;
+  font-family:var(--font-display);font-size:var(--text-xl);
+  font-weight:600;line-height:1.25;letter-spacing:-0.02em;color:var(--ink);
+  margin:0 0 var(--space-lg);max-width:24em;
 }
 .subscribe-form{margin:0}
 .subscribe-row{display:flex;align-items:stretch;gap:var(--space-md)}
@@ -401,8 +401,8 @@ main{flex:1;width:100%}
   margin:var(--space-md) 0 0;
 }
 .subscribe-done-heading{
-  font-family:var(--font-display);font-size:var(--text-2xl);font-weight:800;
-  letter-spacing:-0.035em;line-height:1.02;color:var(--ink);
+  font-family:var(--font-display);font-size:var(--text-xl);font-weight:600;
+  letter-spacing:-0.02em;line-height:1.25;color:var(--ink);
   margin:0 0 var(--space-sm);
 }
 .subscribe-note{font-size:var(--text-base);color:var(--ink-secondary);margin:0}
