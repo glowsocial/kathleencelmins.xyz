@@ -1,5 +1,6 @@
 import { getAllPosts } from "@/lib/posts";
 import PostCard from "./components/PostCard";
+import SubscribeForm from "./components/SubscribeForm";
 
 export default function Home() {
   const posts = getAllPosts();
@@ -19,6 +20,11 @@ export default function Home() {
             content hire &mdash; and I write down what I learn running it.
           </p>
         </div>
+      </section>
+
+      <section className="subscribe-section">
+        <p className="section-label">Subscribe</p>
+        <SubscribeForm />
       </section>
 
       {recentPosts.length > 0 ? (

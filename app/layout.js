@@ -43,6 +43,11 @@ export const metadata = {
   twitter: {
     card: "summary",
   },
+  alternates: {
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
+  },
   robots: {
     index: true,
     follow: true,

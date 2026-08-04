@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getPostBySlug, getAllSlugs } from "@/lib/posts";
 import { markdownToHtml } from "@/lib/markdown";
+import SubscribeForm from "../../components/SubscribeForm";
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
@@ -73,6 +74,7 @@ export default async function WritingPost({ params }) {
             Thanks for reading. If something here resonated, I&rsquo;d love to
             hear about it.
           </p>
+          <SubscribeForm />
         </footer>
       </article>
     </div>
