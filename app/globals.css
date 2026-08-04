@@ -1,9 +1,11 @@
 /* ================================================================
-   KathleenCelmins.xyz — Broadsheet
-   Everything, out loud.
+   KathleenCelmins.xyz — Maison (lite)
+   Everything, in writing.
 
-   Loud on purpose. Type at full volume, one hot accent, hard rules,
-   nothing decorative. The restraint is in the palette, not the scale.
+   The broadsheet structure below, dressed by the MAISON identity
+   layer at the end of this file: Bodoni at restrained scale,
+   ivory/ebony, oxblood accent, hairline rules; charcoal + champagne
+   in dark mode. Structure here, identity in the layer.
    ================================================================ */
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -451,4 +453,78 @@ main{flex:1;width:100%}
 
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
+}
+/* ===== MAISON (lite) — the identity layer =====
+   Bodoni Moda at restrained scale, ivory/ebony, oxblood accent, hairline
+   rules; dark mode is charcoal + champagne. Overrides the broadsheet base
+   above; edit identity here, structure there. ===== */
+:root{
+  --bone:#FAF8F3;--bone-deep:#F1EDE3;--ink:#191511;--ink-secondary:#4D463E;--ink-muted:#877C6E;
+  --rule:#191511;--rule-soft:#DED6C7;--index:#CCC3B0;--accent:#6E1D2B;--accent-deep:#521521;
+  --font-display:var(--font-bodoni),'Bodoni Moda','Didot','Bodoni MT',serif;
+  --text-hero:clamp(2.75rem,7.5vw,6rem);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bone:#131110;--bone-deep:#1C1917;--ink:#F0E9DD;--ink-secondary:#C7BCAC;--ink-muted:#8E8272;
+    --rule:#F0E9DD;--rule-soft:#332E28;--index:#4E463C;--accent:#C9A36A;--accent-deep:#DDBC85;
+  }
+}
+h1,h2,h3,h4,h5,h6{font-weight:500;letter-spacing:-0.005em;line-height:1.1}
+h1{font-weight:500}
+a{text-decoration-thickness:1px;text-underline-offset:4px}
+:focus-visible{outline:1px solid var(--ink);outline-offset:4px}
+blockquote{border-left:1px solid var(--accent);font-weight:400;font-style:italic;letter-spacing:0}
+hr{height:1px}
+pre{background:var(--bone-deep);color:var(--ink);border:1px solid var(--rule-soft)}
+::selection{background:var(--ink);color:var(--bone)}
+.meta,.post-card-date,.article-date,.archive-stat-label,
+.archive-source-meta,.post-card-meta,.footer-text,.archive-origin-links,
+.source-summary dt{font-weight:500;letter-spacing:0.18em}
+.site-header{border-bottom:1px solid var(--rule)}
+.site-header-inner{padding:var(--space-lg) var(--space-xl)}
+.site-name{font-weight:500;font-size:var(--text-lg);letter-spacing:0.02em}
+.site-nav a{font-weight:500;letter-spacing:0.18em;border-bottom:1px solid transparent}
+.site-nav a:hover{border-bottom-color:var(--accent)}
+.home-hero{padding:var(--space-4xl) var(--space-xl) var(--space-2xl)}
+.home-greeting{font-weight:400;line-height:1.04;letter-spacing:0}
+.home-greeting em{font-style:italic;color:var(--accent)}
+.hero-rule{height:1px;margin:var(--space-2xl) 0 var(--space-xl)}
+.home-bio{font-size:var(--text-base);line-height:1.7;font-weight:400}
+.section-label{background:transparent;color:var(--ink-muted);padding:0;letter-spacing:0.2em;font-weight:500}
+.posts-list{border-top:1px solid var(--rule)}
+.post-card{padding:var(--space-xl) 0;border-bottom:1px solid var(--rule-soft)}
+.post-card-index{font-weight:400;font-size:var(--text-base);color:var(--index);letter-spacing:0}
+.post-card-title{font-weight:500;font-size:var(--text-xl);letter-spacing:0;line-height:1.15}
+.post-card-arrow{letter-spacing:0.18em;font-weight:500}
+.article-header{border-bottom:1px solid var(--rule)}
+.article-title{font-weight:500;font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:0;line-height:1.08}
+.article-reading-pill{letter-spacing:0.18em;font-weight:500}
+.article-content > p:first-of-type{font-weight:400;font-size:var(--text-lg);line-height:1.5}
+.article-footer{border-top:1px solid var(--rule)}
+.back-link{border-bottom:1px solid var(--accent);letter-spacing:0.18em;font-weight:500}
+.page-header{border-bottom:1px solid var(--rule)}
+.page-title{font-weight:500}
+.archive-stats{border-bottom:1px solid var(--rule-soft)}
+.archive-stat-number{font-weight:400;color:var(--ink)}
+.archive-source-card{border-bottom:1px solid var(--rule-soft)}
+.archive-source-title{font-weight:500;letter-spacing:0}
+.site-footer{border-top:1px solid var(--rule)}
+.footer-tagline{font-weight:400;font-size:var(--text-xl);letter-spacing:0}
+.manifesto-text{font-weight:400;letter-spacing:0;line-height:1.2}
+.manifesto-text strong{color:var(--accent)}
+/* subscribe, in the house cut */
+.subscribe-card{max-width:40rem;border-top:1px solid var(--rule);padding-top:var(--space-xl)}
+.subscribe-kicker{background:transparent;color:var(--ink-muted);padding:0;letter-spacing:0.2em;font-weight:500;margin:0 0 var(--space-md)}
+.subscribe-heading{font-weight:400;font-size:var(--text-xl);letter-spacing:0;line-height:1.2}
+.subscribe-row input[type="email"]{border-bottom:1px solid var(--rule);font-size:var(--text-base);padding:0.5rem 0}
+.subscribe-row input[type="email"]:focus{border-bottom-color:var(--accent)}
+.subscribe-row button{background:transparent;color:var(--ink);border:1px solid var(--ink);padding:0 var(--space-xl);letter-spacing:0.18em;font-weight:500;transition:background var(--transition),color var(--transition)}
+.subscribe-row button:hover{background:var(--ink);color:var(--bone)}
+.subscribe-status{font-weight:500}
+.subscribe-fine-print{letter-spacing:0.2em;font-weight:500}
+.subscribe-done-heading{font-weight:400;font-style:italic;font-size:var(--text-xl);letter-spacing:0}
+.article-footer .subscribe-card{border-top:none;padding-top:0}
+@media(max-width:480px){
+  .subscribe-row button{padding:0.85rem var(--space-xl)}
 }

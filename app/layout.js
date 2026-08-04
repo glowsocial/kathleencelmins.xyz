@@ -1,14 +1,7 @@
-import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Bodoni_Moda } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-fraunces",
-  weight: ["400", "500", "600", "700", "800", "900"],
-  display: "swap",
-});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,22 +16,30 @@ const jetbrains = JetBrains_Mono({
   display: "swap",
 });
 
+const bodoni = Bodoni_Moda({
+  subsets: ["latin"],
+  variable: "--font-bodoni",
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
 export const metadata = {
   metadataBase: new URL("https://www.kathleencelmins.xyz"),
   title: {
-    default: "Kathleen Celmins — Everything, out loud.",
+    default: "Kathleen Celmins — Everything, in writing.",
     template: "%s — Kathleen Celmins",
   },
   description:
-    "Everything, out loud. Writing, building, and noticing — by Kathleen Celmins.",
+    "Everything, in writing. Essays on building boomp.net and what running it teaches — by Kathleen Celmins.",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://www.kathleencelmins.xyz",
     siteName: "Kathleen Celmins",
-    title: "Kathleen Celmins — Everything, out loud.",
+    title: "Kathleen Celmins — Everything, in writing.",
     description:
-      "Everything, out loud. Writing, building, and noticing — by Kathleen Celmins.",
+      "Everything, in writing. Essays on building boomp.net and what running it teaches — by Kathleen Celmins.",
   },
   twitter: {
     card: "summary",
@@ -56,7 +57,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable} ${jetbrains.variable}`}>
+    <html lang="en" className={`${inter.variable} ${jetbrains.variable} ${bodoni.variable}`}>
       <body>
         <Header />
         <main>{children}</main>

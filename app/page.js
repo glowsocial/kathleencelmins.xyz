@@ -11,7 +11,7 @@ export default function Home() {
       <section className="home-hero">
         <div className="home-hero-content">
           <h1 className="home-greeting">
-            Everything,<br /><em>out loud.</em>
+            Everything,<br /><em>in writing.</em>
           </h1>
           <div className="hero-rule" />
           <p className="home-bio">
