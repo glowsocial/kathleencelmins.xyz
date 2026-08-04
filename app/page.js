@@ -23,7 +23,6 @@ export default function Home() {
       </section>
 
       <section className="subscribe-section">
-        <p className="section-label">Subscribe</p>
         <SubscribeForm />
       </section>
 

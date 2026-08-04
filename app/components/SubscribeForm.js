@@ -41,38 +41,48 @@ export default function SubscribeForm() {
     }
   }
 
-  if (status === "done") {
-    return <p className="subscribe-status">You&apos;re in.</p>;
-  }
-
   return (
-    <>
-      <p className="subscribe-line">New essays by email. That&apos;s it.</p>
-      <form className="subscribe-form" onSubmit={handleSubmit}>
-        <label className="subscribe-label" htmlFor="subscribe-email">
-          Email address
-        </label>
-        <input
-          id="subscribe-email"
-          type="email"
-          name="email"
-          required
-          autoComplete="email"
-          placeholder="you@example.com"
-        />
-        <input
-          type="text"
-          name="website"
-          tabIndex={-1}
-          autoComplete="off"
-          aria-hidden="true"
-          className="subscribe-hp"
-        />
-        <button type="submit" disabled={status === "sending"}>
-          Subscribe
-        </button>
-      </form>
-      {status === "error" && <p className="subscribe-status">{errorMessage}</p>}
-    </>
+    <aside className="subscribe-card">
+      <p className="subscribe-kicker">Email list</p>
+      {status === "done" ? (
+        <p className="subscribe-note">
+          You&apos;re in. New essays will come to your inbox.
+        </p>
+      ) : (
+        <>
+          <p className="subscribe-heading">Get new essays by email.</p>
+          <form className="subscribe-form" onSubmit={handleSubmit}>
+            <label className="subscribe-label" htmlFor="subscribe-email">
+              Email address
+            </label>
+            <input
+              id="subscribe-email"
+              type="email"
+              name="email"
+              required
+              autoComplete="email"
+              placeholder="you@example.com"
+            />
+            <input
+              type="text"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="subscribe-hp"
+            />
+            <button type="submit" disabled={status === "sending"}>
+              {status === "sending" ? "Joining..." : "Subscribe"}
+            </button>
+          </form>
+          {status === "error" && (
+            <p className="subscribe-status" role="alert">{errorMessage}</p>
+          )}
+          <p className="subscribe-fine-print">
+            One email per essay. Unsubscribe anytime.
+          </p>
+        </>
+      )}
+    </aside>
   );
 }
