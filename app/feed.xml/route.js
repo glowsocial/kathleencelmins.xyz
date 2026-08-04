@@ -6,7 +6,7 @@ export const dynamic = "force-static";
 const baseUrl = "https://www.kathleencelmins.xyz";
 const siteTitle = "Kathleen Celmins";
 const siteDescription =
-  "Everything, out loud. Writing, building, and noticing — by Kathleen Celmins.";
+  "Everything, in writing. Essays on building boomp.net and what running it teaches — by Kathleen Celmins.";
 
 function escapeXml(str) {
   return String(str)
