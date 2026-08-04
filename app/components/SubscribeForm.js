@@ -45,9 +45,10 @@ export default function SubscribeForm() {
     <aside className="subscribe-card">
       <p className="subscribe-kicker">Email list</p>
       {status === "done" ? (
-        <p className="subscribe-note">
-          You&apos;re in. New essays will come to your inbox.
-        </p>
+        <div className="subscribe-done" role="status">
+          <p className="subscribe-done-heading">You&rsquo;re in.</p>
+          <p className="subscribe-note">New essays will come to your inbox.</p>
+        </div>
       ) : (
         <>
           <p className="subscribe-heading">Get new essays by email.</p>
@@ -55,14 +56,19 @@ export default function SubscribeForm() {
             <label className="subscribe-label" htmlFor="subscribe-email">
               Email address
             </label>
-            <input
-              id="subscribe-email"
-              type="email"
-              name="email"
-              required
-              autoComplete="email"
-              placeholder="you@example.com"
-            />
+            <div className="subscribe-row">
+              <input
+                id="subscribe-email"
+                type="email"
+                name="email"
+                required
+                autoComplete="email"
+                placeholder="you@example.com"
+              />
+              <button type="submit" disabled={status === "sending"}>
+                {status === "sending" ? "Joining…" : "Subscribe"}
+              </button>
+            </div>
             <input
               type="text"
               name="website"
@@ -71,9 +77,6 @@ export default function SubscribeForm() {
               aria-hidden="true"
               className="subscribe-hp"
             />
-            <button type="submit" disabled={status === "sending"}>
-              {status === "sending" ? "Joining..." : "Subscribe"}
-            </button>
           </form>
           {status === "error" && (
             <p className="subscribe-status" role="alert">{errorMessage}</p>
