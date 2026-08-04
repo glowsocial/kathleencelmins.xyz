@@ -57,8 +57,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrains.variable} ${bodoni.variable}`}>
+    <html lang="en" className={`${inter.variable} ${jetbrains.variable} ${bodoni.variable}`} suppressHydrationWarning>
       <body>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}",
+          }}
+        />
         <Header />
         <main>{children}</main>
         <Footer />

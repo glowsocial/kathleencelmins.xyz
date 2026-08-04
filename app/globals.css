@@ -1,5 +1,5 @@
 /* ================================================================
-   KathleenCelmins.xyz — Maison (lite)
+   KathleenCelmins.xyz — Maison
    Everything, in writing.
 
    The broadsheet structure below, dressed by the MAISON identity
@@ -454,7 +454,7 @@ main{flex:1;width:100%}
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
 }
-/* ===== MAISON (lite) — the identity layer =====
+/* ===== MAISON — the identity layer =====
    Bodoni Moda at restrained scale, ivory/ebony, oxblood accent, hairline
    rules; dark mode is charcoal + champagne. Overrides the broadsheet base
    above; edit identity here, structure there. ===== */
@@ -465,10 +465,14 @@ main{flex:1;width:100%}
   --text-hero:clamp(2.75rem,7.5vw,6rem);
 }
 @media (prefers-color-scheme:dark){
-  :root{
+  :root:not([data-theme="light"]){
     --bone:#131110;--bone-deep:#1C1917;--ink:#F0E9DD;--ink-secondary:#C7BCAC;--ink-muted:#8E8272;
     --rule:#F0E9DD;--rule-soft:#332E28;--index:#4E463C;--accent:#C9A36A;--accent-deep:#DDBC85;
   }
+}
+:root[data-theme="dark"]{
+  --bone:#131110;--bone-deep:#1C1917;--ink:#F0E9DD;--ink-secondary:#C7BCAC;--ink-muted:#8E8272;
+    --rule:#F0E9DD;--rule-soft:#332E28;--index:#4E463C;--accent:#C9A36A;--accent-deep:#DDBC85;
 }
 h1,h2,h3,h4,h5,h6{font-weight:500;letter-spacing:-0.005em;line-height:1.1}
 h1{font-weight:500}
@@ -480,29 +484,29 @@ pre{background:var(--bone-deep);color:var(--ink);border:1px solid var(--rule-sof
 ::selection{background:var(--ink);color:var(--bone)}
 .meta,.post-card-date,.article-date,.archive-stat-label,
 .archive-source-meta,.post-card-meta,.footer-text,.archive-origin-links,
-.source-summary dt{font-weight:500;letter-spacing:0.18em}
+.source-summary dt{font-weight:500;letter-spacing:0.24em}
 .site-header{border-bottom:1px solid var(--rule)}
 .site-header-inner{padding:var(--space-lg) var(--space-xl)}
 .site-name{font-weight:500;font-size:var(--text-lg);letter-spacing:0.02em}
-.site-nav a{font-weight:500;letter-spacing:0.18em;border-bottom:1px solid transparent}
+.site-nav a{font-weight:500;letter-spacing:0.24em;border-bottom:1px solid transparent}
 .site-nav a:hover{border-bottom-color:var(--accent)}
 .home-hero{padding:var(--space-4xl) var(--space-xl) var(--space-2xl)}
 .home-greeting{font-weight:400;line-height:1.04;letter-spacing:0}
 .home-greeting em{font-style:italic;color:var(--accent)}
 .hero-rule{height:1px;margin:var(--space-2xl) 0 var(--space-xl)}
 .home-bio{font-size:var(--text-base);line-height:1.7;font-weight:400}
-.section-label{background:transparent;color:var(--ink-muted);padding:0;letter-spacing:0.2em;font-weight:500}
+.section-label{background:transparent;color:var(--ink-muted);padding:0;letter-spacing:0.26em;font-weight:500}
 .posts-list{border-top:1px solid var(--rule)}
 .post-card{padding:var(--space-xl) 0;border-bottom:1px solid var(--rule-soft)}
 .post-card-index{font-weight:400;font-size:var(--text-base);color:var(--index);letter-spacing:0}
 .post-card-title{font-weight:500;font-size:var(--text-xl);letter-spacing:0;line-height:1.15}
-.post-card-arrow{letter-spacing:0.18em;font-weight:500}
+.post-card-arrow{letter-spacing:0.24em;font-weight:500}
 .article-header{border-bottom:1px solid var(--rule)}
 .article-title{font-weight:500;font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:0;line-height:1.08}
-.article-reading-pill{letter-spacing:0.18em;font-weight:500}
+.article-reading-pill{letter-spacing:0.24em;font-weight:500}
 .article-content > p:first-of-type{font-weight:400;font-size:var(--text-lg);line-height:1.5}
 .article-footer{border-top:1px solid var(--rule)}
-.back-link{border-bottom:1px solid var(--accent);letter-spacing:0.18em;font-weight:500}
+.back-link{border-bottom:1px solid var(--accent);letter-spacing:0.24em;font-weight:500}
 .page-header{border-bottom:1px solid var(--rule)}
 .page-title{font-weight:500}
 .archive-stats{border-bottom:1px solid var(--rule-soft)}
@@ -510,16 +514,16 @@ pre{background:var(--bone-deep);color:var(--ink);border:1px solid var(--rule-sof
 .archive-source-card{border-bottom:1px solid var(--rule-soft)}
 .archive-source-title{font-weight:500;letter-spacing:0}
 .site-footer{border-top:1px solid var(--rule)}
-.footer-tagline{font-weight:400;font-size:var(--text-xl);letter-spacing:0}
+.footer-tagline{font-weight:400;font-style:italic;font-size:var(--text-xl);letter-spacing:0}
 .manifesto-text{font-weight:400;letter-spacing:0;line-height:1.2}
 .manifesto-text strong{color:var(--accent)}
 /* subscribe, in the house cut */
 .subscribe-card{max-width:40rem;border-top:1px solid var(--rule);padding-top:var(--space-xl)}
-.subscribe-kicker{background:transparent;color:var(--ink-muted);padding:0;letter-spacing:0.2em;font-weight:500;margin:0 0 var(--space-md)}
+.subscribe-kicker{background:transparent;color:var(--ink-muted);padding:0;letter-spacing:0.26em;font-weight:500;margin:0 0 var(--space-md)}
 .subscribe-heading{font-weight:400;font-size:var(--text-xl);letter-spacing:0;line-height:1.2}
 .subscribe-row input[type="email"]{border-bottom:1px solid var(--rule);font-size:var(--text-base);padding:0.5rem 0}
 .subscribe-row input[type="email"]:focus{border-bottom-color:var(--accent)}
-.subscribe-row button{background:transparent;color:var(--ink);border:1px solid var(--ink);padding:0 var(--space-xl);letter-spacing:0.18em;font-weight:500;transition:background var(--transition),color var(--transition)}
+.subscribe-row button{background:transparent;color:var(--ink);border:1px solid var(--ink);padding:0 var(--space-xl);letter-spacing:0.24em;font-weight:500;transition:background var(--transition),color var(--transition)}
 .subscribe-row button:hover{background:var(--ink);color:var(--bone)}
 .subscribe-status{font-weight:500}
 .subscribe-fine-print{letter-spacing:0.2em;font-weight:500}
@@ -528,3 +532,16 @@ pre{background:var(--bone-deep);color:var(--ink);border:1px solid var(--rule-sof
 @media(max-width:480px){
   .subscribe-row button{padding:0.85rem var(--space-xl)}
 }
+
+/* theme toggle — the reader chooses; the icon shows what a click gives */
+.site-nav{align-items:center}
+.theme-toggle{display:inline-flex;align-items:center;background:none;border:none;padding:2px;cursor:pointer;color:var(--ink);transition:color var(--transition)}
+.theme-toggle:hover{color:var(--accent)}
+.theme-toggle .icon-sun{display:none}
+.theme-toggle .icon-moon{display:block}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun{display:block}
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon{display:none}
+}
+:root[data-theme="dark"] .theme-toggle .icon-sun{display:block}
+:root[data-theme="dark"] .theme-toggle .icon-moon{display:none}
