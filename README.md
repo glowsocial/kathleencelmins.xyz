@@ -74,3 +74,7 @@ npm run build
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view the site locally.
+
+Local subscribe testing needs `.env.local` with `KIT_API_KEY` and `KIT_TAG_ID`
+(gitignored; the live values are set in Vercel Production). Without them the
+subscribe route fails closed with a 500 — everything else runs fine.
