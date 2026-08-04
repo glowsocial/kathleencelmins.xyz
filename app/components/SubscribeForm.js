@@ -42,20 +42,11 @@ export default function SubscribeForm() {
   }
 
   if (status === "done") {
-    return (
-      <div className="subscribe-coupon">
-        <p className="subscribe-done">
-          <em>You&apos;re in.</em> Next essay, your inbox.
-        </p>
-      </div>
-    );
+    return <p className="subscribe-status">You&apos;re in.</p>;
   }
 
   return (
-    <div className="subscribe-coupon">
-      <p className="subscribe-headline">
-        Get the <em>next one.</em>
-      </p>
+    <>
       <p className="subscribe-line">New essays by email. That&apos;s it.</p>
       <form className="subscribe-form" onSubmit={handleSubmit}>
         <label className="subscribe-label" htmlFor="subscribe-email">
@@ -82,6 +73,6 @@ export default function SubscribeForm() {
         </button>
       </form>
       {status === "error" && <p className="subscribe-status">{errorMessage}</p>}
-    </div>
+    </>
   );
 }
