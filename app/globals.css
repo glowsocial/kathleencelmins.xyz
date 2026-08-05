@@ -3,24 +3,26 @@
    Everything, in writing.
 
    The broadsheet structure below, dressed by the MAISON identity
-   layer at the end of this file: Bodoni at restrained scale,
-   ivory/ebony, oxblood accent, hairline rules; charcoal + champagne
-   in dark mode. Structure here, identity in the layer.
+   layer at the end of this file: Bodoni at restrained scale, hairline
+   rules, in the boomp palette — Chalk/Glow Navy with Ocean and
+   Tangerine; Navy + Sky in dark mode. Structure here, identity in
+   the layer.
    ================================================================ */
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 :root{
-  --bone:#efe8dc;
-  --bone-deep:#e5dccc;
-  --ink:#14110f;
-  --ink-secondary:#463f38;
-  --ink-muted:#75695c;
-  --rule:#14110f;
-  --rule-soft:#c9bda9;
-  --index:#b3a48c;
-  --accent:#d8401a;
-  --accent-deep:#a82e10;
+  --bone:#F6F1EF;
+  --bone-deep:#EBE4E1;
+  --ink:#171F37;
+  --ink-secondary:#454C63;
+  --ink-muted:#7C8296;
+  --rule:#171F37;
+  --rule-soft:#D6CFCC;
+  --index:#BDB6B3;
+  --accent:#004AAC;
+  --accent-deep:#00337A;
+  --accent-warm:#E55730;
 
   --font-display:var(--font-fraunces),'Fraunces','Iowan Old Style','Georgia',serif;
   --font-body:var(--font-inter),'Inter','Segoe UI',system-ui,sans-serif;
@@ -39,16 +41,17 @@
 
 @media (prefers-color-scheme:dark){
   :root{
-    --bone:#100e0c;
-    --bone-deep:#1a1714;
-    --ink:#f3ece0;
-    --ink-secondary:#c2b6a6;
-    --ink-muted:#8b7e6e;
-    --rule:#f3ece0;
-    --rule-soft:#39322b;
-    --index:#544a40;
-    --accent:#ff6136;
-    --accent-deep:#ff8256;
+    --bone:#141B30;
+    --bone-deep:#1D2645;
+    --ink:#F6F1EF;
+    --ink-secondary:#C3C8D6;
+    --ink-muted:#8A90A3;
+    --rule:#F6F1EF;
+    --rule-soft:#2E3757;
+    --index:#4B5474;
+    --accent:#BBE3FC;
+    --accent-deep:#DCF0FE;
+    --accent-warm:#F0714D;
   }
 }
 
@@ -455,30 +458,43 @@ main{flex:1;width:100%}
   *{animation:none!important;transition:none!important}
 }
 /* ===== MAISON — the identity layer =====
-   Bodoni Moda at restrained scale, ivory/ebony, oxblood accent, hairline
-   rules; dark mode is charcoal + champagne. Overrides the broadsheet base
-   above; edit identity here, structure there. ===== */
+   Bodoni Moda at restrained scale, hairline rules; dressed in the boomp
+   palette (docs/brand/color-palette.md, adopted 2026-07-22): Chalk ground,
+   Glow Navy ink, Ocean for anything that carries text, Tangerine as the
+   warm accent reserved for display-size moments and marks. Dark mode
+   inverts onto Navy with Sky. Overrides the broadsheet base above; edit
+   identity here, structure there.
+
+   Why two accents: Tangerine on Chalk is 3.2:1 — fine for display type and
+   rules, short of AA for the small-caps meta text the site sets in --accent.
+   Ocean on Chalk is 8.9:1, and the palette assigns links to Ocean anyway. ===== */
 :root{
-  --bone:#FAF8F3;--bone-deep:#F1EDE3;--ink:#191511;--ink-secondary:#4D463E;--ink-muted:#877C6E;
-  --rule:#191511;--rule-soft:#DED6C7;--index:#CCC3B0;--accent:#6E1D2B;--accent-deep:#521521;
+  /* Chalk #F6F1EF · Glow Navy #171F37 · Ocean #004AAC · Tangerine #E55730 */
+  --bone:#F6F1EF;--bone-deep:#EBE4E1;--ink:#171F37;--ink-secondary:#454C63;--ink-muted:#7C8296;
+  --rule:#171F37;--rule-soft:#D6CFCC;--index:#BDB6B3;
+  --accent:#004AAC;--accent-deep:#00337A;--accent-warm:#E55730;
   --font-display:var(--font-bodoni),'Bodoni Moda','Didot','Bodoni MT',serif;
   --text-hero:clamp(2.75rem,7.5vw,6rem);
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --bone:#131110;--bone-deep:#1C1917;--ink:#F0E9DD;--ink-secondary:#C7BCAC;--ink-muted:#8E8272;
-    --rule:#F0E9DD;--rule-soft:#332E28;--index:#4E463C;--accent:#C9A36A;--accent-deep:#DDBC85;
+    /* Navy ground · Chalk ink · Sky #BBE3FC carries text · Tangerine stays warm */
+    --bone:#141B30;--bone-deep:#1D2645;--ink:#F6F1EF;--ink-secondary:#C3C8D6;--ink-muted:#8A90A3;
+    --rule:#F6F1EF;--rule-soft:#2E3757;--index:#4B5474;
+    --accent:#BBE3FC;--accent-deep:#DCF0FE;--accent-warm:#F0714D;
   }
 }
 :root[data-theme="dark"]{
-  --bone:#131110;--bone-deep:#1C1917;--ink:#F0E9DD;--ink-secondary:#C7BCAC;--ink-muted:#8E8272;
-    --rule:#F0E9DD;--rule-soft:#332E28;--index:#4E463C;--accent:#C9A36A;--accent-deep:#DDBC85;
+  --bone:#141B30;--bone-deep:#1D2645;--ink:#F6F1EF;--ink-secondary:#C3C8D6;--ink-muted:#8A90A3;
+  --rule:#F6F1EF;--rule-soft:#2E3757;--index:#4B5474;
+  --accent:#BBE3FC;--accent-deep:#DCF0FE;--accent-warm:#F0714D;
 }
 h1,h2,h3,h4,h5,h6{font-weight:500;letter-spacing:-0.005em;line-height:1.1}
 h1{font-weight:500}
 a{text-decoration-thickness:1px;text-underline-offset:4px}
 :focus-visible{outline:1px solid var(--ink);outline-offset:4px}
-blockquote{border-left:1px solid var(--accent);font-weight:400;font-style:italic;letter-spacing:0}
+blockquote{border-left:1px solid var(--accent-warm);font-weight:400;font-style:italic;letter-spacing:0}
+li::marker{color:var(--accent-warm)}
 hr{height:1px}
 pre{background:var(--bone-deep);color:var(--ink);border:1px solid var(--rule-soft)}
 ::selection{background:var(--ink);color:var(--bone)}
@@ -492,7 +508,7 @@ pre{background:var(--bone-deep);color:var(--ink);border:1px solid var(--rule-sof
 .site-nav a:hover{border-bottom-color:var(--accent)}
 .home-hero{padding:var(--space-4xl) var(--space-xl) var(--space-2xl)}
 .home-greeting{font-weight:400;line-height:1.04;letter-spacing:0}
-.home-greeting em{font-style:italic;color:var(--accent)}
+.home-greeting em{font-style:italic;color:var(--accent-warm)}
 .hero-rule{height:1px;margin:var(--space-2xl) 0 var(--space-xl)}
 .home-bio{font-size:var(--text-base);line-height:1.7;font-weight:400}
 .section-label{background:transparent;color:var(--ink-muted);padding:0;letter-spacing:0.26em;font-weight:500}
@@ -506,7 +522,7 @@ pre{background:var(--bone-deep);color:var(--ink);border:1px solid var(--rule-sof
 .article-reading-pill{letter-spacing:0.24em;font-weight:500}
 .article-content > p:first-of-type{font-weight:400;font-size:var(--text-lg);line-height:1.5}
 .article-footer{border-top:1px solid var(--rule)}
-.back-link{border-bottom:1px solid var(--accent);letter-spacing:0.24em;font-weight:500}
+.back-link{border-bottom:1px solid var(--accent-warm);letter-spacing:0.24em;font-weight:500}
 .page-header{border-bottom:1px solid var(--rule)}
 .page-title{font-weight:500}
 .archive-stats{border-bottom:1px solid var(--rule-soft)}
@@ -516,7 +532,7 @@ pre{background:var(--bone-deep);color:var(--ink);border:1px solid var(--rule-sof
 .site-footer{border-top:1px solid var(--rule)}
 .footer-tagline{font-weight:400;font-style:italic;font-size:var(--text-xl);letter-spacing:0}
 .manifesto-text{font-weight:400;letter-spacing:0;line-height:1.2}
-.manifesto-text strong{color:var(--accent)}
+.manifesto-text strong{color:var(--accent-warm)}
 /* subscribe, in the house cut */
 .subscribe-card{max-width:40rem;border-top:1px solid var(--rule);padding-top:var(--space-xl)}
 .subscribe-kicker{background:transparent;color:var(--ink-muted);padding:0;letter-spacing:0.26em;font-weight:500;margin:0 0 var(--space-md)}
