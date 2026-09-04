@@ -18,23 +18,26 @@ export default function Home() {
         <div className="home-hero-content">
           <p className="home-kicker">Founder &middot; Writer &middot; Chandler, Arizona</p>
           <h1 className="home-greeting">
-            I built <em>software</em>{" "}that runs social media for business
-            owners who&rsquo;d rather not do it themselves.
+            Sixteen years making other people look good online. Then I got
+            tired of advising and <em>wrote the code myself.</em>
           </h1>
           <div className="hero-rule" />
           <p className="home-bio">
-            It reads your website, writes the posts, and all you do is say
-            yes. That&rsquo;s <a href="https://boomp.net">boomp.net</a>.
+            That software is <a href="https://boomp.net">boomp.net</a>. It
+            reads your website, writes the posts, you say yes. That&rsquo;s
+            why it&rsquo;s ninety-nine bucks and not two grand.
           </p>
           <p className="home-bio">
-            I&rsquo;m Kathleen Celmins, the founder. I&rsquo;ve worked in
-            marketing since 2010; in 2025 I stopped advising on it and built
-            the software instead. I write the code, answer the support email,
-            and decide what ships.
+            I built it, I run it, I answer the support email. 5,600 commits
+            since May 2025. Nobody raised a round.
           </p>
           <a className="hero-cta" href={FIRST_LOOK_URL}>
             See what it would say about you
           </a>
+          <p className="home-receipts">
+            HubSpot contributor &middot; SCORE Phoenix contributor &middot;
+            200+ commits a month &middot; 0 rounds raised
+          </p>
         </div>
       </section>
 

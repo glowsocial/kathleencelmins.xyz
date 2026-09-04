@@ -79,7 +79,9 @@ export default function AboutPage() {
           <p>
             <strong>Elsewhere.</strong>{" "}
             <a href="https://boomp.net">boomp.net</a> &middot;{" "}
-            <a href="https://www.linkedin.com/in/kathleencelmins/">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/kathleencelmins/">LinkedIn</a> &middot;{" "}
+            <a href="https://blog.hubspot.com/marketing/author/kathleen-celmins">HubSpot</a> &middot;{" "}
+            <a href="https://www.score.org/contributor/kathleen-celmins/">SCORE</a>
           </p>
         </div>
 
