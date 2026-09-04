@@ -347,6 +347,18 @@ main{flex:1;width:100%}
 
 /* --- About / Goals --- */
 .about-content{max-width:var(--max-prose);margin:0}
+/* About header: the opening line beside a framed portrait; stacks under 768px */
+.about-header{
+  display:grid;grid-template-columns:minmax(0,var(--max-prose)) auto;
+  gap:var(--space-2xl) var(--space-3xl);align-items:start;
+  max-width:var(--max-full);margin:0 0 var(--space-xl);
+}
+.about-lead{min-width:0}
+.about-lead h1{font-size:var(--text-4xl);margin-bottom:var(--space-xl)}
+.about-lead .manifesto-text{margin-bottom:0}
+.about-portrait{margin:0;width:300px;max-width:100%;justify-self:end}
+.about-portrait img{display:block;width:100%;height:auto;border:3px solid var(--rule)}
+.about-content .about-rule{margin-top:0}
 .about-content h1{font-size:var(--text-4xl);margin-bottom:var(--space-xl)}
 .about-content h2{margin-top:var(--space-3xl)}
 .about-content p{line-height:1.65;margin-bottom:var(--space-lg);font-size:var(--text-lg)}
@@ -472,6 +484,8 @@ main{flex:1;width:100%}
   .archive-stats{gap:var(--space-xl)}
   .site-footer-inner{flex-direction:column;gap:var(--space-sm)}
   .source-summary-row{grid-template-columns:1fr;gap:var(--space-xs)}
+  .about-header{grid-template-columns:1fr;gap:var(--space-xl)}
+  .about-portrait{width:70%;justify-self:start}
 }
 
 @media(max-width:480px){
@@ -566,6 +580,8 @@ pre{background:var(--bone-deep);color:var(--ink);border:1px solid var(--rule-sof
 .footer-tagline{font-weight:400;font-style:italic;font-size:var(--text-xl);letter-spacing:0}
 .manifesto-text{font-weight:400;letter-spacing:0;line-height:1.2}
 .manifesto-text strong{color:var(--accent-warm)}
+/* the portrait: a hairline frame and a paper mat, never a circle */
+.about-portrait img{border:1px solid var(--rule);padding:6px;background:var(--bone)}
 /* subscribe, in the house cut */
 .subscribe-card{max-width:40rem;border-top:1px solid var(--rule);padding-top:var(--space-xl)}
 .subscribe-kicker{background:transparent;color:var(--ink-muted);padding:0;letter-spacing:0.26em;font-weight:500;margin:0 0 var(--space-md)}

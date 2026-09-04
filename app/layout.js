@@ -40,9 +40,18 @@ export const metadata = {
     title: "Kathleen Celmins, founder of boomp.net",
     description:
       "Kathleen Celmins built boomp.net, software that runs social media for business owners who'd rather not do it themselves. Essays on building and running it.",
+    images: [
+      {
+        url: "/images/kathleen-celmins-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Kathleen Celmins, founder of boomp.net",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
+    images: ["/images/kathleen-celmins-og.jpg"],
   },
   alternates: {
     types: {

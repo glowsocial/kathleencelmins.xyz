@@ -1,3 +1,6 @@
+import Image from "next/image";
+import portrait from "@/public/images/kathleen-celmins.jpg";
+
 export const metadata = {
   title: "About",
   description:
@@ -9,15 +12,26 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="page-container">
+      <div className="about-header">
+        <div className="about-lead">
+          <h1>About</h1>
+          <p className="manifesto-text">
+            I build software for business owners who&rsquo;d rather not run
+            their own social media, and I write about what running it teaches me.
+          </p>
+        </div>
+        <figure className="about-portrait">
+          <Image
+            src={portrait}
+            alt="Kathleen Celmins at her desk, smiling, in a navy shirt"
+            sizes="(max-width: 768px) 70vw, 340px"
+            priority
+          />
+        </figure>
+      </div>
+
       <div className="about-content">
-        <h1>About</h1>
-
-        <p className="manifesto-text">
-          I build software for business owners who&rsquo;d rather not run
-          their own social media, and I write about what running it teaches me.
-        </p>
-
-        <hr />
+        <hr className="about-rule" />
 
         <div className="about-section">
           <p>
