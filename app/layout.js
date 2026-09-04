@@ -27,19 +27,19 @@ const bodoni = Bodoni_Moda({
 export const metadata = {
   metadataBase: new URL("https://www.kathleencelmins.xyz"),
   title: {
-    default: "Kathleen Celmins — Everything, in writing.",
+    default: "Kathleen Celmins, founder of boomp.net",
     template: "%s — Kathleen Celmins",
   },
   description:
-    "Everything, in writing. Essays on building boomp.net and what running it teaches — by Kathleen Celmins.",
+    "Kathleen Celmins built boomp.net, software that runs social media for business owners who'd rather not do it themselves. Essays on building and running it.",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://www.kathleencelmins.xyz",
     siteName: "Kathleen Celmins",
-    title: "Kathleen Celmins — Everything, in writing.",
+    title: "Kathleen Celmins, founder of boomp.net",
     description:
-      "Everything, in writing. Essays on building boomp.net and what running it teaches — by Kathleen Celmins.",
+      "Kathleen Celmins built boomp.net, software that runs social media for business owners who'd rather not do it themselves. Essays on building and running it.",
   },
   twitter: {
     card: "summary",
