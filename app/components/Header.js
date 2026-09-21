@@ -1,7 +1,7 @@
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 
-// A slim bar: the name, three links, a subscribe button. The home page
+// A slim bar: the name, four links, a subscribe button. The home page
 // carries the masthead; this just gets the reader back to it.
 export default function Header() {
   return (
@@ -20,6 +20,9 @@ export default function Header() {
             </li>
             <li>
               <Link href="/about">About</Link>
+            </li>
+            <li className="nav-secondary">
+              <Link href="/work-with-me">Work with me</Link>
             </li>
             <li>
               <ThemeToggle />

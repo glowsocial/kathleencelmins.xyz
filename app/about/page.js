@@ -60,6 +60,9 @@ export default function AboutPage() {
             </a>
             <span>5,600 commits since May 2025 &middot; 0 rounds raised</span>
           </p>
+          <p>
+            Or skip the app entirely and <a href="/work-with-me">have me run it</a>.
+          </p>
         </div>
 
         <div className="about-section">

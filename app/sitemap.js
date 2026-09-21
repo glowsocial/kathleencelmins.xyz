@@ -52,6 +52,12 @@ export default function sitemap() {
       priority: 0.5,
     },
     {
+      url: `${baseUrl}/work-with-me`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/goals`,
       lastModified: new Date(),
       changeFrequency: "monthly",
