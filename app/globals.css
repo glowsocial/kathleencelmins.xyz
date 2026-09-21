@@ -117,7 +117,8 @@ img{max-width:100%;height:auto}
 }
 .site-name{font-size:var(--text-base);font-weight:700;color:var(--ink);letter-spacing:-0.01em;white-space:nowrap}
 .site-name:hover{text-decoration:none;color:var(--accent)}
-.site-nav{display:flex;align-items:center;gap:var(--space-lg);list-style:none}
+.site-nav{display:flex;align-items:center;gap:var(--space-lg);list-style:none;margin:0;padding:0}
+.site-nav li{margin:0}
 .site-nav a{font-size:var(--text-sm);font-weight:500;color:var(--ink-secondary)}
 .site-nav a:hover{color:var(--ink);text-decoration:none}
 .site-nav a.btn{color:var(--on-accent)}
