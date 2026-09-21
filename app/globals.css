@@ -227,7 +227,7 @@ main{flex:1;width:100%}
 .about-lead{min-width:0}
 .about-lead h1{margin-bottom:var(--space-md)}
 .about-portrait{margin:0;width:180px;max-width:100%}
-.about-portrait img{display:block;width:100%;height:auto;border-radius:50%}
+.about-portrait img{display:block;width:100%;height:auto;border-radius:var(--radius)}
 .about-content{font-family:var(--font-serif);font-size:1.125rem;line-height:1.65}
 .about-content h1,.about-content h2{font-family:var(--font-ui)}
 .about-content h1{font-size:var(--text-3xl);margin-bottom:var(--space-lg)}
