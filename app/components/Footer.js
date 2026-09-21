@@ -6,7 +6,10 @@ export default function Footer() {
       <div className="site-footer-inner">
         <p className="footer-tagline">The unshrunk version.</p>
         <p className="footer-text">&copy; {year} Kathleen Celmins</p>
-        <a href="/feed.xml">rss</a>
+        <div className="footer-links">
+          <a href="https://boomp.net">boomp.net</a>
+          <a href="/feed.xml">RSS</a>
+        </div>
       </div>
     </footer>
   );

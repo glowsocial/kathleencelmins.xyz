@@ -21,8 +21,8 @@ export default function WritingPage() {
 
       {posts.length > 0 ? (
         <div className="posts-list">
-          {posts.map((post, i) => (
-            <PostCard key={post.slug} post={post} index={i} />
+          {posts.map((post) => (
+            <PostCard key={post.slug} post={post} />
           ))}
         </div>
       ) : (

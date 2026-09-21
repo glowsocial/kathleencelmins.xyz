@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getPostBySlug, getAllSlugs } from "@/lib/posts";
+import { getPostBySlug, getAllSlugs, getAllPosts } from "@/lib/posts";
 import { markdownToHtml } from "@/lib/markdown";
 import SubscribeForm from "../../components/SubscribeForm";
+import { formatDate } from "../../components/PostCard";
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
@@ -20,6 +21,8 @@ export async function generateMetadata({ params }) {
   };
 }
 
+// The reading layout: one narrow column, title, subtitle, byline, body,
+// a subscribe box at the end, then the neighbours in the feed.
 export default async function WritingPost({ params }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
@@ -29,38 +32,25 @@ export default async function WritingPost({ params }) {
   }
 
   const contentHtml = markdownToHtml(post.content);
-  const formattedDate = post.date
-    ? new Date(post.date).toLocaleDateString("en-US", {
-        timeZone: "UTC",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      })
-    : "";
+  const all = getAllPosts();
+  const i = all.findIndex((p) => p.slug === slug);
+  const newer = i > 0 ? all[i - 1] : null;
+  const older = i >= 0 && i < all.length - 1 ? all[i + 1] : null;
 
   return (
-    <div className="page-container">
+    <div className="read-container">
       <article>
-        <Link href="/writing" className="back-link">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fillRule="evenodd"
-              d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z"
-              clipRule="evenodd"
-            />
-          </svg>
-          All writing
-        </Link>
-
         <header className="article-header">
-          <p className="article-date">{formattedDate}</p>
           <h1 className="article-title">{post.title}</h1>
-          <div className="article-meta">
-            <span className="article-reading-pill">{post.readingTime}</span>
+          {post.description && (
+            <p className="article-subtitle">{post.description}</p>
+          )}
+          <div className="article-byline">
+            <span className="article-byline-name">Kathleen Celmins</span>
+            <p className="article-meta">
+              <span>{formatDate(post.date)}</span>
+              <span>{post.readingTime}</span>
+            </p>
           </div>
         </header>
 
@@ -75,6 +65,26 @@ export default async function WritingPost({ params }) {
             hear about it.
           </p>
           <SubscribeForm />
+          {(newer || older) && (
+            <nav className="article-nav" aria-label="More writing">
+              <div>
+                {older && (
+                  <Link href={`/writing/${older.slug}`}>
+                    <span className="article-nav-label">Previous</span>
+                    <span className="article-nav-title">{older.title}</span>
+                  </Link>
+                )}
+              </div>
+              <div className="article-nav-next">
+                {newer && (
+                  <Link href={`/writing/${newer.slug}`}>
+                    <span className="article-nav-label">Next</span>
+                    <span className="article-nav-title">{newer.title}</span>
+                  </Link>
+                )}
+              </div>
+            </nav>
+          )}
         </footer>
       </article>
     </div>

@@ -7,11 +7,14 @@ export const metadata = {
     "Kathleen Celmins is the founder of boomp.net, software that runs social media for business owners who'd rather not do it themselves. Chandler, Arizona.",
 };
 
+const FIRST_LOOK_URL =
+  "https://boomp.net/preview?utm_source=kathleencelmins.xyz&utm_medium=referral&utm_campaign=free_preview&utm_content=about";
+
 // A bio for someone who just searched her name, not a manifesto.
 // The facts first, the voice underneath.
 export default function AboutPage() {
   return (
-    <div className="page-container">
+    <div className="read-container">
       <div className="about-header">
         <div className="about-lead">
           <h1>About</h1>
@@ -24,7 +27,7 @@ export default function AboutPage() {
           <Image
             src={portrait}
             alt="Kathleen Celmins at her desk, smiling, in a navy shirt"
-            sizes="(max-width: 768px) 70vw, 340px"
+            sizes="(max-width: 768px) 120px, 180px"
             priority
           />
         </figure>
@@ -50,6 +53,12 @@ export default function AboutPage() {
             posts, and all you do is say yes. Local businesses stay current on
             social without a content hire or an agency retainer. It launched
             as Glow Social in 2025 and got its real name in 2026.
+          </p>
+          <p className="about-cta">
+            <a className="btn btn-primary" href={FIRST_LOOK_URL}>
+              See what it would say about you
+            </a>
+            <span>5,600 commits since May 2025 &middot; 0 rounds raised</span>
           </p>
         </div>
 

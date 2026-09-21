@@ -1,4 +1,4 @@
-import { Inter, JetBrains_Mono, Bodoni_Moda } from "next/font/google";
+import { Inter, JetBrains_Mono, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -16,10 +16,10 @@ const jetbrains = JetBrains_Mono({
   display: "swap",
 });
 
-const bodoni = Bodoni_Moda({
+const serif = Source_Serif_4({
   subsets: ["latin"],
-  variable: "--font-bodoni",
-  weight: ["400", "500", "600"],
+  variable: "--font-serif-body",
+  weight: ["400", "600"],
   style: ["normal", "italic"],
   display: "swap",
 });
@@ -66,7 +66,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrains.variable} ${bodoni.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${jetbrains.variable} ${serif.variable}`} suppressHydrationWarning>
       <body>
         <script
           dangerouslySetInnerHTML={{

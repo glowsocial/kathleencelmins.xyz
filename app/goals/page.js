@@ -5,7 +5,7 @@ export const metadata = {
 
 export default function GoalsPage() {
   return (
-    <div className="page-container">
+    <div className="read-container">
       <div className="about-content">
         <h1>Goals</h1>
 
