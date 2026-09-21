@@ -1,8 +1,8 @@
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 
-// A slim bar: the name, four links, a subscribe button. The home page
-// carries the masthead; this just gets the reader back to it.
+// A slim bar: the name, four links, a subscribe button. On phones only
+// Work with me and Subscribe stay; About and the toggle live in the footer.
 export default function Header() {
   return (
     <header className="site-header">
@@ -18,13 +18,13 @@ export default function Header() {
             <li className="nav-secondary">
               <Link href="/goals">Goals</Link>
             </li>
-            <li>
+            <li className="nav-secondary">
               <Link href="/about">About</Link>
             </li>
-            <li className="nav-secondary">
+            <li className="nav-work">
               <Link href="/work-with-me">Work with me</Link>
             </li>
-            <li>
+            <li className="nav-secondary">
               <ThemeToggle />
             </li>
             <li>

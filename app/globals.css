@@ -314,9 +314,12 @@ main{flex:1;width:100%}
 @media(max-width:768px){
   :root{--text-3xl:2.125rem;--text-2xl:1.75rem}
   .site-header-inner{padding:0.75rem var(--space-md)}
-  .site-nav{gap:var(--space-md)}
+  .site-nav{gap:0.75rem}
   .site-name{font-size:var(--text-sm)}
+  .site-nav a{font-size:var(--text-xs)}
+  .site-header-inner{gap:var(--space-md)}
   .site-nav .nav-secondary{display:none}
+  .site-nav a{white-space:nowrap}
   .masthead{padding:var(--space-2xl) var(--space-md) var(--space-xl)}
   .feed,.subscribe-section{padding-left:var(--space-md);padding-right:var(--space-md)}
   .page-container,.read-container{padding:var(--space-xl) var(--space-md)}
@@ -328,6 +331,10 @@ main{flex:1;width:100%}
   .about-portrait{width:120px}
   .article-nav{grid-template-columns:1fr}
   .article-nav-next{text-align:left}
+}
+@media(max-width:380px){
+  .site-name{font-size:var(--text-xs)}
+  .site-header-inner{padding-left:var(--space-sm);padding-right:var(--space-sm)}
 }
 @media(max-width:480px){
   .subscribe-row{flex-direction:column}
