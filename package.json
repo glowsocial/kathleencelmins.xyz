@@ -18,5 +18,12 @@
     "@mozilla/readability": "^0.6.0",
     "jsdom": "^29.1.1",
     "turndown": "^7.2.4"
+  },
+  "overrides": {
+    "gray-matter": {
+      "js-yaml": {
+        "argparse": "2.0.1"
+      }
+    }
   }
 }
