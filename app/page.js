@@ -1,5 +1,6 @@
 import { getAllPosts } from "@/lib/posts";
 import Link from "next/link";
+import Doodle from "./components/Doodle";
 import PostCard from "./components/PostCard";
 import SubscribeForm from "./components/SubscribeForm";
 
@@ -10,7 +11,12 @@ export default function Home() {
     <div className="writing-home">
       <aside className="home-intro" aria-labelledby="home-title">
         <div className="home-intro-inner">
-          <h1 id="home-title">Everything, <br />in writing.</h1>
+          <Doodle name="sparkle" className="intro-sparkle intro-sparkle-big" />
+          <Doodle name="sparkle" className="intro-sparkle intro-sparkle-small" />
+          <h1 id="home-title">
+            Everything, <span className="home-title-script">in writing.</span>
+          </h1>
+          <Doodle name="squiggle" className="intro-squiggle" />
           <p className="home-hello">I&rsquo;m Kathleen.</p>
           <p>
             I build things, read books, and write to figure out what I think.
@@ -20,12 +26,17 @@ export default function Home() {
             room for all of it here.
           </p>
           <Link href="/about" className="home-about">A little more about me</Link>
+          <Doodle name="curlicue" className="intro-curlicue" />
+          <Doodle name="cloud" className="intro-cloud" />
         </div>
       </aside>
 
       <div className="home-pages">
         <section className="home-feed" aria-labelledby="writing-heading" id="writing">
-          <h2 id="writing-heading">Recent writing</h2>
+          <div className="home-feed-heading">
+            <h2 id="writing-heading">Recent writing</h2>
+            <Doodle name="arrow" className="feed-arrow" />
+          </div>
           {posts.length > 0 ? (
           <div className="posts-list">
             {posts.map((post) => (

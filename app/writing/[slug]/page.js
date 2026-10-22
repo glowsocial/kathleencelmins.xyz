@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getPostBySlug, getAllSlugs, getAllPosts } from "@/lib/posts";
 import { markdownToHtml } from "@/lib/markdown";
+import Doodle from "../../components/Doodle";
 import SubscribeForm from "../../components/SubscribeForm";
 import { formatDate } from "../../components/PostCard";
 
@@ -60,6 +61,7 @@ export default async function WritingPost({ params }) {
         />
 
         <footer className="article-footer">
+          <Doodle name="curlicue" className="article-end" />
           <p className="article-footer-text">
             Thanks for reading. If something here resonated, I&rsquo;d love to
             hear about it.

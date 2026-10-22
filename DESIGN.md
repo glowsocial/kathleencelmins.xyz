@@ -1,6 +1,6 @@
 ---
 name: "Kathleen Celmins"
-description: "A personal commonplace book with green endpapers and quiet reading pages."
+description: "A personal commonplace book with green endpapers, her name in handwriting, and doodles in the margins."
 colors:
   bg: "#F9FAF5"
   bg-deep: "#EDF1E7"
@@ -12,6 +12,10 @@ colors:
   accent: "#365D40"
   accent-deep: "#24452D"
   on-accent: "#FFFFFF"
+  pop: "#D9486F"
+  gold: "#D99A1E"
+  wave-ink: "#B9C8B1"
+  highlight: "#F8CBD6"
   bg-dark: "#19231E"
   bg-deep-dark: "#233027"
   endpaper-dark: "#28372B"
@@ -22,7 +26,15 @@ colors:
   accent-dark: "#BDCCA9"
   accent-deep-dark: "#D8E2CB"
   on-accent-dark: "#19231E"
+  pop-dark: "#F497AE"
+  gold-dark: "#E9C46A"
+  wave-ink-dark: "#506553"
+  highlight-dark: "#6E3446"
 typography:
+  script:
+    fontFamily: "Ms Madi, cursive"
+    fontWeight: 400
+    lineHeight: 1
   display:
     fontFamily: "Source Serif 4, Iowan Old Style, Georgia, serif"
     fontSize: "2.75rem"
@@ -164,7 +176,15 @@ The desktop home has two unequal columns. The endpaper column uses `minmax(19rem
 
 ## Elevation & Depth
 
-The design has no shadows. Paper color fields, open space, and one-pixel rules separate the page parts. Color transitions take (180ms) with `cubic-bezier(0.16, 1, 0.3, 1)`. The reduced-motion setting removes transitions. The legacy entrance animation classes are inert.
+The design has no shadows. Paper color fields, open space, and hand-drawn wavy lines separate the page parts. Color transitions take (180ms) with `cubic-bezier(0.16, 1, 0.3, 1)`. The legacy entrance animation classes are inert.
+
+## Handwriting and doodles
+
+Added 2026-10-22 because the site still felt sterile. The script face (Ms Madi) sets her name in the header, "in writing." on the home page, "Recent writing", page titles, the article byline, and the footer tagline. Titles of posts and body text stay in the serif.
+
+Doodles come from `app/components/Doodle.js`: squiggle, sparkle, curlicue, cloud, arrow, heart. They are inline SVG, hidden from screen readers, and colored by role: `pop` (pink) for squiggles, the arrow, the curlicue and the heart; `gold` for sparkles; `accent` at low opacity for the cloud. Dividers (`hr`, post rows, byline, page headers, subscribe, article nav) use the `--wave` mask in `wave-ink`.
+
+The squiggle, arrow and curlicues draw themselves in once on load, and the sparkles twinkle. All of it sits inside `prefers-reduced-motion: no-preference`, so a reader who turns motion off sees the finished drawings with no movement.
 
 ## Shapes
 
@@ -207,5 +227,6 @@ Keyboard focus uses an accent outline (2px) with an offset (3px). The skip link 
 
 ### Don't:
 - Don't box the post feed into raised cards.
-- Don't add entrance motion or remove the reduced-motion rule.
+- Don't add motion outside the doodles, and keep every doodle animation inside the reduced-motion guard.
+- Don't set post titles or body text in the script face; it is for names and labels.
 - Don't place the subscription form before the writing on the home page.

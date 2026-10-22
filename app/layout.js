@@ -1,4 +1,4 @@
-import { Inter, JetBrains_Mono, Source_Serif_4 } from "next/font/google";
+import { Inter, JetBrains_Mono, Ms_Madi, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -21,6 +21,13 @@ const serif = Source_Serif_4({
   variable: "--font-serif-body",
   weight: ["400", "600"],
   style: ["normal", "italic"],
+  display: "swap",
+});
+
+const script = Ms_Madi({
+  subsets: ["latin"],
+  variable: "--font-script",
+  weight: "400",
   display: "swap",
 });
 
@@ -66,7 +73,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrains.variable} ${serif.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${jetbrains.variable} ${serif.variable} ${script.variable}`} suppressHydrationWarning>
       <body>
         <script
           dangerouslySetInnerHTML={{
