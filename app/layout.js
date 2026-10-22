@@ -27,19 +27,19 @@ const serif = Source_Serif_4({
 export const metadata = {
   metadataBase: new URL("https://www.kathleencelmins.xyz"),
   title: {
-    default: "Kathleen Celmins, founder of boomp.net",
+    default: "Kathleen Celmins — Everything, in writing.",
     template: "%s — Kathleen Celmins",
   },
   description:
-    "Kathleen Celmins built boomp.net, software that runs social media for business owners who'd rather not do it themselves. Essays on building and running it.",
+    "Personal writing by Kathleen Celmins. Notes on work, books, life, and the things still taking shape.",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://www.kathleencelmins.xyz",
     siteName: "Kathleen Celmins",
-    title: "Kathleen Celmins, founder of boomp.net",
+    title: "Kathleen Celmins — Everything, in writing.",
     description:
-      "Kathleen Celmins built boomp.net, software that runs social media for business owners who'd rather not do it themselves. Essays on building and running it.",
+      "Personal writing by Kathleen Celmins. Notes on work, books, life, and the things still taking shape.",
     images: [
       {
         url: "/images/kathleen-celmins-og.jpg",
@@ -74,8 +74,9 @@ export default function RootLayout({ children }) {
               "try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}",
           }}
         />
+        <a href="#main" className="skip-link">Skip to writing</a>
         <Header />
-        <main>{children}</main>
+        <main id="main">{children}</main>
         <Footer />
       </body>
     </html>

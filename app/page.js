@@ -1,41 +1,48 @@
 import { getAllPosts } from "@/lib/posts";
+import Link from "next/link";
 import PostCard from "./components/PostCard";
 import SubscribeForm from "./components/SubscribeForm";
 
-// The home page is the publication page: who writes it, what it's about,
-// the subscribe box, then the feed. The founder pitch lives on /about.
 export default function Home() {
   const posts = getAllPosts();
 
   return (
-    <div>
-      <section className="masthead" id="subscribe">
-        <h1 className="masthead-title">Everything, in writing.</h1>
-        <p className="masthead-tagline">
-          Notes from building and running boomp.net, and whatever else
-          I&rsquo;m thinking about. Unpolished on purpose.
-        </p>
-        <p className="masthead-byline">
-          By <a href="/about">Kathleen Celmins</a>, founder of{" "}
-          <a href="https://boomp.net">boomp.net</a>
-        </p>
-        <SubscribeForm />
-      </section>
+    <div className="writing-home">
+      <aside className="home-intro" aria-labelledby="home-title">
+        <div className="home-intro-inner">
+          <h1 id="home-title">Everything, <br />in writing.</h1>
+          <p className="home-hello">I&rsquo;m Kathleen.</p>
+          <p>
+            I build things, read books, and write to figure out what I think.
+          </p>
+          <p>
+            Some of it is about work. Some of it is about life. There&rsquo;s
+            room for all of it here.
+          </p>
+          <Link href="/about" className="home-about">A little more about me</Link>
+        </div>
+      </aside>
 
-      {posts.length > 0 ? (
-        <section className="feed">
-          <h2 className="feed-heading">Latest</h2>
+      <div className="home-pages">
+        <section className="home-feed" aria-labelledby="writing-heading" id="writing">
+          <h2 id="writing-heading">Recent writing</h2>
+          {posts.length > 0 ? (
           <div className="posts-list">
             {posts.map((post) => (
               <PostCard key={post.slug} post={post} />
             ))}
           </div>
+          ) : (
+            <div className="empty-state"><p>The first piece will be here soon.</p></div>
+          )}
+          <p className="home-archive-link">
+            <Link href="/archive">From earlier chapters: the archive</Link>
+          </p>
         </section>
-      ) : (
-        <div className="empty-state">
-          <p>Nothing here yet. Check back soon.</p>
-        </div>
-      )}
+        <section className="home-subscribe" id="subscribe" aria-label="Subscribe by email">
+          <SubscribeForm />
+        </section>
+      </div>
     </div>
   );
 }

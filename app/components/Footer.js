@@ -8,6 +8,7 @@ export default function Footer() {
         <p className="footer-text">&copy; {year} Kathleen Celmins</p>
         <div className="footer-links">
           <a href="/about">About</a>
+          <a href="/goals">Goals</a>
           <a href="/work-with-me">Work with me</a>
           <a href="https://boomp.net">boomp.net</a>
           <a href="/feed.xml">RSS</a>

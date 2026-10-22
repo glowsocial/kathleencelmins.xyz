@@ -1,0 +1,466 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-22T13:32:40.192933+00:00",
+  "title": "Design System: Kathleen Celmins",
+  "extensions": {
+    "colorMeta": {
+      "bg": {
+        "role": "neutral",
+        "displayName": "Reading Paper",
+        "canonical": "#F9FAF5",
+        "tonalRamp": [
+          "oklch(15.00% 0.00666 115.70)",
+          "oklch(26.43% 0.00666 115.70)",
+          "oklch(37.86% 0.00666 115.70)",
+          "oklch(49.29% 0.00666 115.70)",
+          "oklch(60.71% 0.00666 115.70)",
+          "oklch(72.14% 0.00666 115.70)",
+          "oklch(83.57% 0.00666 115.70)",
+          "oklch(95.00% 0.00666 115.70)"
+        ]
+      },
+      "bg-deep": {
+        "role": "neutral",
+        "displayName": "Code Paper",
+        "canonical": "#EDF1E7",
+        "tonalRamp": [
+          "oklch(15.00% 0.01390 124.55)",
+          "oklch(26.43% 0.01390 124.55)",
+          "oklch(37.86% 0.01390 124.55)",
+          "oklch(49.29% 0.01390 124.55)",
+          "oklch(60.71% 0.01390 124.55)",
+          "oklch(72.14% 0.01390 124.55)",
+          "oklch(83.57% 0.01390 124.55)",
+          "oklch(95.00% 0.01390 124.55)"
+        ]
+      },
+      "endpaper": {
+        "role": "neutral",
+        "displayName": "Green Endpaper",
+        "canonical": "#E5EBD9",
+        "tonalRamp": [
+          "oklch(15.00% 0.02476 121.92)",
+          "oklch(26.43% 0.02476 121.92)",
+          "oklch(37.86% 0.02476 121.92)",
+          "oklch(49.29% 0.02476 121.92)",
+          "oklch(60.71% 0.02476 121.92)",
+          "oklch(72.14% 0.02476 121.92)",
+          "oklch(83.57% 0.02476 121.92)",
+          "oklch(95.00% 0.02476 121.92)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Forest Ink",
+        "canonical": "#26382C",
+        "tonalRamp": [
+          "oklch(15.00% 0.03168 155.05)",
+          "oklch(26.43% 0.03168 155.05)",
+          "oklch(37.86% 0.03168 155.05)",
+          "oklch(49.29% 0.03168 155.05)",
+          "oklch(60.71% 0.03168 155.05)",
+          "oklch(72.14% 0.03168 155.05)",
+          "oklch(83.57% 0.03168 155.05)",
+          "oklch(95.00% 0.03168 155.05)"
+        ]
+      },
+      "ink-secondary": {
+        "role": "neutral",
+        "displayName": "Support Ink",
+        "canonical": "#485B4B",
+        "tonalRamp": [
+          "oklch(15.00% 0.03483 149.43)",
+          "oklch(26.43% 0.03483 149.43)",
+          "oklch(37.86% 0.03483 149.43)",
+          "oklch(49.29% 0.03483 149.43)",
+          "oklch(60.71% 0.03483 149.43)",
+          "oklch(72.14% 0.03483 149.43)",
+          "oklch(83.57% 0.03483 149.43)",
+          "oklch(95.00% 0.03483 149.43)"
+        ]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Quiet Ink",
+        "canonical": "#5F6E5C",
+        "tonalRamp": [
+          "oklch(15.00% 0.03316 140.44)",
+          "oklch(26.43% 0.03316 140.44)",
+          "oklch(37.86% 0.03316 140.44)",
+          "oklch(49.29% 0.03316 140.44)",
+          "oklch(60.71% 0.03316 140.44)",
+          "oklch(72.14% 0.03316 140.44)",
+          "oklch(83.57% 0.03316 140.44)",
+          "oklch(95.00% 0.03316 140.44)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Paper Rule",
+        "canonical": "#D7DECF",
+        "tonalRamp": [
+          "oklch(15.00% 0.02154 127.41)",
+          "oklch(26.43% 0.02154 127.41)",
+          "oklch(37.86% 0.02154 127.41)",
+          "oklch(49.29% 0.02154 127.41)",
+          "oklch(60.71% 0.02154 127.41)",
+          "oklch(72.14% 0.02154 127.41)",
+          "oklch(83.57% 0.02154 127.41)",
+          "oklch(95.00% 0.02154 127.41)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Forest Accent",
+        "canonical": "#365D40",
+        "tonalRamp": [
+          "oklch(15.00% 0.06532 151.17)",
+          "oklch(26.43% 0.06532 151.17)",
+          "oklch(37.86% 0.06532 151.17)",
+          "oklch(49.29% 0.06532 151.17)",
+          "oklch(60.71% 0.06532 151.17)",
+          "oklch(72.14% 0.06532 151.17)",
+          "oklch(83.57% 0.06532 151.17)",
+          "oklch(95.00% 0.06532 151.17)"
+        ]
+      },
+      "accent-deep": {
+        "role": "primary",
+        "displayName": "Accent Hover",
+        "canonical": "#24452D",
+        "tonalRamp": [
+          "oklch(15.00% 0.05714 151.39)",
+          "oklch(26.43% 0.05714 151.39)",
+          "oklch(37.86% 0.05714 151.39)",
+          "oklch(49.29% 0.05714 151.39)",
+          "oklch(60.71% 0.05714 151.39)",
+          "oklch(72.14% 0.05714 151.39)",
+          "oklch(83.57% 0.05714 151.39)",
+          "oklch(95.00% 0.05714 151.39)"
+        ]
+      },
+      "on-accent": {
+        "role": "neutral",
+        "displayName": "Accent Text",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ]
+      },
+      "bg-dark": {
+        "role": "neutral",
+        "displayName": "Reading Paper — Dark",
+        "canonical": "#19231E",
+        "tonalRamp": [
+          "oklch(15.00% 0.01709 163.15)",
+          "oklch(26.43% 0.01709 163.15)",
+          "oklch(37.86% 0.01709 163.15)",
+          "oklch(49.29% 0.01709 163.15)",
+          "oklch(60.71% 0.01709 163.15)",
+          "oklch(72.14% 0.01709 163.15)",
+          "oklch(83.57% 0.01709 163.15)",
+          "oklch(95.00% 0.01709 163.15)"
+        ]
+      },
+      "bg-deep-dark": {
+        "role": "neutral",
+        "displayName": "Code Paper — Dark",
+        "canonical": "#233027",
+        "tonalRamp": [
+          "oklch(15.00% 0.02397 154.49)",
+          "oklch(26.43% 0.02397 154.49)",
+          "oklch(37.86% 0.02397 154.49)",
+          "oklch(49.29% 0.02397 154.49)",
+          "oklch(60.71% 0.02397 154.49)",
+          "oklch(72.14% 0.02397 154.49)",
+          "oklch(83.57% 0.02397 154.49)",
+          "oklch(95.00% 0.02397 154.49)"
+        ]
+      },
+      "endpaper-dark": {
+        "role": "neutral",
+        "displayName": "Green Endpaper — Dark",
+        "canonical": "#28372B",
+        "tonalRamp": [
+          "oklch(15.00% 0.02903 150.54)",
+          "oklch(26.43% 0.02903 150.54)",
+          "oklch(37.86% 0.02903 150.54)",
+          "oklch(49.29% 0.02903 150.54)",
+          "oklch(60.71% 0.02903 150.54)",
+          "oklch(72.14% 0.02903 150.54)",
+          "oklch(83.57% 0.02903 150.54)",
+          "oklch(95.00% 0.02903 150.54)"
+        ]
+      },
+      "ink-dark": {
+        "role": "neutral",
+        "displayName": "Forest Ink — Dark",
+        "canonical": "#E8EDE2",
+        "tonalRamp": [
+          "oklch(15.00% 0.01555 126.83)",
+          "oklch(26.43% 0.01555 126.83)",
+          "oklch(37.86% 0.01555 126.83)",
+          "oklch(49.29% 0.01555 126.83)",
+          "oklch(60.71% 0.01555 126.83)",
+          "oklch(72.14% 0.01555 126.83)",
+          "oklch(83.57% 0.01555 126.83)",
+          "oklch(95.00% 0.01555 126.83)"
+        ]
+      },
+      "ink-secondary-dark": {
+        "role": "neutral",
+        "displayName": "Support Ink — Dark",
+        "canonical": "#C1CCBC",
+        "tonalRamp": [
+          "oklch(15.00% 0.02499 135.70)",
+          "oklch(26.43% 0.02499 135.70)",
+          "oklch(37.86% 0.02499 135.70)",
+          "oklch(49.29% 0.02499 135.70)",
+          "oklch(60.71% 0.02499 135.70)",
+          "oklch(72.14% 0.02499 135.70)",
+          "oklch(83.57% 0.02499 135.70)",
+          "oklch(95.00% 0.02499 135.70)"
+        ]
+      },
+      "ink-muted-dark": {
+        "role": "neutral",
+        "displayName": "Quiet Ink — Dark",
+        "canonical": "#ABB9A5",
+        "tonalRamp": [
+          "oklch(15.00% 0.03195 136.18)",
+          "oklch(26.43% 0.03195 136.18)",
+          "oklch(37.86% 0.03195 136.18)",
+          "oklch(49.29% 0.03195 136.18)",
+          "oklch(60.71% 0.03195 136.18)",
+          "oklch(72.14% 0.03195 136.18)",
+          "oklch(83.57% 0.03195 136.18)",
+          "oklch(95.00% 0.03195 136.18)"
+        ]
+      },
+      "rule-dark": {
+        "role": "neutral",
+        "displayName": "Paper Rule — Dark",
+        "canonical": "#3D4D3F",
+        "tonalRamp": [
+          "oklch(15.00% 0.03083 148.43)",
+          "oklch(26.43% 0.03083 148.43)",
+          "oklch(37.86% 0.03083 148.43)",
+          "oklch(49.29% 0.03083 148.43)",
+          "oklch(60.71% 0.03083 148.43)",
+          "oklch(72.14% 0.03083 148.43)",
+          "oklch(83.57% 0.03083 148.43)",
+          "oklch(95.00% 0.03083 148.43)"
+        ]
+      },
+      "accent-dark": {
+        "role": "primary",
+        "displayName": "Forest Accent — Dark",
+        "canonical": "#BDCCA9",
+        "tonalRamp": [
+          "oklch(15.00% 0.05036 126.39)",
+          "oklch(26.43% 0.05036 126.39)",
+          "oklch(37.86% 0.05036 126.39)",
+          "oklch(49.29% 0.05036 126.39)",
+          "oklch(60.71% 0.05036 126.39)",
+          "oklch(72.14% 0.05036 126.39)",
+          "oklch(83.57% 0.05036 126.39)",
+          "oklch(95.00% 0.05036 126.39)"
+        ]
+      },
+      "accent-deep-dark": {
+        "role": "primary",
+        "displayName": "Accent Hover — Dark",
+        "canonical": "#D8E2CB",
+        "tonalRamp": [
+          "oklch(15.00% 0.03261 126.29)",
+          "oklch(26.43% 0.03261 126.29)",
+          "oklch(37.86% 0.03261 126.29)",
+          "oklch(49.29% 0.03261 126.29)",
+          "oklch(60.71% 0.03261 126.29)",
+          "oklch(72.14% 0.03261 126.29)",
+          "oklch(83.57% 0.03261 126.29)",
+          "oklch(95.00% 0.03261 126.29)"
+        ]
+      },
+      "on-accent-dark": {
+        "role": "neutral",
+        "displayName": "Accent Text — Dark",
+        "canonical": "#19231E",
+        "tonalRamp": [
+          "oklch(15.00% 0.01709 163.15)",
+          "oklch(26.43% 0.01709 163.15)",
+          "oklch(37.86% 0.01709 163.15)",
+          "oklch(49.29% 0.01709 163.15)",
+          "oklch(60.71% 0.01709 163.15)",
+          "oklch(72.14% 0.01709 163.15)",
+          "oklch(83.57% 0.01709 163.15)",
+          "oklch(95.00% 0.01709 163.15)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Home introduction."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Article titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Linked writing titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Article reading text."
+      },
+      "excerpt": {
+        "displayName": "Excerpt",
+        "purpose": "Post summaries."
+      },
+      "ui": {
+        "displayName": "Ui",
+        "purpose": "General controls and support text."
+      },
+      "ui-small": {
+        "displayName": "Ui Small",
+        "purpose": "Navigation."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Dates and fine print."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Inline code."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "transition",
+        "value": "180ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Color and border state changes. Removed for reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-desktop",
+        "value": "960px"
+      },
+      {
+        "name": "stacked-page",
+        "value": "768px"
+      },
+      {
+        "name": "stacked-header",
+        "value": "520px"
+      },
+      {
+        "name": "stacked-subscription",
+        "value": "480px"
+      },
+      {
+        "name": "legacy-small-header",
+        "value": "380px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Accent action for a form or a page.",
+      "html": "<button class=\"ds-primary\">Subscribe</button>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-ui,Inter,sans-serif);font-size:.9375rem;font-weight:600;padding:.6rem 1.1rem;border-radius:var(--radius,3px);border:1px solid transparent;cursor:pointer;transition:background 180ms cubic-bezier(.16,1,.3,1),color 180ms cubic-bezier(.16,1,.3,1),border-color 180ms cubic-bezier(.16,1,.3,1);background:var(--accent,#365D40);color:var(--on-accent,#FFF)}.ds-primary:hover{background:var(--accent-deep,#24452D)}.ds-primary:focus-visible{outline:2px solid var(--accent,#365D40);outline-offset:3px}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A quieter action with a fine border.",
+      "html": "<button class=\"ds-secondary\">Read more</button>",
+      "css": ".ds-secondary{display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-ui,Inter,sans-serif);font-size:.9375rem;font-weight:600;padding:.6rem 1.1rem;border-radius:var(--radius,3px);border:1px solid transparent;cursor:pointer;transition:background 180ms cubic-bezier(.16,1,.3,1),color 180ms cubic-bezier(.16,1,.3,1),border-color 180ms cubic-bezier(.16,1,.3,1);background:transparent;color:var(--ink,#26382C);border-color:var(--rule,#D7DECF)}.ds-secondary:hover{border-color:var(--ink,#26382C)}.ds-secondary:focus-visible{outline:2px solid var(--accent,#365D40);outline-offset:3px}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none}}"
+    },
+    {
+      "name": "Email Field",
+      "kind": "input",
+      "refersTo": "email-field",
+      "description": "Email entry on the reading ground.",
+      "html": "<label class=\"ds-email-label\" for=\"ds-email\">Email address</label><input class=\"ds-email\" id=\"ds-email\" type=\"email\" placeholder=\"Your email address\">",
+      "css": ".ds-email-label{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}.ds-email{background:var(--bg,#F9FAF5);color:var(--ink,#26382C);border:1px solid var(--rule,#D7DECF);border-radius:var(--radius,3px);font-family:var(--font-ui,Inter,sans-serif);font-size:.9375rem;padding:.6rem .8rem;caret-color:var(--accent,#365D40);transition:border-color 180ms cubic-bezier(.16,1,.3,1)}.ds-email::placeholder{color:var(--ink-muted,#5F6E5C);opacity:1}.ds-email:focus{outline:2px solid var(--accent,#365D40);outline-offset:2px;border-color:var(--accent,#365D40)}@media(prefers-reduced-motion:reduce){.ds-email{transition:none}}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Small plain links with the full mobile link set.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"/writing\">Writing</a><a href=\"/about\">About</a><a href=\"/archive\">Archive</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:1.5rem;font-family:var(--font-ui,Inter,sans-serif)}.ds-nav a{font-size:.9375rem;font-weight:500;color:var(--ink-secondary,#485B4B);text-decoration:none;white-space:nowrap;transition:color 180ms cubic-bezier(.16,1,.3,1)}.ds-nav a:hover{color:var(--ink,#26382C)}.ds-nav a:focus-visible{outline:2px solid var(--accent,#365D40);outline-offset:3px}@media(max-width:768px){.ds-nav{gap:.75rem}.ds-nav a{font-size:.8125rem}}@media(max-width:520px){.ds-nav{gap:1.5rem}.ds-nav a{font-size:.875rem;padding:.625rem 0;display:inline-block}}@media(prefers-reduced-motion:reduce){.ds-nav a{transition:none}}"
+    },
+    {
+      "name": "Open Post Row",
+      "kind": "card",
+      "refersTo": "post-row",
+      "description": "A single linked writing entry with no enclosing card.",
+      "html": "<a class=\"ds-post\" href=\"/writing\"><h3 class=\"ds-post-title\">Everything, in writing.</h3><p class=\"ds-post-excerpt\">Notes on work, books, life, and the things still taking shape.</p><p class=\"ds-post-date\">Oct 22, 2026</p></a>",
+      "css": ".ds-post{display:block;color:var(--ink,#26382C);padding:2rem 0;border-bottom:1px solid var(--rule,#D7DECF);text-decoration:none}.ds-post-title{font-family:var(--font-serif,\"Source Serif 4\",Georgia,serif);font-size:1.875rem;font-weight:400;letter-spacing:-.02em;line-height:1.2;margin:0 0 .75rem;transition:color 180ms cubic-bezier(.16,1,.3,1);text-wrap:pretty}.ds-post-excerpt{font-family:var(--font-serif,\"Source Serif 4\",Georgia,serif);font-size:1.125rem;line-height:1.6;color:var(--ink-secondary,#485B4B);margin:0 0 .875rem}.ds-post-date{font-family:var(--font-ui,Inter,sans-serif);font-size:.8125rem;font-weight:500;color:var(--ink-muted,#5F6E5C);margin:0;font-variant-numeric:tabular-nums}.ds-post:hover .ds-post-title{color:var(--accent,#365D40)}.ds-post:is(:hover,:focus-visible) .ds-post-title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.16em}.ds-post:focus-visible{outline:2px solid var(--accent,#365D40);outline-offset:3px}@media(max-width:768px){.ds-post{padding:1.5rem 0}.ds-post-title{font-size:1.625rem}}@media(prefers-reduced-motion:reduce){.ds-post-title{transition:none}}"
+    },
+    {
+      "name": "Subscription Heading",
+      "kind": "custom",
+      "refersTo": "subscribe",
+      "description": "A quiet serif heading after a fine top rule.",
+      "html": "<section class=\"ds-subscribe\"><h2 class=\"ds-subscribe-title\">Keep reading</h2></section>",
+      "css": ".ds-subscribe{border-top:1px solid var(--rule,#D7DECF);padding:2rem 0 0;color:var(--ink,#26382C)}.ds-subscribe-title{font-family:var(--font-serif,\"Source Serif 4\",Georgia,serif);font-weight:400;font-size:1.5rem;line-height:1.35;margin:0 0 1rem}@media(prefers-reduced-motion:reduce){.ds-subscribe{transition:none}}"
+    },
+    {
+      "name": "Theme Toggle",
+      "kind": "button",
+      "refersTo": "theme-toggle",
+      "description": "A small line icon in a full-size click area.",
+      "html": "<button class=\"ds-theme\" aria-label=\"Switch theme\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M21 12.8A9 9 0 0 1 11.2 3 9 9 0 1 0 21 12.8Z\"/></svg></button>",
+      "css": ".ds-theme{display:inline-flex;align-items:center;justify-content:center;width:2.75rem;height:2.75rem;background:none;border:none;cursor:pointer;color:var(--ink-secondary,#485B4B);transition:color 180ms cubic-bezier(.16,1,.3,1)}.ds-theme:hover{color:var(--ink,#26382C)}.ds-theme:focus-visible{outline:2px solid var(--accent,#365D40);outline-offset:3px}@media(prefers-reduced-motion:reduce){.ds-theme{transition:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "A personal commonplace book",
+    "overview": "Green endpapers sit beside an off-white reading ground. Forest ink, open space, and serif titles give short notes and long essays the same care. Small sans-serif controls keep the writing easy to find.\n\nDark mode uses a soft green-black ground with pale text. Both themes keep the same page structure and quiet contrast.",
+    "keyCharacteristics": [
+      "Open post rows with fine rules.",
+      "Serif writing with small sans-serif controls.",
+      "Green tones in both light and dark themes."
+    ],
+    "rules": [
+      {
+        "name": "The Theme Pair Rule",
+        "body": "Use the matching theme value for each color role. Keep the reading structure the same in both themes.",
+        "section": "colors"
+      },
+      {
+        "name": "The Open Page Rule",
+        "body": "Separate post entries with space and a fine bottom rule. Keep each entry on the reading ground.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do use the theme color roles for text, grounds, rules, and controls.",
+      "Do keep serif titles and reading text distinct from sans-serif controls.",
+      "Do preserve visible keyboard focus and the full mobile navigation."
+    ],
+    "donts": [
+      "Don't box the post feed into raised cards.",
+      "Don't add entrance motion or remove the reduced-motion rule.",
+      "Don't place the subscription form before the writing on the home page."
+    ]
+  }
+}

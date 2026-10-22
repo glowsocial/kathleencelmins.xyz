@@ -10,8 +10,6 @@ export function formatDate(dateStr) {
   });
 }
 
-// One entry in the feed: title, subtitle, date and length. No numbers,
-// no arrows. The whole block is the link.
 export default function PostCard({ post }) {
   return (
     <Link href={`/writing/${post.slug}`} className="post-card">
@@ -20,8 +18,7 @@ export default function PostCard({ post }) {
         <p className="post-card-excerpt">{post.description}</p>
       )}
       <p className="post-card-meta">
-        <span>{formatDate(post.date)}</span>
-        <span>{post.readingTime}</span>
+        <time dateTime={post.date}>{formatDate(post.date)}</time>
       </p>
     </Link>
   );
