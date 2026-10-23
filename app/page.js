@@ -1,6 +1,7 @@
 import { getAllPosts } from "@/lib/posts";
 import Link from "next/link";
 import Doodle from "./components/Doodle";
+import { doodleForPost } from "./components/doodles";
 import PostCard from "./components/PostCard";
 import SubscribeForm from "./components/SubscribeForm";
 
@@ -27,8 +28,8 @@ export default function Home() {
           </p>
           <Link href="/about" className="home-about">A little more about me</Link>
           <Doodle name="curlicue" className="intro-curlicue" />
-          <Doodle name="cloud" className="intro-cloud" />
         </div>
+        <Doodle name="sprout" className="intro-sprout" />
       </aside>
 
       <div className="home-pages">
@@ -40,7 +41,7 @@ export default function Home() {
           {posts.length > 0 ? (
           <div className="posts-list">
             {posts.map((post) => (
-              <PostCard key={post.slug} post={post} />
+              <PostCard key={post.slug} post={post} doodle={doodleForPost(posts, post.slug)} />
             ))}
           </div>
           ) : (

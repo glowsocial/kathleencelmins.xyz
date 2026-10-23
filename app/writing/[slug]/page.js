@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getPostBySlug, getAllSlugs, getAllPosts } from "@/lib/posts";
 import { markdownToHtml } from "@/lib/markdown";
 import Doodle from "../../components/Doodle";
+import { doodleForPost } from "../../components/doodles";
 import SubscribeForm from "../../components/SubscribeForm";
 import { formatDate } from "../../components/PostCard";
 
@@ -37,6 +38,7 @@ export default async function WritingPost({ params }) {
   const i = all.findIndex((p) => p.slug === slug);
   const newer = i > 0 ? all[i - 1] : null;
   const older = i >= 0 && i < all.length - 1 ? all[i + 1] : null;
+  const doodle = doodleForPost(all, slug);
 
   return (
     <div className="read-container">
@@ -47,7 +49,12 @@ export default async function WritingPost({ params }) {
             <p className="article-subtitle">{post.description}</p>
           )}
           <div className="article-byline">
-            <span className="article-byline-name">Kathleen Celmins</span>
+            <span className="article-byline-name">
+              Kathleen Celmins
+              {doodle && (
+                <Doodle name={doodle.name} className={`byline-doodle doodle-tone-${doodle.tone}`} />
+              )}
+            </span>
             <p className="article-meta">
               <span>{formatDate(post.date)}</span>
               <span>{post.readingTime}</span>

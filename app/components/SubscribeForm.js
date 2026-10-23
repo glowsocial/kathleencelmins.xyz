@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Doodle from "./Doodle";
 
 const FALLBACK_ERROR = "Couldn't subscribe you just now — try again in a minute.";
 
@@ -51,7 +52,10 @@ export default function SubscribeForm() {
         </div>
       ) : (
         <>
-          <p className="subscribe-heading">Get new essays by email.</p>
+          <p className="subscribe-heading">
+            Get new essays by email.
+            <Doodle name="plane" className="subscribe-plane" />
+          </p>
           <form className="subscribe-form" onSubmit={handleSubmit}>
             <label className="subscribe-label" htmlFor="subscribe-email">
               Email address

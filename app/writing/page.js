@@ -1,5 +1,6 @@
 import { getAllPosts } from "@/lib/posts";
 import PostCard from "../components/PostCard";
+import { doodleForPost } from "../components/doodles";
 
 export const metadata = {
   title: "Writing",
@@ -22,7 +23,7 @@ export default function WritingPage() {
       {posts.length > 0 ? (
         <div className="posts-list">
           {posts.map((post) => (
-            <PostCard key={post.slug} post={post} />
+            <PostCard key={post.slug} post={post} doodle={doodleForPost(posts, post.slug)} />
           ))}
         </div>
       ) : (

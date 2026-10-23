@@ -182,9 +182,17 @@ The design has no shadows. Paper color fields, open space, and hand-drawn wavy l
 
 Added 2026-10-22 because the site still felt sterile. The script face (Ms Madi) sets her name in the header, "in writing." on the home page, "Recent writing", page titles, the article byline, and the footer tagline. Titles of posts and body text stay in the serif.
 
-Doodles come from `app/components/Doodle.js`: squiggle, sparkle, curlicue, cloud, arrow, heart. They are inline SVG, hidden from screen readers, and colored by role: `pop` (pink) for squiggles, the arrow, the curlicue and the heart; `gold` for sparkles; `accent` at low opacity for the cloud. Dividers (`hr`, post rows, byline, page headers, subscribe, article nav) use the `--wave` mask in `wave-ink`.
+Doodles are drawn by `app/components/Doodle.js` from the plain data in `app/components/doodles.js`: squiggle, sparkle, curlicue, cloud, arrow, heart, flower, spiral, sun, leaf, star, moon, plane and sprout. They are inline SVG, hidden from screen readers, and colored by role: `pop` (pink) for squiggles, the arrow, the curlicue, the plane and the heart; `gold` for sparkles; `accent` green for leaves and stems. A path can carry its own tone (`pop`, `gold`, `leaf`, or `trail` for a dashed line), so one doodle can mix colors. Dividers (`hr`, post rows, byline, page headers, subscribe, article nav) use the `--wave` mask in `wave-ink`.
+Added 2026-10-23, the bolder pass:
+Every post has its own doodle, chosen by `doodleForPost` from a nine-doodle cycle counted from the oldest post, so a new post never changes an older post's doodle.
+Colors cycle gold, pink, green.
+The doodle hangs in the left margin beside the title from 961px up, and sits beside the date below that; the essay byline carries the same doodle.
+A gold sparkle sits after her name in the header.
+Page titles (Writing, Archive, About) have a pink squiggle under them, from the `--squiggle` mask.
+The subscribe line has a paper plane with a dashed trail, and the footer heart is filled.
+On the home page a sprout grows from the foot of the green column; the column's bottom padding is the sprout's height plus space, so the sticky intro never covers it, and phones hide it.
 
-The squiggle, arrow and curlicues draw themselves in once on load, and the sparkles twinkle. All of it sits inside `prefers-reduced-motion: no-preference`, so a reader who turns motion off sees the finished drawings with no movement.
+The squiggle, arrow and curlicues draw themselves in once on load, and the sparkles twinkle. A post's doodle wiggles once on hover or keyboard focus. The sprout draws itself as it scrolls into view, in browsers that tie animation to scrolling (`animation-timeline: view()`); other browsers show it already drawn. All of it sits inside `prefers-reduced-motion: no-preference`, so a reader who turns motion off sees the finished drawings with no movement.
 
 ## Shapes
 

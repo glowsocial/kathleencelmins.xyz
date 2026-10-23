@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Doodle from "./Doodle";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
@@ -7,6 +8,7 @@ export default function Header() {
       <div className="site-header-inner">
         <Link href="/" className="site-name">
           Kathleen Celmins
+          <Doodle name="sparkle" className="name-sparkle" />
         </Link>
         <nav aria-label="Main navigation">
           <ul className="site-nav">
