@@ -7,7 +7,7 @@
       "bg": {
         "role": "neutral",
         "displayName": "Reading Paper",
-        "canonical": "#F9FAF5",
+        "canonical": "#F6FAF9",
         "tonalRamp": [
           "oklch(15.00% 0.00666 115.70)",
           "oklch(26.43% 0.00666 115.70)",
@@ -22,7 +22,7 @@
       "bg-deep": {
         "role": "neutral",
         "displayName": "Code Paper",
-        "canonical": "#EDF1E7",
+        "canonical": "#E8F1F0",
         "tonalRamp": [
           "oklch(15.00% 0.01390 124.55)",
           "oklch(26.43% 0.01390 124.55)",
@@ -37,7 +37,7 @@
       "endpaper": {
         "role": "neutral",
         "displayName": "Green Endpaper",
-        "canonical": "#E5EBD9",
+        "canonical": "#114B4F",
         "tonalRamp": [
           "oklch(15.00% 0.02476 121.92)",
           "oklch(26.43% 0.02476 121.92)",
@@ -52,7 +52,7 @@
       "ink": {
         "role": "neutral",
         "displayName": "Forest Ink",
-        "canonical": "#26382C",
+        "canonical": "#1E3436",
         "tonalRamp": [
           "oklch(15.00% 0.03168 155.05)",
           "oklch(26.43% 0.03168 155.05)",
@@ -67,7 +67,7 @@
       "ink-secondary": {
         "role": "neutral",
         "displayName": "Support Ink",
-        "canonical": "#485B4B",
+        "canonical": "#425A5B",
         "tonalRamp": [
           "oklch(15.00% 0.03483 149.43)",
           "oklch(26.43% 0.03483 149.43)",
@@ -82,7 +82,7 @@
       "ink-muted": {
         "role": "neutral",
         "displayName": "Quiet Ink",
-        "canonical": "#5F6E5C",
+        "canonical": "#586D6E",
         "tonalRamp": [
           "oklch(15.00% 0.03316 140.44)",
           "oklch(26.43% 0.03316 140.44)",
@@ -97,7 +97,7 @@
       "rule": {
         "role": "neutral",
         "displayName": "Paper Rule",
-        "canonical": "#D7DECF",
+        "canonical": "#D0DFDD",
         "tonalRamp": [
           "oklch(15.00% 0.02154 127.41)",
           "oklch(26.43% 0.02154 127.41)",
@@ -112,7 +112,7 @@
       "accent": {
         "role": "primary",
         "displayName": "Forest Accent",
-        "canonical": "#365D40",
+        "canonical": "#16676B",
         "tonalRamp": [
           "oklch(15.00% 0.06532 151.17)",
           "oklch(26.43% 0.06532 151.17)",
@@ -127,7 +127,7 @@
       "accent-deep": {
         "role": "primary",
         "displayName": "Accent Hover",
-        "canonical": "#24452D",
+        "canonical": "#0F4E52",
         "tonalRamp": [
           "oklch(15.00% 0.05714 151.39)",
           "oklch(26.43% 0.05714 151.39)",
@@ -157,7 +157,7 @@
       "bg-dark": {
         "role": "neutral",
         "displayName": "Reading Paper — Dark",
-        "canonical": "#19231E",
+        "canonical": "#122224",
         "tonalRamp": [
           "oklch(15.00% 0.01709 163.15)",
           "oklch(26.43% 0.01709 163.15)",
@@ -172,7 +172,7 @@
       "bg-deep-dark": {
         "role": "neutral",
         "displayName": "Code Paper — Dark",
-        "canonical": "#233027",
+        "canonical": "#1A2E30",
         "tonalRamp": [
           "oklch(15.00% 0.02397 154.49)",
           "oklch(26.43% 0.02397 154.49)",
@@ -187,7 +187,7 @@
       "endpaper-dark": {
         "role": "neutral",
         "displayName": "Green Endpaper — Dark",
-        "canonical": "#28372B",
+        "canonical": "#0E3B3F",
         "tonalRamp": [
           "oklch(15.00% 0.02903 150.54)",
           "oklch(26.43% 0.02903 150.54)",
@@ -202,7 +202,7 @@
       "ink-dark": {
         "role": "neutral",
         "displayName": "Forest Ink — Dark",
-        "canonical": "#E8EDE2",
+        "canonical": "#E5EFED",
         "tonalRamp": [
           "oklch(15.00% 0.01555 126.83)",
           "oklch(26.43% 0.01555 126.83)",
@@ -217,7 +217,7 @@
       "ink-secondary-dark": {
         "role": "neutral",
         "displayName": "Support Ink — Dark",
-        "canonical": "#C1CCBC",
+        "canonical": "#BACFCC",
         "tonalRamp": [
           "oklch(15.00% 0.02499 135.70)",
           "oklch(26.43% 0.02499 135.70)",
@@ -232,7 +232,7 @@
       "ink-muted-dark": {
         "role": "neutral",
         "displayName": "Quiet Ink — Dark",
-        "canonical": "#ABB9A5",
+        "canonical": "#A1B8B5",
         "tonalRamp": [
           "oklch(15.00% 0.03195 136.18)",
           "oklch(26.43% 0.03195 136.18)",
@@ -247,7 +247,7 @@
       "rule-dark": {
         "role": "neutral",
         "displayName": "Paper Rule — Dark",
-        "canonical": "#3D4D3F",
+        "canonical": "#314B4D",
         "tonalRamp": [
           "oklch(15.00% 0.03083 148.43)",
           "oklch(26.43% 0.03083 148.43)",
@@ -262,7 +262,7 @@
       "accent-dark": {
         "role": "primary",
         "displayName": "Forest Accent — Dark",
-        "canonical": "#BDCCA9",
+        "canonical": "#8FD0C7",
         "tonalRamp": [
           "oklch(15.00% 0.05036 126.39)",
           "oklch(26.43% 0.05036 126.39)",
@@ -277,7 +277,7 @@
       "accent-deep-dark": {
         "role": "primary",
         "displayName": "Accent Hover — Dark",
-        "canonical": "#D8E2CB",
+        "canonical": "#BEE6E0",
         "tonalRamp": [
           "oklch(15.00% 0.03261 126.29)",
           "oklch(26.43% 0.03261 126.29)",
@@ -292,7 +292,7 @@
       "on-accent-dark": {
         "role": "neutral",
         "displayName": "Accent Text — Dark",
-        "canonical": "#19231E",
+        "canonical": "#122224",
         "tonalRamp": [
           "oklch(15.00% 0.01709 163.15)",
           "oklch(26.43% 0.01709 163.15)",
@@ -381,7 +381,7 @@
       "refersTo": "button-primary",
       "description": "Accent action for a form or a page.",
       "html": "<button class=\"ds-primary\">Subscribe</button>",
-      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-ui,Inter,sans-serif);font-size:.9375rem;font-weight:600;padding:.6rem 1.1rem;border-radius:var(--radius,3px);border:1px solid transparent;cursor:pointer;transition:background 180ms cubic-bezier(.16,1,.3,1),color 180ms cubic-bezier(.16,1,.3,1),border-color 180ms cubic-bezier(.16,1,.3,1);background:var(--accent,#365D40);color:var(--on-accent,#FFF)}.ds-primary:hover{background:var(--accent-deep,#24452D)}.ds-primary:focus-visible{outline:2px solid var(--accent,#365D40);outline-offset:3px}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}"
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-ui,Inter,sans-serif);font-size:.9375rem;font-weight:600;padding:.6rem 1.1rem;border-radius:var(--radius,3px);border:1px solid transparent;cursor:pointer;transition:background 180ms cubic-bezier(.16,1,.3,1),color 180ms cubic-bezier(.16,1,.3,1),border-color 180ms cubic-bezier(.16,1,.3,1);background:var(--accent,#16676B);color:var(--on-accent,#FFF)}.ds-primary:hover{background:var(--accent-deep,#0F4E52)}.ds-primary:focus-visible{outline:2px solid var(--accent,#16676B);outline-offset:3px}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}"
     },
     {
       "name": "Secondary Button",
@@ -389,7 +389,7 @@
       "refersTo": "button-secondary",
       "description": "A quieter action with a fine border.",
       "html": "<button class=\"ds-secondary\">Read more</button>",
-      "css": ".ds-secondary{display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-ui,Inter,sans-serif);font-size:.9375rem;font-weight:600;padding:.6rem 1.1rem;border-radius:var(--radius,3px);border:1px solid transparent;cursor:pointer;transition:background 180ms cubic-bezier(.16,1,.3,1),color 180ms cubic-bezier(.16,1,.3,1),border-color 180ms cubic-bezier(.16,1,.3,1);background:transparent;color:var(--ink,#26382C);border-color:var(--rule,#D7DECF)}.ds-secondary:hover{border-color:var(--ink,#26382C)}.ds-secondary:focus-visible{outline:2px solid var(--accent,#365D40);outline-offset:3px}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none}}"
+      "css": ".ds-secondary{display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-ui,Inter,sans-serif);font-size:.9375rem;font-weight:600;padding:.6rem 1.1rem;border-radius:var(--radius,3px);border:1px solid transparent;cursor:pointer;transition:background 180ms cubic-bezier(.16,1,.3,1),color 180ms cubic-bezier(.16,1,.3,1),border-color 180ms cubic-bezier(.16,1,.3,1);background:transparent;color:var(--ink,#1E3436);border-color:var(--rule,#D0DFDD)}.ds-secondary:hover{border-color:var(--ink,#1E3436)}.ds-secondary:focus-visible{outline:2px solid var(--accent,#16676B);outline-offset:3px}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none}}"
     },
     {
       "name": "Email Field",
@@ -397,7 +397,7 @@
       "refersTo": "email-field",
       "description": "Email entry on the reading ground.",
       "html": "<label class=\"ds-email-label\" for=\"ds-email\">Email address</label><input class=\"ds-email\" id=\"ds-email\" type=\"email\" placeholder=\"Your email address\">",
-      "css": ".ds-email-label{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}.ds-email{background:var(--bg,#F9FAF5);color:var(--ink,#26382C);border:1px solid var(--rule,#D7DECF);border-radius:var(--radius,3px);font-family:var(--font-ui,Inter,sans-serif);font-size:.9375rem;padding:.6rem .8rem;caret-color:var(--accent,#365D40);transition:border-color 180ms cubic-bezier(.16,1,.3,1)}.ds-email::placeholder{color:var(--ink-muted,#5F6E5C);opacity:1}.ds-email:focus{outline:2px solid var(--accent,#365D40);outline-offset:2px;border-color:var(--accent,#365D40)}@media(prefers-reduced-motion:reduce){.ds-email{transition:none}}"
+      "css": ".ds-email-label{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}.ds-email{background:var(--bg,#F6FAF9);color:var(--ink,#1E3436);border:1px solid var(--rule,#D0DFDD);border-radius:var(--radius,3px);font-family:var(--font-ui,Inter,sans-serif);font-size:.9375rem;padding:.6rem .8rem;caret-color:var(--accent,#16676B);transition:border-color 180ms cubic-bezier(.16,1,.3,1)}.ds-email::placeholder{color:var(--ink-muted,#586D6E);opacity:1}.ds-email:focus{outline:2px solid var(--accent,#16676B);outline-offset:2px;border-color:var(--accent,#16676B)}@media(prefers-reduced-motion:reduce){.ds-email{transition:none}}"
     },
     {
       "name": "Navigation",
@@ -405,7 +405,7 @@
       "refersTo": "navigation",
       "description": "Small plain links with the full mobile link set.",
       "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"/writing\">Writing</a><a href=\"/about\">About</a><a href=\"/archive\">Archive</a></nav>",
-      "css": ".ds-nav{display:flex;align-items:center;gap:1.5rem;font-family:var(--font-ui,Inter,sans-serif)}.ds-nav a{font-size:.9375rem;font-weight:500;color:var(--ink-secondary,#485B4B);text-decoration:none;white-space:nowrap;transition:color 180ms cubic-bezier(.16,1,.3,1)}.ds-nav a:hover{color:var(--ink,#26382C)}.ds-nav a:focus-visible{outline:2px solid var(--accent,#365D40);outline-offset:3px}@media(max-width:768px){.ds-nav{gap:.75rem}.ds-nav a{font-size:.8125rem}}@media(max-width:520px){.ds-nav{gap:1.5rem}.ds-nav a{font-size:.875rem;padding:.625rem 0;display:inline-block}}@media(prefers-reduced-motion:reduce){.ds-nav a{transition:none}}"
+      "css": ".ds-nav{display:flex;align-items:center;gap:1.5rem;font-family:var(--font-ui,Inter,sans-serif)}.ds-nav a{font-size:.9375rem;font-weight:500;color:var(--ink-secondary,#425A5B);text-decoration:none;white-space:nowrap;transition:color 180ms cubic-bezier(.16,1,.3,1)}.ds-nav a:hover{color:var(--ink,#1E3436)}.ds-nav a:focus-visible{outline:2px solid var(--accent,#16676B);outline-offset:3px}@media(max-width:768px){.ds-nav{gap:.75rem}.ds-nav a{font-size:.8125rem}}@media(max-width:520px){.ds-nav{gap:1.5rem}.ds-nav a{font-size:.875rem;padding:.625rem 0;display:inline-block}}@media(prefers-reduced-motion:reduce){.ds-nav a{transition:none}}"
     },
     {
       "name": "Open Post Row",
@@ -413,7 +413,7 @@
       "refersTo": "post-row",
       "description": "A single linked writing entry with no enclosing card.",
       "html": "<a class=\"ds-post\" href=\"/writing\"><h3 class=\"ds-post-title\">Everything, in writing.</h3><p class=\"ds-post-excerpt\">Notes on work, books, life, and the things still taking shape.</p><p class=\"ds-post-date\">Oct 22, 2026</p></a>",
-      "css": ".ds-post{display:block;color:var(--ink,#26382C);padding:2rem 0;border-bottom:1px solid var(--rule,#D7DECF);text-decoration:none}.ds-post-title{font-family:var(--font-serif,\"Source Serif 4\",Georgia,serif);font-size:1.875rem;font-weight:400;letter-spacing:-.02em;line-height:1.2;margin:0 0 .75rem;transition:color 180ms cubic-bezier(.16,1,.3,1);text-wrap:pretty}.ds-post-excerpt{font-family:var(--font-serif,\"Source Serif 4\",Georgia,serif);font-size:1.125rem;line-height:1.6;color:var(--ink-secondary,#485B4B);margin:0 0 .875rem}.ds-post-date{font-family:var(--font-ui,Inter,sans-serif);font-size:.8125rem;font-weight:500;color:var(--ink-muted,#5F6E5C);margin:0;font-variant-numeric:tabular-nums}.ds-post:hover .ds-post-title{color:var(--accent,#365D40)}.ds-post:is(:hover,:focus-visible) .ds-post-title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.16em}.ds-post:focus-visible{outline:2px solid var(--accent,#365D40);outline-offset:3px}@media(max-width:768px){.ds-post{padding:1.5rem 0}.ds-post-title{font-size:1.625rem}}@media(prefers-reduced-motion:reduce){.ds-post-title{transition:none}}"
+      "css": ".ds-post{display:block;color:var(--ink,#1E3436);padding:2rem 0;border-bottom:1px solid var(--rule,#D0DFDD);text-decoration:none}.ds-post-title{font-family:var(--font-serif,\"Source Serif 4\",Georgia,serif);font-size:1.875rem;font-weight:400;letter-spacing:-.02em;line-height:1.2;margin:0 0 .75rem;transition:color 180ms cubic-bezier(.16,1,.3,1);text-wrap:pretty}.ds-post-excerpt{font-family:var(--font-serif,\"Source Serif 4\",Georgia,serif);font-size:1.125rem;line-height:1.6;color:var(--ink-secondary,#425A5B);margin:0 0 .875rem}.ds-post-date{font-family:var(--font-ui,Inter,sans-serif);font-size:.8125rem;font-weight:500;color:var(--ink-muted,#586D6E);margin:0;font-variant-numeric:tabular-nums}.ds-post:hover .ds-post-title{color:var(--accent,#16676B)}.ds-post:is(:hover,:focus-visible) .ds-post-title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.16em}.ds-post:focus-visible{outline:2px solid var(--accent,#16676B);outline-offset:3px}@media(max-width:768px){.ds-post{padding:1.5rem 0}.ds-post-title{font-size:1.625rem}}@media(prefers-reduced-motion:reduce){.ds-post-title{transition:none}}"
     },
     {
       "name": "Subscription Heading",
@@ -421,7 +421,7 @@
       "refersTo": "subscribe",
       "description": "A quiet serif heading after a fine top rule.",
       "html": "<section class=\"ds-subscribe\"><h2 class=\"ds-subscribe-title\">Keep reading</h2></section>",
-      "css": ".ds-subscribe{border-top:1px solid var(--rule,#D7DECF);padding:2rem 0 0;color:var(--ink,#26382C)}.ds-subscribe-title{font-family:var(--font-serif,\"Source Serif 4\",Georgia,serif);font-weight:400;font-size:1.5rem;line-height:1.35;margin:0 0 1rem}@media(prefers-reduced-motion:reduce){.ds-subscribe{transition:none}}"
+      "css": ".ds-subscribe{border-top:1px solid var(--rule,#D0DFDD);padding:2rem 0 0;color:var(--ink,#1E3436)}.ds-subscribe-title{font-family:var(--font-serif,\"Source Serif 4\",Georgia,serif);font-weight:400;font-size:1.5rem;line-height:1.35;margin:0 0 1rem}@media(prefers-reduced-motion:reduce){.ds-subscribe{transition:none}}"
     },
     {
       "name": "Theme Toggle",
@@ -429,7 +429,7 @@
       "refersTo": "theme-toggle",
       "description": "A small line icon in a full-size click area.",
       "html": "<button class=\"ds-theme\" aria-label=\"Switch theme\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M21 12.8A9 9 0 0 1 11.2 3 9 9 0 1 0 21 12.8Z\"/></svg></button>",
-      "css": ".ds-theme{display:inline-flex;align-items:center;justify-content:center;width:2.75rem;height:2.75rem;background:none;border:none;cursor:pointer;color:var(--ink-secondary,#485B4B);transition:color 180ms cubic-bezier(.16,1,.3,1)}.ds-theme:hover{color:var(--ink,#26382C)}.ds-theme:focus-visible{outline:2px solid var(--accent,#365D40);outline-offset:3px}@media(prefers-reduced-motion:reduce){.ds-theme{transition:none}}"
+      "css": ".ds-theme{display:inline-flex;align-items:center;justify-content:center;width:2.75rem;height:2.75rem;background:none;border:none;cursor:pointer;color:var(--ink-secondary,#425A5B);transition:color 180ms cubic-bezier(.16,1,.3,1)}.ds-theme:hover{color:var(--ink,#1E3436)}.ds-theme:focus-visible{outline:2px solid var(--accent,#16676B);outline-offset:3px}@media(prefers-reduced-motion:reduce){.ds-theme{transition:none}}"
     }
   ],
   "narrative": {

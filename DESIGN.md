@@ -1,34 +1,34 @@
 ---
 name: "Kathleen Celmins"
-description: "A personal commonplace book with green endpapers, her name in handwriting, and doodles in the margins."
+description: "A personal commonplace book with deep teal endpapers, her name in handwriting, and doodles in the margins."
 colors:
-  bg: "#F9FAF5"
-  bg-deep: "#EDF1E7"
-  endpaper: "#E5EBD9"
-  ink: "#26382C"
-  ink-secondary: "#485B4B"
-  ink-muted: "#5F6E5C"
-  rule: "#D7DECF"
-  accent: "#365D40"
-  accent-deep: "#24452D"
+  bg: "#F6FAF9"
+  bg-deep: "#E8F1F0"
+  endpaper: "#114B4F"
+  ink: "#1E3436"
+  ink-secondary: "#425A5B"
+  ink-muted: "#586D6E"
+  rule: "#D0DFDD"
+  accent: "#16676B"
+  accent-deep: "#0F4E52"
   on-accent: "#FFFFFF"
   pop: "#D9486F"
   gold: "#D99A1E"
-  wave-ink: "#B9C8B1"
+  wave-ink: "#A9CAC6"
   highlight: "#F8CBD6"
-  bg-dark: "#19231E"
-  bg-deep-dark: "#233027"
-  endpaper-dark: "#28372B"
-  ink-dark: "#E8EDE2"
-  ink-secondary-dark: "#C1CCBC"
-  ink-muted-dark: "#ABB9A5"
-  rule-dark: "#3D4D3F"
-  accent-dark: "#BDCCA9"
-  accent-deep-dark: "#D8E2CB"
-  on-accent-dark: "#19231E"
+  bg-dark: "#122224"
+  bg-deep-dark: "#1A2E30"
+  endpaper-dark: "#0E3B3F"
+  ink-dark: "#E5EFED"
+  ink-secondary-dark: "#BACFCC"
+  ink-muted-dark: "#A1B8B5"
+  rule-dark: "#314B4D"
+  accent-dark: "#8FD0C7"
+  accent-deep-dark: "#BEE6E0"
+  on-accent-dark: "#122224"
   pop-dark: "#F497AE"
   gold-dark: "#E9C46A"
-  wave-ink-dark: "#506553"
+  wave-ink-dark: "#43666A"
   highlight-dark: "#6E3446"
 typography:
   script:
@@ -131,18 +131,20 @@ components:
 
 **Creative North Star: "A personal commonplace book"**
 
-Green endpapers sit beside an off-white reading ground. Forest ink, open space, and serif titles give short notes and long essays the same care. Small sans-serif controls keep the writing easy to find.
+Deep teal endpapers sit beside an off-white reading ground. Teal-black ink, open space, and serif titles give short notes and long essays the same care. Small sans-serif controls keep the writing easy to find.
 
-Dark mode uses a soft green-black ground with pale text. Both themes keep the same page structure and quiet contrast.
+Dark mode uses a soft teal-black ground with pale text. Both themes keep the same page structure and quiet contrast.
 
 **Key Characteristics:**
 - Open post rows with fine rules.
 - Serif writing with small sans-serif controls.
-- Green tones in both light and dark themes.
+- Teal tones in both light and dark themes.
 
 ## Colors
 
-The palette uses green paper tones and forest ink. The frontmatter holds the exact values.
+The palette uses teal-tinted paper and teal-black ink, with a deep teal accent. The frontmatter holds the exact values.
+Changed from green to teal on 2026-10-23, at her request.
+The home page's endpaper column is a dark block in both themes, so `.home-intro` sets its own light ink, light-teal accent, and the lighter pink and gold, and everything inside it inherits them.
 
 ### Primary
 
@@ -182,15 +184,15 @@ The design has no shadows. Paper color fields, open space, and hand-drawn wavy l
 
 Added 2026-10-22 because the site still felt sterile. The script face (Ms Madi) sets her name in the header, "in writing." on the home page, "Recent writing", page titles, the article byline, and the footer tagline. Titles of posts and body text stay in the serif.
 
-Doodles are drawn by `app/components/Doodle.js` from the plain data in `app/components/doodles.js`: squiggle, sparkle, curlicue, cloud, arrow, heart, flower, spiral, sun, leaf, star, moon, plane and sprout. They are inline SVG, hidden from screen readers, and colored by role: `pop` (pink) for squiggles, the arrow, the curlicue, the plane and the heart; `gold` for sparkles; `accent` green for leaves and stems. A path can carry its own tone (`pop`, `gold`, `leaf`, or `trail` for a dashed line), so one doodle can mix colors. Dividers (`hr`, post rows, byline, page headers, subscribe, article nav) use the `--wave` mask in `wave-ink`.
+Doodles are drawn by `app/components/Doodle.js` from the plain data in `app/components/doodles.js`: squiggle, sparkle, curlicue, cloud, arrow, heart, flower, spiral, sun, leaf, star, moon, plane and sprout. They are inline SVG, hidden from screen readers, and colored by role: `pop` (pink) for squiggles, the arrow, the curlicue, the plane and the heart; `gold` for sparkles; `accent` teal for leaves and stems. A path can carry its own tone (`pop`, `gold`, `leaf`, or `trail` for a dashed line), so one doodle can mix colors. Dividers (`hr`, post rows, byline, page headers, subscribe, article nav) use the `--wave` mask in `wave-ink`.
 Added 2026-10-23, the bolder pass:
 Every post has its own doodle, chosen by `doodleForPost` from a nine-doodle cycle counted from the oldest post, so a new post never changes an older post's doodle.
-Colors cycle gold, pink, green.
+Colors cycle gold, pink, teal.
 The doodle hangs in the left margin beside the title from 961px up, and sits beside the date below that; the essay byline carries the same doodle.
 A gold sparkle sits after her name in the header.
 Page titles (Writing, Archive, About) have a pink squiggle under them, from the `--squiggle` mask.
 The subscribe line has a paper plane with a dashed trail, and the footer heart is filled.
-On the home page a sprout grows from the foot of the green column; the column's bottom padding is the sprout's height plus space, so the sticky intro never covers it, and phones hide it.
+On the home page a sprout grows from the foot of the teal column; the column's bottom padding is the sprout's height plus space, so the sticky intro never covers it, and phones hide it.
 
 The squiggle, arrow and curlicues draw themselves in once on load, and the sparkles twinkle. A post's doodle wiggles once on hover or keyboard focus. The sprout draws itself as it scrolls into view, in browsers that tie animation to scrolling (`animation-timeline: view()`); other browsers show it already drawn. All of it sits inside `prefers-reduced-motion: no-preference`, so a reader who turns motion off sees the finished drawings with no movement.
 
