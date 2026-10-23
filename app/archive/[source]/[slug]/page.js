@@ -5,6 +5,7 @@ import {
   getArchiveStaticParams,
 } from "@/lib/archive";
 import { markdownToHtml } from "@/lib/markdown";
+import { shareMetadata } from "@/lib/share";
 
 export function generateStaticParams() {
   return getArchiveStaticParams();
@@ -15,10 +16,12 @@ export async function generateMetadata({ params }) {
   const post = getArchivePostBySlug(source, slug);
   if (!post) return {};
 
-  return {
+  return shareMetadata({
     title: post.title,
     description: post.description || "",
-  };
+    path: `/archive/${source}/${slug}`,
+    date: post.date,
+  });
 }
 
 export default async function ArchivePostPage({ params }) {
@@ -37,7 +40,7 @@ export default async function ArchivePostPage({ params }) {
     : "";
 
   return (
-    <div className="page-container">
+    <div className="read-container">
       <article>
         <Link href={`/archive/${post.sourceId}`} className="back-link">
           {post.sourceTitle}

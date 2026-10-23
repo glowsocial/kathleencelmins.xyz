@@ -196,6 +196,14 @@ On the home page a sprout grows from the foot of the teal column; the column's b
 
 The squiggle, arrow and curlicues draw themselves in once on load, and the sparkles twinkle. A post's doodle wiggles once on hover or keyboard focus. The sprout draws itself as it scrolls into view, in browsers that tie animation to scrolling (`animation-timeline: view()`); other browsers show it already drawn. All of it sits inside `prefers-reduced-motion: no-preference`, so a reader who turns motion off sees the finished drawings with no movement.
 
+## Share cards and icons
+
+Added 2026-10-23.
+Link previews come from `app/opengraph-image.js` (the site card: her name in script, "Everything, in writing.", her portrait) and `app/writing/[slug]/opengraph-image.js` (one card per essay: its title beside that essay's own doodle), both drawn at build time by `lib/og.js` on the deep teal.
+The fonts they use are saved in `assets/fonts/`, so a build never depends on reaching Google Fonts.
+Each essay and archive post sets its own share title, description and link through `lib/share.js`; without it a page would share as the home page.
+The tab icon (`app/icon.svg`) and the home-screen icon (`app/apple-icon.png`) are her script K, from the Ms Madi outline, in cream on deep teal with a gold sparkle.
+
 ## Shapes
 
 Controls, portraits, article images, and code blocks use small corners from the UI radius token. Inline code uses a (4px) radius. Post rows have no enclosing box or corner treatment. Rules remain thin and quiet.
@@ -219,6 +227,11 @@ The name and navigation share a slim bar with a bottom rule. Links use support i
 Each complete entry is one link. The serif title sits above the excerpt and small date. Hover changes the title to accent. Hover and keyboard focus underline it. The row uses a bottom rule and no shadow.
 
 **The Open Page Rule.** Separate post entries with space and a fine bottom rule. Keep each entry on the reading ground.
+
+### Archive pages
+
+The archive index, each blog's page and each recovered post sit in the same reading column as the essays.
+On a blog's page, each post's number hangs in the left margin in pink script from 961px up, and sits above the date below that.
 
 ### Subscription
 

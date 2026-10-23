@@ -47,18 +47,9 @@ export const metadata = {
     title: "Kathleen Celmins — Everything, in writing.",
     description:
       "Personal writing by Kathleen Celmins. Notes on work, books, life, and the things still taking shape.",
-    images: [
-      {
-        url: "/images/kathleen-celmins-og.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Kathleen Celmins, founder of boomp.net",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/images/kathleen-celmins-og.jpg"],
   },
   alternates: {
     types: {

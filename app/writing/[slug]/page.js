@@ -6,6 +6,7 @@ import Doodle from "../../components/Doodle";
 import { doodleForPost } from "../../components/doodles";
 import SubscribeForm from "../../components/SubscribeForm";
 import { formatDate } from "../../components/PostCard";
+import { shareMetadata } from "@/lib/share";
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
@@ -17,10 +18,12 @@ export async function generateMetadata({ params }) {
   const post = getPostBySlug(slug);
   if (!post) return {};
 
-  return {
+  return shareMetadata({
     title: post.title,
     description: post.description || "",
-  };
+    path: `/writing/${slug}`,
+    date: post.date,
+  });
 }
 
 // The reading layout: one narrow column, title, subtitle, byline, body,
