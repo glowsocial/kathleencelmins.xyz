@@ -196,6 +196,14 @@ On the home page a sprout grows from the foot of the teal column; the column's b
 
 The squiggle, arrow and curlicues draw themselves in once on load, and the sparkles twinkle. A post's doodle wiggles once on hover or keyboard focus. The sprout draws itself as it scrolls into view, in browsers that tie animation to scrolling (`animation-timeline: view()`); other browsers show it already drawn. All of it sits inside `prefers-reduced-motion: no-preference`, so a reader who turns motion off sees the finished drawings with no movement.
 
+## Blog illustration character
+
+Kathleen chose the golden lion from "Where does confidence come from?" as the recurring character for blog images on 2026-10-27.
+Use him for new post images and for images added to older posts.
+His face, oversized curly mane, golden coat, cream muzzle, and painted paper texture stay consistent.
+His mood, pose, props, and setting change with each post.
+Use the [character guide and approved reference](assets/characters/blog-lion/README.md) for every image.
+
 ## Share cards and icons
 
 Added 2026-10-23.

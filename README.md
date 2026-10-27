@@ -39,6 +39,9 @@ Default response shape for a dictated note:
 
 ## Publishing
 
+Use the [blog lion](assets/characters/blog-lion/README.md) as the recurring character in blog illustrations.
+Read his guide and use the approved reference image for each new illustration.
+
 Published posts live in `content/writing/` as Markdown or MDX with frontmatter:
 
 ```md
