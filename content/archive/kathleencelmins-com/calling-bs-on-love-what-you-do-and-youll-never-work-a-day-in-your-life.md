@@ -18,6 +18,8 @@ curationNote: >-
   Selected as a concise work-philosophy essay with clear voice and no
   sponsorship residue.
 ---
+
+![The golden lion admires a handmade mug while he wipes clay from his workbench.](/images/writing/archive-love-the-work.webp)
 There’s some toxicity around entrepreneurship. The grass is always greener over here because we entrepreneurs grow grass seeds.
 
 There’s a phrase I see a lot in motivational Facebook groups, or posters in cool fonts.

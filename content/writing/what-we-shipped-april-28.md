@@ -4,6 +4,8 @@ date: 2026-04-28
 description: "264 commits across the app. 77 across the marketing site. Video, carousels, onboarding, security, SEO, and the unsexy fixes that keep everything running."
 ---
 
+![The golden lion unrolls a colorful film strip across a small tabletop theater.](/images/writing/what-we-shipped-april-28.webp)
+
 I haven't written one of these in a month. That's because I've been building.
 
 264 commits on the app. 77 on the marketing site. Here are the ones that matter.

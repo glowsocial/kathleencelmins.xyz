@@ -13,6 +13,8 @@ curationNote: "Keeps because it has strong personal context, original interview 
 importedAt: "2026-07-06T17:38:04.041Z"
 ---
 
+![The golden lion listens at a cafe table with a notebook, two mugs, and sunglasses in his mane.](/images/writing/archive-jd-roth-interview.webp)
+
 You’re familiar with J.D. Roth. He’s the man who got rich quickly writing about how to [get rich slowly](http://getrichslowly.org/). He’s my neighbor and friend, and a really cool guy. So when he told me about the book he was writing, I was thrilled. In fact, he let me read an advance copy a few weeks ago, and it’s great.
 
 It launches today, and we sat down for lunch to talk about his latest project.

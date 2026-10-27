@@ -4,7 +4,7 @@ date: 2026-03-30
 description: "Analytics that were lying, a homepage that finally looks like a real product, and a checkout that was silently failing. Here's the week."
 ---
 
-![Monday workspace — another week shipped](/images/shipped-hero-march-23.jpg)
+![The golden lion uses a tiny spirit level to check a brass balance scale.](/images/writing/what-we-shipped-march-23.webp)
 
 Every Monday, I look back at the week and talk about what actually got done. Not in engineering-speak — just what changed for Glow Social customers, for my other projects, and for the business. Here's this week.
 

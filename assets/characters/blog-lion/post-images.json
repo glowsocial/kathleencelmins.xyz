@@ -1,0 +1,134 @@
+{
+  "reference": "reference.png",
+  "tool": "built-in imagegen",
+  "date": "2026-10-27",
+  "promptTemplate": "Use case: identity-preserve\nAsset type: blog editorial illustration, wide 3:2 landscape.\nUse the attached approved image as the identity and style reference for the same recurring golden lion. Preserve his soft rounded face, cream muzzle and chin, broad dark nose, fine white whiskers, expressive eyes with white sclera and dark pupils, rounded ears, warm cheeks, and enormous flowing mane of loose ochre curls and ringlets. Keep his sturdy body and large soft forepaws. Preserve the loose dark pencil outlines, dry gouache texture, cut-paper shapes, and warm visible paper grain. Use warm paper, deep teal, marigold, and small coral-pink accents. He should feel warm, witty, and expressive, like a drawing in an adult personal notebook.\nCreate an entirely new scene with this exact lion. Replace the original webcam scene, props, pose, and composition.\nScene: {{scene}}\nFraming: Show a complete, readable scene in a single wide image. Keep his face and the main action in the central 80 percent. No panels, montage, border, words, letters, logos, or watermark. Keep the opaque warm paper background and tactile handmade style. Preserve the original lion's identity. Do not copy the reference scene.",
+  "images": [
+    {
+      "post": "content/writing/waiting-for-permission.md",
+      "image": "/images/writing/waiting-for-permission.webp",
+      "scene": "The lion cheerfully steps through a garden gate that was already wide open. He carries a tiny camera in one paw. An enormous unused rubber approval stamp sits beside the gate, with a plain unlettered face. His expression says he has finally realized he can just begin. Make his exuberant mane slightly too big for the gateway. One clear scene, hopeful and funny.",
+      "alt": "The golden lion steps through an open garden gate with a small camera."
+    },
+    {
+      "post": "content/writing/firing-the-gatekeeper.md",
+      "image": "/images/writing/firing-the-gatekeeper.webp",
+      "scene": "The lion joyfully steps out from behind a ridiculously tiny folding privacy screen that could never hide his huge curly mane. He waves at the viewer with relaxed confidence. The screen is teal, the floor is warm paper, and a small coral theater curtain curls away at the edge. The visual idea is letting his full personality be seen. No other figures.",
+      "alt": "The golden lion steps out from behind a tiny screen and gives a cheerful wave."
+    },
+    {
+      "post": "content/writing/you-have-to-make-the-posts.md",
+      "image": "/images/writing/you-have-to-make-the-posts.webp",
+      "scene": "The lion proudly hangs freshly painted square picture cards on a little clothesline, one wooden peg in his paw. The cards show simple handmade suns, flowers, and waves without any words or letters. His enormous curls swirl around a delighted face. The playful idea is that your work needs to be put out where people can see it. A simple sunny workspace, no screens.",
+      "alt": "The golden lion hangs bright handmade picture cards on a clothesline."
+    },
+    {
+      "post": "content/writing/do-you-need-to-build-an-agent.md",
+      "image": "/images/writing/do-you-need-to-build-an-agent.webp",
+      "scene": "The lion calmly tests a small, beautifully simple wooden marble run on a workbench. Three short wooden chutes make a clear path for one golden marble into a teal cup. He checks the marble through a small magnifying glass with a pleased, curious expression. The humor is his giant fluffy head concentrating on this very small useful mechanism. No robots, screens, labels, or complicated machine.",
+      "alt": "The golden lion checks a small wooden marble run with a magnifying glass."
+    },
+    {
+      "post": "content/writing/the-work-that-happens-while-im-gone.md",
+      "image": "/images/writing/the-work-that-happens-while-im-gone.webp",
+      "scene": "The lion walks away from a neat desk toward an open sunny garden door, carrying a mug and looking peacefully back over his shoulder. On the desk a tiny whimsical wind-up folding mechanism with a visible brass key gently places finished folded paper envelopes into a tray for later review. The small mechanism has no face and is not a robot. Warm, humorous image of useful work ready while he steps away.",
+      "alt": "The golden lion leaves his desk while a small wind-up machine folds papers into a tray."
+    },
+    {
+      "post": "content/writing/light.md",
+      "image": "/images/writing/light.webp",
+      "scene": "At blue-hour dusk in a quiet garden, the lion sits holding a small open glass jar containing warm golden fireflies near his heart. One tiny glowing firefly hovers by his nose and he watches it with a soft delighted smile. The warm glow is reflected in his golden curls against a deep teal garden. This is about noticing what lights you up, intimate and gently funny. Paint the glow with textured gouache, not digital gradients.",
+      "alt": "The golden lion smiles at a firefly as he holds a glowing jar close to his heart."
+    },
+    {
+      "post": "content/writing/the-untethered-soul.md",
+      "image": "/images/writing/the-untethered-soul.webp",
+      "scene": "The lion throws open a large teal window with both forepaws. A fresh breeze lifts his enormous curls and carries a few tiny pale paper knots outward into the garden. His eyes are softly closed and his face is relaxed. The main visual idea is opening up and letting go of tight thoughts. An airy room with warm daylight and one simple flowering branch outside.",
+      "alt": "The golden lion opens a window as a breeze lifts his curls and carries paper knots outside."
+    },
+    {
+      "post": "content/writing/2025-year-in-review.md",
+      "image": "/images/writing/2025-year-in-review.webp",
+      "scene": "The lion cozies up in a broad armchair under a fluffy cream blanket, a steaming teal mug nearby. He looks happily through a large scrapbook on his lap. The scrapbook contains a few simple little painted shapes and snapshots of a sun, a trail, and a flower, with no text. A desert cactus and golden winter sun show through the window. His tail curls out from the blanket like a bookmark. A warm moment of counting the good memories.",
+      "alt": "The golden lion looks through a scrapbook under a soft blanket beside a steaming mug."
+    },
+    {
+      "post": "content/writing/can-a-patent-be-worth-3-2-billion.md",
+      "image": "/images/writing/can-a-patent-be-worth-3-2-billion.webp",
+      "scene": "The lion carefully lowers a large clear glass cloche over a charming tiny invention on his workbench: a small brass gear-powered flower with coral petals. He looks thoughtfully protective and curious, not possessive. The joke is his huge soft paws gently protecting this tiny clever thing. A loose blank blueprint with simple line-drawn gears rests beside the cloche. No written labels or money symbols.",
+      "alt": "The golden lion protects a tiny gear-powered flower beneath a glass cover."
+    },
+    {
+      "post": "content/writing/what-we-shipped-march-16.md",
+      "image": "/images/writing/what-we-shipped-march-16.webp",
+      "scene": "The lion kneels beside a charming little wooden delivery cart filled with neatly folded coral and cream paper airplanes. He delicately tightens one small wheel bolt with a tiny wrench, making the cart sturdy and ready to roll. His curls spill over one shoulder and he looks quietly proud. A playful image about repairing the everyday things so useful work can reach people. No packaging logos or words.",
+      "alt": "The golden lion fixes the wheel of a wooden cart filled with paper airplanes."
+    },
+    {
+      "post": "content/writing/what-we-shipped-march-23.md",
+      "image": "/images/writing/what-we-shipped-march-23.webp",
+      "scene": "The lion carefully calibrates a little brass balance scale on a teal workbench. He holds a tiny spirit level across the central beam and adjusts a small knob with one paw. Equal little wooden blocks sit in the two now-balanced pans. His expression is skeptical but pleased to see things finally measure correctly. A playful image about fixing misleading numbers and earning trust. No numbers or words on the scale.",
+      "alt": "The golden lion uses a tiny spirit level to check a brass balance scale."
+    },
+    {
+      "post": "content/writing/what-we-shipped-april-28.md",
+      "image": "/images/writing/what-we-shipped-april-28.webp",
+      "scene": "The lion is a delighted craft-film director at a small handmade tabletop theater. He unrolls a long accordion-like film strip of simple painted suns, leaves, and waves across the table. A little film reel rests by one forepaw and one curl has amusingly caught a loose loop of film. Keep the face delighted and the composition simple. The idea is many pieces of creative work finally running together. No lettering or extra characters.",
+      "alt": "The golden lion unrolls a colorful film strip across a small tabletop theater."
+    },
+    {
+      "post": "content/archive/frugal-portland/2014-new-years-resolutions.md",
+      "image": "/images/writing/archive-2014-resolutions.webp",
+      "scene": "The lion sits at a tiny writing desk with an absurdly long paper list that unrolls across the floor and loops past his tufted tail. He holds a fountain pen and smiles with eager ambition. The list contains only small hand-drawn empty square checkboxes and abstract short strokes, no readable words, numbers, or letters. A teal savings jar and a small blooming plant sit on the desk. Warm humor about making a big list of new-year intentions.",
+      "alt": "The golden lion writes a long list that unrolls from his desk onto the floor."
+    },
+    {
+      "post": "content/archive/frugal-portland/10-questions-with-j-d-roth-my-internet-famous-neighbor.md",
+      "image": "/images/writing/archive-jd-roth-interview.webp",
+      "scene": "The lion is an interested interviewer at an outdoor cafe table, holding a small notebook and fountain pen while listening toward an empty chair at the edge of the image. Two coffee mugs and a plain closed book sit between the seats. A pair of sunglasses perches jauntily on his huge curly mane. His eyes are bright and his posture is friendly and curious. He represents the writer conducting a good conversation, not the human interview guest. No other figures and no text.",
+      "alt": "The golden lion listens at a cafe table with a notebook, two mugs, and sunglasses in his mane."
+    },
+    {
+      "post": "content/archive/kathleencelmins-com/2018-in-review.md",
+      "image": "/images/writing/archive-2018-review.webp",
+      "scene": "The lion carries a little houseplant beside a cheerful stack of moving boxes. He has just arrived on a sunlit desert porch with a cactus and a gold sky; a small postcard-sized glimpse of rainy pine trees peeks from one open box. He looks a little tired but excited about the new home. One curly mane ringlet has caught a piece of packing tape. A warm funny scene about a full year of change and a move to Arizona. No labels or words on the boxes.",
+      "alt": "The golden lion arrives at a sunny desert home with moving boxes and a houseplant."
+    },
+    {
+      "post": "content/archive/kathleencelmins-com/2019-goals-business-and-personal.md",
+      "image": "/images/writing/archive-2019-goals.webp",
+      "scene": "The lion patiently places one small flat stepping stone across a narrow garden stream. A short path of other little stones leads toward a cozy reading chair under a tree. He wears a calm, focused smile as his grand mane drapes toward the water. A tiny flower grows between two earlier stones. The idea is small daily habits making a useful path, with a gentle joke in the contrast between his big paws and the small steady step. No text.",
+      "alt": "The golden lion adds one small stepping stone to a garden path across a stream."
+    },
+    {
+      "post": "content/archive/kathleencelmins-com/2020-goals-words-income-and-yoga-poses.md",
+      "image": "/images/writing/archive-2020-goals.webp",
+      "scene": "The lion attempts a playful crow yoga balance on a deep teal yoga mat. His forepaws support him, his hind feet tuck off the ground, and his tufted tail lifts for balance. His enormous golden curls almost brush the mat, giving him a determined but amused expression. A plain closed notebook and one small flower rest beside the mat. Keep the anatomy readable and his face visible in three-quarter view. Warm humor about practicing and making progress, not perfection. No text.",
+      "alt": "The golden lion practices a careful yoga balance with his mane nearly touching the mat."
+    },
+    {
+      "post": "content/archive/kathleencelmins-com/8-things-im-leaving-behind-and-what-im-making-space-for-instead-as-we-head-into-a-new-decade.md",
+      "image": "/images/writing/archive-making-space.webp",
+      "scene": "The lion happily sets down an enormous bulging travel bag filled with gray tangled wool and crumpled paper knots, then turns toward a bright airy garden carrying just one tiny flowering seedling. His curls spring wide and his shoulders relax. The heavy bag is left on a little bench, not thrown away. The funny, freeing idea is leaving old burdens behind to make room for what matters. One coherent scene, no signs or text.",
+      "alt": "The golden lion sets down a heavy bag and carries a small seedling toward a sunny garden."
+    },
+    {
+      "post": "content/archive/kathleencelmins-com/a-couple-words-on-imposter-syndrome.md",
+      "image": "/images/writing/archive-imposter-syndrome.webp",
+      "scene": "The lion gently lifts a comically small plain cardboard cat mask away from his face while looking into a small oval mirror. The tiny mask could never have hidden his huge exuberant mane. The mirror shows the same lion face with a warm, increasingly confident smile, not a different lion. An open notebook and pen rest at the edge of the table. A witty, affectionate scene about recognizing that he already belongs. No writing on the mask or notebook.",
+      "alt": "The golden lion removes a tiny cat mask and smiles at his own reflection."
+    },
+    {
+      "post": "content/archive/kathleencelmins-com/building-a-life-i-dont-want-to-retire-from.md",
+      "image": "/images/writing/archive-life-without-retirement.webp",
+      "scene": "The lion stretches happily in a hammock on a sunny garden patio with a notebook balanced on his lap and a pencil in one paw. His tufted tail dangles contentedly. A small simple writing desk and a flowering plant stand nearby, and a teal mug sits on a low stool. His huge curls spill over the hammock edge. A warm gently funny picture of a daily life that holds both satisfying work and rest. No screens, clocks, or text.",
+      "alt": "The golden lion rests in a garden hammock with a notebook and a mug nearby."
+    },
+    {
+      "post": "content/archive/kathleencelmins-com/calling-bs-on-love-what-you-do-and-youll-never-work-a-day-in-your-life.md",
+      "image": "/images/writing/archive-love-the-work.webp",
+      "scene": "The lion is a pleased but slightly tired pottery maker at a messy workbench. He proudly holds a beautiful small handmade teal mug in one paw while the other paw wipes a big smear of clay with a sponge. A few clay flecks are caught in his huge curls and a basin of tools waits nearby. The funny, honest idea is that loving the work still includes doing the messy chores. Keep it warm and satisfying, not exhausted or miserable. No apron lettering, logos, or text.",
+      "alt": "The golden lion admires a handmade mug while he wipes clay from his workbench."
+    }
+  ]
+}

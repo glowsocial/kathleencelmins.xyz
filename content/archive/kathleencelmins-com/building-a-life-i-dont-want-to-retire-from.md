@@ -18,6 +18,8 @@ curationNote: >-
   Selected as a strong personal philosophy essay with clear voice and lasting
   relevance.
 ---
+
+![The golden lion rests in a garden hammock with a notebook and a mug nearby.](/images/writing/archive-life-without-retirement.webp)
 I started writing online, after a few false starts (restaurant reviews, fiction) in 2011. My niche was personal finance. I found my people, I found my topic, and I wrote about how I got into, and more importantly, how I was going to get out of, a massive pile of debt.
 
 In personal finance, there are a number of sub-categories. I was a debt blogger, but many of my friends were blogging about freelancing, or investing, or… really most of us started by telling our own stories related to money.

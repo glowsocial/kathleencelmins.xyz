@@ -18,6 +18,8 @@ curationNote: >-
   Selected for first-person debt, goals, and early online-work context with
   clear authorship.
 ---
+
+![The golden lion writes a long list that unrolls from his desk onto the floor.](/images/writing/archive-2014-resolutions.webp)
 I love to make lists. To set goals. To realize my intentions. I also absolutely love to look at everyone else’s goals, so if you have a good list of resolutions for next year, let me know, and I’ll compile it all together into one amazing many-bullet-pointed list. Cool? Cool.
 
 Below are the things I’m going to make happen in 2014. Ready: go!

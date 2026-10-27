@@ -4,6 +4,8 @@ date: 2026-08-04
 description: "New branding, a vanity plate, and a breakfast that changed who I think Boomp is for."
 ---
 
+![The golden lion hangs bright handmade picture cards on a clothesline.](/images/writing/you-have-to-make-the-posts.webp)
+
 I just got my branding done. [Bethany](https://bethanyworks.com), as always, did an amazing job.
 
 Brent surprised me with my very first vanity plate. My car says BOOMP now. Honk if you see me! I've ordered branded sweatshirts and hats.

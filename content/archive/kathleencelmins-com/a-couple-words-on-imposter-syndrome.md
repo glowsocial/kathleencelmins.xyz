@@ -15,6 +15,8 @@ curationNote: >-
   Selected as a strong first-person essay with scene, vulnerability, and
   practical insight.
 ---
+
+![The golden lion removes a tiny cat mask and smiles at his own reflection.](/images/writing/archive-imposter-syndrome.webp)
 Recently, I went to Austin for a writing retreat.
 
 The reason I went I can’t really explain, other than to say I felt compelled to go. I’d just gotten to know the organizer, [Terri Trespicio](https://territrespicio.com/), through email after meeting her at [Statement Event](https://www.statementevent.co/) in New York City in May.

@@ -10,6 +10,7 @@ Use him in each new blog illustration, including images added to older posts.
 `reference.png` is the full-size original image that Kathleen approved.
 Keep this file as the fixed reference for his identity and the art style.
 The first published image is `/public/images/writing/where-does-confidence-come-from.webp`.
+The other post scenes and their prompts are in [post-images.json](post-images.json).
 
 Read the post before you choose the scene.
 Inspect `reference.png` before you generate an image.

@@ -4,6 +4,8 @@ date: 2026-03-16
 description: "A synopsis of The Untethered Soul by Michael A. Singer — the parts I want to remember, and the language it gave me for something I already knew."
 ---
 
+![The golden lion opens a window as a breeze lifts his curls and carries paper knots outside.](/images/writing/the-untethered-soul.webp)
+
 I finished [this book](https://amzn.to/4sQvNnW) last week, thinking I was the last person to have read it, and I want to remember it. It feels like the lessons in it are worth remembering, and rereading, and coming back to when I feel like I've lost my way.
 
 I thought it might be some overly religious nonsense, but what it actually was was a different way to look at meditation and the experience of who we are as not a collection of our ideas or the places we've been, but the way that we sit in awareness as the person whose thoughts and ideas come to them. 

@@ -17,6 +17,8 @@ curationNote: >-
   Selected as a strong annual goals essay with voice, reflection, and public
   continuity.
 ---
+
+![The golden lion practices a careful yoga balance with his mane nearly touching the mat.](/images/writing/archive-2020-goals.webp)
 I’m all about setting goals. I believe in the power of publishing your goals, and I believe that it doesn’t diminish them when your plans change.
 
 This is the internet, after all, not something chiseled in stone.

@@ -20,6 +20,8 @@ curationNote: >-
   Selected as a strong decade-transition essay with specific personal and
   professional reflection.
 ---
+
+![The golden lion sets down a heavy bag and carries a small seedling toward a sunny garden.](/images/writing/archive-making-space.webp)
 As I look back on the last decade, I’m reminded that a person can pack a whole lot into one ten-year span. But there are things better left in the teens.
 
 Here are the eight things I’m leaving in the teens and what I’m making room for in the twenties:

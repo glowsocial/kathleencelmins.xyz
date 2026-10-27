@@ -4,6 +4,8 @@ date: 2026-06-11
 description: "On why the agent hype is less about AI job titles and more about clear, checkable workflows."
 ---
 
+![The golden lion checks a small wooden marble run with a magnifying glass.](/images/writing/do-you-need-to-build-an-agent.webp)
+
 There's a lot of language being thrown around about AI right now.
 
 The newest, most exciting word seems to be **agents**.

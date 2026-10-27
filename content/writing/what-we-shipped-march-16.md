@@ -4,7 +4,7 @@ date: 2026-03-23
 description: "Every Monday, I look back at what actually got done — the features, fixes, sites, and SEO work across Glow Social and my client projects. Here's this week."
 ---
 
-![Monday workspace — another week shipped](/images/weekly-shipped-hero.jpg)
+![The golden lion fixes the wheel of a wooden cart filled with paper airplanes.](/images/writing/what-we-shipped-march-16.webp)
 
 Every Monday, I look back at the week and talk about what actually got done. Not in engineering-speak — just what changed for Glow Social customers, for my other projects, and for the business. Here's this week.
 

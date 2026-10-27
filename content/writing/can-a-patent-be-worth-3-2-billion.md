@@ -4,6 +4,8 @@ date: 2026-06-04
 description: "What one AI and IP night at Venture Cafe changed about how I am protecting what I am building."
 ---
 
+![The golden lion protects a tiny gear-powered flower beneath a glass cover.](/images/writing/can-a-patent-be-worth-3-2-billion.webp)
+
 One presentation can change the trajectory of your business.
 
 Last week at Venture Cafe, we had an AI and IP-themed night. An IP lawyer came in to talk about what founders need to protect, what can actually be protected, and what people tend to ignore until it is expensive.

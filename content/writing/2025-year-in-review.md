@@ -4,6 +4,8 @@ date: 2025-12-01
 description: "My 2025 year in review — the highlight reel, the things I want to remember, and the theme that ties them all together."
 ---
 
+![The golden lion looks through a scrapbook under a soft blanket beside a steaming mug.](/images/writing/2025-year-in-review.webp)
+
 This is my favorite time of year. It's a busy time, with the hustle and bustle of the holidays, but it's also a time of deep reflection. Looking back to look forward. Snuggling in with a fluffy blanket, a huge mug filled with something steaming, and my notebook, ready to ask myself "what did I do with these last 11 months?"
 
 When I lived in the Pacific Northwest, I leaned into Christmas to distract myself from the way the weather—the dark, the gloom—seeped into my skin, my bones, my soul. I'd skip the reflecting and jump straight to resolving: be thinner, richer, more accomplished. The new year would feel less gloomy because I had goals.

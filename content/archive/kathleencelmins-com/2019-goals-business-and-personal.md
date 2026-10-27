@@ -17,6 +17,8 @@ curationNote: >-
   Selected as a strong goals essay with personal context, work philosophy, and
   clean authorship.
 ---
+
+![The golden lion adds one small stepping stone to a garden path across a stream.](/images/writing/archive-2019-goals.webp)
 I couldn’t decide whether to post this here or on [my personal blog](http://kathleencelmins.com/). In fact, I’m anything but clear on where I want this blog to go in 2019 and beyond.
 
 See, I was following [Neil Patel’s](https://neilpatel.com/) rules for SEO on blog posts, which states that every single blog post should be, at minimum, 2000 words. And they should be _good_.

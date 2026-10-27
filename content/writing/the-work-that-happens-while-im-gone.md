@@ -4,6 +4,8 @@ date: 2026-09-09
 description: "I want AI to finish useful work while I'm away from my desk, with my judgment still in the process."
 ---
 
+![The golden lion leaves his desk while a small wind-up machine folds papers into a tray.](/images/writing/the-work-that-happens-while-im-gone.webp)
+
 I get a shitload done when I'm at my desk.
 
 Then I leave, and the work waits for me.

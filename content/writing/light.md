@@ -4,6 +4,8 @@ date: 2025-11-15
 description: "On the difficulty of small talk, and what it might mean to lead with what lights you up."
 ---
 
+![The golden lion smiles at a firefly as he holds a glowing jar close to his heart.](/images/writing/light.webp)
+
 "The light in me honors the light in you."
 
 It's one of my favorite phrases from yoga. And I think it's that way because we have a hard time acknowledging the light in ourselves. But, this is a self-referential reminder, because if you don't honor the light in you, then you can't honor the light in anyone else. It's funny how that works, right?

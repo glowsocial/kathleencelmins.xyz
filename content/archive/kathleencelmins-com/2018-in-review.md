@@ -17,6 +17,8 @@ curationNote: >-
   Selected as a strong annual-review essay with personal context and business
   continuity.
 ---
+
+![The golden lion arrives at a sunny desert home with moving boxes and a houseplant.](/images/writing/archive-2018-review.webp)
 Brent and I met in April 2013. We got married in September 2014. At the end of both of those years, we said, “wow, what a year,” and honestly?
 
 We’ve been doing some version of that every year since.

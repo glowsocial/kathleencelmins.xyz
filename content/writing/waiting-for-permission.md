@@ -4,6 +4,8 @@ date: 2026-10-22
 description: "And now I feel unstuck."
 ---
 
+![The golden lion steps through an open garden gate with a small camera.](/images/writing/waiting-for-permission.webp)
+
 I officially launched boomp.net on October 1.
 
 It took me forever (18 months) to build it.

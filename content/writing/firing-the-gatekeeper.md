@@ -4,6 +4,8 @@ date: 2026-04-07
 description: "On the version of me that only shows up when I'm tired, and what happened when I asked why."
 ---
 
+![The golden lion steps out from behind a tiny screen and gives a cheerful wave.](/images/writing/firing-the-gatekeeper.webp)
+
 I have this version of myself that only comes out when I'm exhausted.
 
 She's looser. Funnier. She says things I wouldn't normally say — not offensive, just unfiltered. A little zany. People always tell me she's more fun. That she makes the room better. That they wish she showed up more often.
