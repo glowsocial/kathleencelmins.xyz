@@ -87,8 +87,9 @@ export default function WorkWithMePage() {
         <div className="about-section">
           <p>
             <strong>Who is behind it.</strong>{" "}Me. I have worked in
-            marketing since 2010. In 2025 I stopped advising on it and built
-            boomp.net instead. I write the code and I answer the support
+            marketing since 2010. In 2025 I built boomp.net. Now I also run
+            marketing for a few businesses, and the software does the posting
+            part. I write the code and I answer the support
             email. If your posts are wrong, you are talking to the person
             who can fix it. <a href="/about">More about me</a>.
           </p>

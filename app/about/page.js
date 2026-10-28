@@ -42,8 +42,8 @@ export default function AboutPage() {
             the founder of <a href="https://boomp.net">boomp.net</a>. I live
             in Chandler, Arizona. I&rsquo;ve worked in digital marketing since
             2010: lead magnets, email sequences, content strategy, the whole
-            thing. In 2025 I stopped advising on it and built the software
-            instead.
+            thing. In 2025 I built the software. Now I also run marketing for
+            a few businesses, and the software does the posting part.
           </p>
         </div>
 
