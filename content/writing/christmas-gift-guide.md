@@ -195,15 +195,19 @@ My list has spaces for something to play with, make, wear, read, need, and want.
 
 ### Press-on nails
 
-**On the list.** “Fake nails” in the original note. No specific set chosen yet.
+<div class="gift-media"><a class="gift-photo" href="https://www.amazon.com/dp/B01N5N3HN5?tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer"><img src="/images/gifts/impress-mini-dream-big.webp" alt="KISS imPRESS Mini Dream Big peel-and-stick nails for kids" width="512" height="512" loading="lazy" decoding="async" /></a></div>
 
-<a class="shop-link" href="https://www.amazon.com/s?k=press+on+nails&amp;tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer">buy now<span aria-hidden="true"> →</span></a>
+**On the list.** KISS imPRESS Mini “Dream Big” nails come in kids’ sizes with peel-and-stick adhesive. No separate glue needed.
 
-### A new Diary of a Wimpy Kid book
+<a class="shop-link" href="https://www.amazon.com/dp/B01N5N3HN5?tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer">buy now<span aria-hidden="true"> →</span></a>
 
-**On the list.** I still need to choose the title.
+### Diary of a Wimpy Kid: Fight or Flight
 
-<a class="shop-link" href="https://www.amazon.com/s?k=Diary+of+a+Wimpy+Kid+new+book&amp;tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer">buy now<span aria-hidden="true"> →</span></a>
+<div class="gift-media"><a class="gift-photo" href="https://www.amazon.com/dp/1419782703?tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer"><img src="/images/gifts/wimpy-kid-fight-or-flight.webp" alt="Diary of a Wimpy Kid: Fight or Flight book cover" width="512" height="752" loading="lazy" decoding="async" /></a></div>
+
+**On the list.** Book 21 in the series, published October 20, 2026.
+
+<a class="shop-link" href="https://www.amazon.com/dp/1419782703?tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer">buy now<span aria-hidden="true"> →</span></a>
 
 <h2 id="little-kids">A few gifts for younger kids</h2>
 
