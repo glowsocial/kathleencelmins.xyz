@@ -281,9 +281,19 @@ Since I am making a list anyway.
 
 ### Outdoor slippers
 
-**Wish list.** The pair I have in mind comes in kids’ sizing. I still need the brand and model.
+<div class="gift-media"><a class="gift-photo" href="https://www.amazon.com/dp/B01N3A6V3O?tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer"><img src="/images/gifts/ugg-tasman-ii-chestnut.webp" alt="UGG Tasman II slippers in Chestnut" width="512" height="258" loading="lazy" decoding="async" /></a></div>
 
-<a class="shop-link" href="https://www.amazon.com/s?k=outdoor+slippers+kids+size+6&amp;tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer">buy now<span aria-hidden="true"> →</span></a>
+**Wish list.** The pair I have in mind comes in kids’ sizing.
+
+<a class="shop-link" href="https://www.amazon.com/dp/B01N3A6V3O?tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer">buy now<span aria-hidden="true"> →</span></a>
+
+### Ruti On the Loose work pants
+
+<div class="gift-media"><a class="gift-photo" href="https://ruti.com/products/the-on-the-loose-work-pants-deep-sea?variant=52601119867247" target="_blank" rel="noopener noreferrer"><img src="/images/gifts/ruti-on-the-loose-deep-sea.webp" alt="Ruti On the Loose work pants in Deep Sea" width="512" height="769" loading="lazy" decoding="async" /></a></div>
+
+**Wish list.** In Deep Sea.
+
+<a class="shop-link" href="https://ruti.com/products/the-on-the-loose-work-pants-deep-sea?variant=52601119867247" target="_blank" rel="noopener noreferrer">View at Ruti<span aria-hidden="true"> →</span></a>
 
 ### Jamón ibérico
 
