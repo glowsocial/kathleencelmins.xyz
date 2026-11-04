@@ -225,9 +225,9 @@ Joint gifts: try to limit. That instruction is in the note, too.
 
 ### A Shark hair dryer that can do some straightening
 
-**On the list.** I have not picked the model. This link opens a search, not a specific recommendation.
+**On the list.**
 
-<a class="shop-link" href="https://www.amazon.com/s?k=Shark+hair+dryer+straightening&amp;tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer">buy now<span aria-hidden="true"> →</span></a>
+<a class="shop-link" href="https://www.amazon.com/dp/B0FKKQ2PH1?tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer">buy now<span aria-hidden="true"> →</span></a>
 
 ### Family Christmas pajamas
 
