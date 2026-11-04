@@ -191,8 +191,6 @@ My oldest saw this kit at Costco and lit up. "Maybe put it on your list," I told
 
 <h2 id="wear-read">Something to wear. Something to read.</h2>
 
-My list has spaces for something to play with, make, wear, read, need, and want. The “need” and “want” spaces are still blank.
-
 ### Press-on nails
 
 <div class="gift-media"><a class="gift-photo" href="https://www.amazon.com/dp/B01N5N3HN5?tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer"><img src="/images/gifts/impress-mini-dream-big.webp" alt="KISS imPRESS Mini Dream Big peel-and-stick nails for kids" width="512" height="512" loading="lazy" decoding="async" /></a></div>
@@ -210,8 +208,6 @@ My list has spaces for something to play with, make, wear, read, need, and want.
 <a class="shop-link" href="https://www.amazon.com/dp/1419782703?tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer">buy now<span aria-hidden="true"> →</span></a>
 
 <h2 id="little-kids">A few gifts for younger kids</h2>
-
-The builder idea and two more saved links.
 
 ### Panda Brothers screwdriver board
 
@@ -238,8 +234,6 @@ The builder idea and two more saved links.
 <a class="shop-link" href="https://www.walmart.com/ip/55475736" target="_blank" rel="noopener noreferrer">View at Walmart<span aria-hidden="true"> →</span></a>
 
 <h2 id="shared">Shared gifts and family things</h2>
-
-Joint gifts: try to limit. That instruction is in the note, too.
 
 ### A Shark hair dryer that can do some straightening
 
