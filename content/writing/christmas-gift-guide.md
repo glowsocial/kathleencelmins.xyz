@@ -251,9 +251,11 @@ Joint gifts: try to limit. That instruction is in the note, too.
 
 ### Family Christmas pajamas
 
-**Bought.** From Old Navy, for Thanksgiving weekend. This link opens the current family pajama search.
+<div class="gift-media"><a class="gift-photo" href="https://oldnavy.gap.com/browse/family-pajamas/matching-pajamas?cid=1189220&amp;mlink=5151,topNav,visnav&amp;nav=meganav:Family+Pajamas::" target="_blank" rel="noopener noreferrer"><img src="/images/gifts/old-navy-family-pajamas.webp" alt="Old Navy red plaid pajamas" width="512" height="683" loading="lazy" decoding="async" /></a></div>
 
-<a class="shop-link" href="https://oldnavy.gap.com/browse/search.do?searchText=family%20pajamas" target="_blank" rel="noopener noreferrer">Browse Old Navy<span aria-hidden="true"> →</span></a>
+**Bought.** From Old Navy, for Thanksgiving weekend.
+
+<a class="shop-link" href="https://oldnavy.gap.com/browse/family-pajamas/matching-pajamas?cid=1189220&amp;mlink=5151,topNav,visnav&amp;nav=meganav:Family+Pajamas::" target="_blank" rel="noopener noreferrer">Browse Old Navy<span aria-hidden="true"> →</span></a>
 
 ### Fyrfly Player
 
