@@ -31,11 +31,15 @@ And here's what's going in the stockings.
 
 ### Hand sanitizer
 
+<div class="gift-media"><a class="gift-photo" href="https://www.amazon.com/dp/B0CJMV9SJY?tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer"><img src="https://m.media-amazon.com/images/I/816N0QQAQ1L._SL1500_.jpg" alt="Hand sanitizer" width="1500" height="1500" loading="lazy" decoding="async" /></a></div>
+
 I have no idea why my kids like hand sanitizer. But they do. And they really like the rectangular kind. And they fit in a stocking.
 
 <a class="shop-link" href="https://www.amazon.com/dp/B0CJMV9SJY?tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer">buy now<span aria-hidden="true"> →</span></a>
 
 ### Eye masks
+
+<div class="gift-media"><a class="gift-photo" href="https://www.amazon.com/dp/B08ZCB9X7R?tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer"><img src="https://m.media-amazon.com/images/I/71JdUWz8sYL._AC_SL1500_.jpg" alt="Eye masks" width="1500" height="1489" loading="lazy" decoding="async" /></a></div>
 
 Just the other night, my seven-year-old came out of her room for the third time to ask, "When are you getting me an eye mask?"
 
@@ -44,6 +48,8 @@ I don't know, diva. Maybe I'll leave this one to the big man.
 <a class="shop-link" href="https://www.amazon.com/dp/B08ZCB9X7R?tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer">buy now<span aria-hidden="true"> →</span></a>
 
 ### NeeDoh cubes
+
+<div class="gift-media"><a class="gift-photo" href="https://www.amazon.com/dp/B0DXRKN7KY?tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer"><img src="https://m.media-amazon.com/images/I/81LMlw57DAL._AC_SL1500_.jpg" alt="NeeDoh cubes" width="1408" height="1500" loading="lazy" decoding="async" /></a></div>
 
 How old am I?
 
@@ -57,6 +63,8 @@ I just need to supply.
 
 ### Rainbow popsicle loofahs
 
+<div class="gift-media"><a class="gift-photo" href="https://www.amazon.com/dp/B0CDH1H2J6?tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer"><img src="https://m.media-amazon.com/images/I/61ZEaBeM4vL._AC_SL1280_.jpg" alt="Rainbow popsicle loofahs" width="1269" height="1155" loading="lazy" decoding="async" /></a></div>
+
 Found these bad boys at Albertsons, which means hopefully they're stored in a place where I will:
 
 a) remember them, and
@@ -68,6 +76,8 @@ Because rainbow. And popsicles.
 <a class="shop-link" href="https://www.amazon.com/dp/B0CDH1H2J6?tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer">buy now<span aria-hidden="true"> →</span></a>
 
 ### Hair clips
+
+<div class="gift-media"><a class="gift-photo" href="https://www.amazon.com/dp/B0H35V8VPW?tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer"><img src="https://m.media-amazon.com/images/I/71wvwAH4zdL._SL1500_.jpg" alt="Hair clips" width="1500" height="1500" loading="lazy" decoding="async" /></a></div>
 
 Out: scrunchies.
 
@@ -149,6 +159,8 @@ Here's what I'm considering.
 
 ### Glitter pen set
 
+<div class="gift-media"><a class="gift-photo" href="https://www.amazon.com/dp/B0F9S3JC1M?tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer"><img src="https://m.media-amazon.com/images/I/81wGV2am90L._AC_SL1500_.jpg" alt="Glitter pen set" width="1500" height="1485" loading="lazy" decoding="async" /></a></div>
+
 My oldest saw this kit at Costco and lit up. "Maybe put it on your list," I told her.
 
 <a class="shop-link" href="https://www.amazon.com/dp/B0F9S3JC1M?tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer">buy now<span aria-hidden="true"> →</span></a>
@@ -215,6 +227,8 @@ The builder idea and two more saved links.
 
 ### Learning Resources Snap-n-Learn Counting Cows
 
+<div class="gift-media"><a class="gift-photo" href="https://www.walmart.com/ip/55475736" target="_blank" rel="noopener noreferrer"><img src="https://i5.walmartimages.com/seo/Learning-Resources-Snap-n-Learn-Counting-Cows_0f3025c5-b242-4823-9594-b7a5234735da.b60de55c846694c5e88cac34281c0e0e.jpeg?odnBg=FFFFFF&amp;odnHeight=573&amp;odnWidth=573" alt="Learning Resources Snap-n-Learn Counting Cows" width="573" height="573" loading="lazy" decoding="async" /></a></div>
+
 **Considering.** A set of little cows to match, count, and sort.
 
 <a class="shop-link" href="https://www.walmart.com/ip/55475736" target="_blank" rel="noopener noreferrer">View at Walmart<span aria-hidden="true"> →</span></a>
@@ -247,7 +261,7 @@ Joint gifts: try to limit. That instruction is in the note, too.
 
 ### Inkifi photo magnets
 
-<div class="gift-media"><a class="gift-photo" href="https://inkifi.com/us/prints/square-magnets.html" target="_blank" rel="noopener noreferrer"><img src="https://inkifi.com/media/catalog/product/cache/6b78ac9ed927a3c2db42a3c84dab4ce5/c/u/custom-photo-magnets.jpg" alt="Inkifi photo magnets" width="360" height="300" loading="lazy" decoding="async" /></a></div>
+<div class="gift-media"><a class="gift-photo" href="https://inkifi.com/us/prints/square-magnets.html" target="_blank" rel="noopener noreferrer"><img src="/images/gifts/inkifi-photo-magnets.webp" alt="Inkifi photo magnets" width="360" height="300" loading="lazy" decoding="async" /></a></div>
 
 **Considering.** Square magnets made from your photos.
 
@@ -279,9 +293,11 @@ Since I am making a list anyway.
 
 ### Jamón ibérico
 
-**Wish list.** From Costco. I still need the exact listing.
+<div class="gift-media"><a class="gift-photo" href="https://www.costco.com/p/-/covapjamon-iberico-bellota-ham-leg-with-stand-and-knife-154-lbs/100519895" target="_blank" rel="noopener noreferrer"><img src="/images/gifts/covap-jamon-iberico.webp" alt="Covap jamón ibérico ham leg with stand and knife" width="512" height="512" loading="lazy" decoding="async" /></a></div>
 
-<a class="shop-link" href="https://www.costco.com/s?keyword=jamon%20iberico" target="_blank" rel="noopener noreferrer">Search Costco<span aria-hidden="true"> →</span></a>
+**Wish list.** From Costco.
+
+<a class="shop-link" href="https://www.costco.com/p/-/covapjamon-iberico-bellota-ham-leg-with-stand-and-knife-154-lbs/100519895" target="_blank" rel="noopener noreferrer">View at Costco<span aria-hidden="true"> →</span></a>
 
 ---
 
