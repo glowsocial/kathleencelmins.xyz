@@ -285,12 +285,6 @@ Since I am making a list anyway.
 
 <a class="shop-link" href="https://www.amazon.com/s?k=outdoor+slippers+kids+size+6&amp;tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer">buy now<span aria-hidden="true"> →</span></a>
 
-### Diana Taverner’s sweater
-
-**Still looking.** The one from the last episode of season six. I have not found an exact match, so there is no shopping link yet.
-
-<span class="missing-link">Exact match still to find</span>
-
 ### Jamón ibérico
 
 <div class="gift-media"><a class="gift-photo" href="https://www.costco.com/p/-/covapjamon-iberico-bellota-ham-leg-with-stand-and-knife-154-lbs/100519895" target="_blank" rel="noopener noreferrer"><img src="/images/gifts/covap-jamon-iberico.webp" alt="Covap jamón ibérico ham leg with stand and knife" width="512" height="512" loading="lazy" decoding="async" /></a></div>
