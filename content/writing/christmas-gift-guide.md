@@ -1,6 +1,7 @@
 ---
 title: "What I'm considering for Christmas this year"
 date: 2026-10-27
+layout: gift-guide
 description: "Stocking stuffers, gifts to play with and make, a few shared gifts, and my own wish list."
 ---
 

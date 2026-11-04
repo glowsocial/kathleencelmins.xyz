@@ -211,6 +211,62 @@ main{flex:1;width:100%}
 .article-nav-title{display:block;font-weight:600;line-height:1.3;transition:color var(--transition)}
 .article-nav-next{text-align:right}
 
+/* Gift guides keep each item, photo, and shop link together. */
+.gift-guide-page{max-width:1120px}
+.gift-guide-page .article-header{max-width:760px;margin-bottom:var(--space-lg)}
+.gift-guide-page .article-title{max-width:23ch;font-size:clamp(2rem,3.5vw,2.75rem)}
+.gift-guide-page .article-subtitle{font-size:1.125rem;max-width:60ch;margin-bottom:var(--space-sm)}
+.gift-guide-page .article-byline{padding:var(--space-sm) 0}
+.gift-guide-page .article-byline-name{font-size:1.5rem}
+.gift-guide-content{margin-top:var(--space-xl)}
+.gift-guide-layout{display:grid;grid-template-columns:176px minmax(0,1fr);gap:var(--space-3xl);align-items:start}
+.gift-guide-nav{position:sticky;top:var(--space-xl);font:500 .875rem/1.5 var(--font-ui)}
+.gift-guide-nav p{font-weight:600;color:var(--ink);margin:0 0 var(--space-sm)}
+.gift-guide-nav a{display:flex;align-items:center;min-height:44px;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink-secondary)}
+.gift-guide-nav a:hover{color:var(--accent);text-decoration:underline}
+.gift-guide-body{min-width:0}
+.gift-guide-intro{font-size:1.125rem;line-height:1.65}
+.gift-guide-intro p{margin-bottom:var(--space-sm)}
+.gift-guide-intro details{margin:var(--space-sm) 0 var(--space-lg)}
+.gift-guide-intro summary{width:fit-content;min-height:44px;padding:var(--space-sm) 0;color:var(--accent);cursor:pointer;font:500 .875rem/1.6 var(--font-ui);text-decoration:underline;text-underline-offset:3px}
+.gift-guide-intro details[open] summary{margin-bottom:var(--space-md)}
+.gift-guide-intro details p{margin-bottom:var(--space-md)}
+.gift-guide-disclosure{font:400 .8125rem/1.6 var(--font-ui);color:var(--ink-secondary);border-top:1px solid var(--rule);padding-top:var(--space-md);margin-bottom:var(--space-2xl)}
+.gift-guide-disclosure p{margin:0}
+.gift-section{margin-bottom:var(--space-2xl)}
+.gift-guide-content .gift-section h2{font:400 1.875rem/1.2 var(--font-serif);margin:0 0 var(--space-md);scroll-margin-top:var(--space-xl);text-wrap:balance}
+.gift-section-intro-copy{font-size:1.0625rem;line-height:1.6;color:var(--ink-secondary)}
+.gift-section-intro-copy p{margin-bottom:var(--space-sm)}
+.gift-row{padding:var(--space-lg) 0;border-bottom:1px solid var(--rule);scroll-margin-top:var(--space-xl)}
+.gift-row-with-photo{display:grid;grid-template-columns:148px minmax(0,1fr);gap:var(--space-lg);align-items:start}
+.gift-copy{min-width:0;font-size:1.0625rem;line-height:1.6}
+.gift-guide-content .gift-copy h3{font:600 1.125rem/1.35 var(--font-ui);margin:0 0 var(--space-sm);text-wrap:pretty}
+.gift-copy p{margin:0 0 var(--space-sm)}
+.gift-copy .shop-link{display:inline-flex;align-items:center;gap:var(--space-sm);min-height:44px;font:600 .875rem/1.4 var(--font-ui);text-decoration:underline;text-decoration-color:var(--accent)}
+.gift-copy .missing-link{font:400 .875rem/1.5 var(--font-ui);color:var(--ink-muted)}
+.gift-media{width:100%;background:#FFFFFF;border-radius:var(--radius);overflow:hidden}
+.gift-guide-content .gift-photo{display:flex;align-items:center;justify-content:center;min-height:148px;padding:var(--space-sm)}
+.gift-guide-content .gift-photo img{display:block;width:100%;height:132px;object-fit:contain;margin:0;border-radius:0}
+.gift-guide-closing{font-size:.9375rem;color:var(--ink-secondary);margin-top:var(--space-xl)}
+.gift-guide-page .article-footer{max-width:760px;margin-left:auto}
+@media(max-width:850px){
+  .gift-guide-layout{grid-template-columns:1fr;gap:var(--space-lg)}
+  .gift-guide-nav{position:static;display:flex;flex-wrap:wrap;gap:0 var(--space-lg);padding-bottom:var(--space-md);border-bottom:1px solid var(--rule)}
+  .gift-guide-nav p{flex-basis:100%;margin:0}
+  .gift-guide-nav a{border:0}
+  .gift-guide-page .article-footer{max-width:none}
+}
+@media(max-width:520px){
+  .gift-guide-page .article-title{font-size:2rem;max-width:22ch}
+  .gift-guide-page .article-subtitle{font-size:1rem}
+  .gift-guide-content{margin-top:var(--space-lg)}
+  .gift-row-with-photo{grid-template-columns:104px minmax(0,1fr);gap:var(--space-md)}
+  .gift-guide-content .gift-photo{min-height:104px}
+  .gift-guide-content .gift-photo img{height:88px}
+  .gift-guide-content .gift-copy h3{font-size:1rem}
+  .gift-copy{font-size:1rem}
+}
+
 /* --- Page headers (writing, archive) --- */
 .page-header{position:relative;max-width:var(--max-read);margin:0 auto var(--space-xl);padding-bottom:var(--space-lg)}
 .page-title,.about-lead h1,.about-content h1{font-family:var(--font-hand);font-size:3.75rem;font-weight:400;line-height:1;letter-spacing:0;margin-bottom:var(--space-sm)}

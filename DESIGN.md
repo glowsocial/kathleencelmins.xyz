@@ -218,6 +218,10 @@ Controls, portraits, article images, and code blocks use small corners from the 
 
 ## Components
 
+### Gift guides
+
+A post with `layout: gift-guide` uses a 1120px page and a 176px section navigation beside the reading column. Open rows group each gift's photo, title, prose, and named shop link. Photos fit inside a white 148px square; phones use 104px squares. At 850px and below, section links wrap above the list. The full introduction stays available in a native disclosure. This layout keeps the site's type, palette, themes, and plain Markdown source.
+
 ### Buttons
 
 Primary buttons use the accent ground and on-accent text. Hover uses the deeper accent. Secondary buttons use clear grounds, ink text, and a rule border that changes to ink on hover. Both use weight (600) and the small UI type size. Small buttons use the label size and padding (0.4rem 0.8rem).

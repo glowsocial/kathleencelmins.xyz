@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getPostBySlug, getAllSlugs, getAllPosts } from "@/lib/posts";
 import { markdownToHtml } from "@/lib/markdown";
+import { giftGuideToHtml } from "@/lib/gift-guide";
 import Doodle from "../../components/Doodle";
 import { doodleForPost } from "../../components/doodles";
 import SubscribeForm from "../../components/SubscribeForm";
@@ -36,7 +37,8 @@ export default async function WritingPost({ params }) {
     notFound();
   }
 
-  const contentHtml = markdownToHtml(post.content);
+  const isGiftGuide = post.layout === "gift-guide";
+  const contentHtml = isGiftGuide ? giftGuideToHtml(post.content) : markdownToHtml(post.content);
   const all = getAllPosts();
   const i = all.findIndex((p) => p.slug === slug);
   const newer = i > 0 ? all[i - 1] : null;
@@ -44,7 +46,7 @@ export default async function WritingPost({ params }) {
   const doodle = doodleForPost(all, slug);
 
   return (
-    <div className="read-container">
+    <div className={`read-container${isGiftGuide ? " gift-guide-page" : ""}`}>
       <article>
         <header className="article-header">
           <h1 className="article-title">{post.title}</h1>
@@ -66,7 +68,7 @@ export default async function WritingPost({ params }) {
         </header>
 
         <div
-          className="article-content"
+          className={`article-content${isGiftGuide ? " gift-guide-content" : ""}`}
           dangerouslySetInnerHTML={{ __html: contentHtml }}
         />
 
