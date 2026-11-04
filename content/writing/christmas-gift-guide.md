@@ -225,6 +225,8 @@ Joint gifts: try to limit. That instruction is in the note, too.
 
 ### A Shark hair dryer that can do some straightening
 
+<div class="gift-media"><a class="gift-photo" href="https://www.amazon.com/dp/B0FKKQ2PH1?tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer"><img src="https://m.media-amazon.com/images/I/71NCOxPOyfL._AC_SX466_.jpg" alt="Shark Glossi 2-in-1 blow dryer brush" width="466" height="1008" loading="lazy" decoding="async" /></a></div>
+
 **On the list.**
 
 <a class="shop-link" href="https://www.amazon.com/dp/B0FKKQ2PH1?tag=kathleencelmins-20" target="_blank" rel="sponsored noopener noreferrer">buy now<span aria-hidden="true"> →</span></a>
