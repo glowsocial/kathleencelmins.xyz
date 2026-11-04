@@ -279,11 +279,11 @@ Since I am making a list anyway.
 
 ### Escapade Gourmande Grand Cru
 
-<div class="gift-media"><a class="gift-photo" href="https://maisonmataha.com/products/escapade-gourmande-grand-cru" target="_blank" rel="noopener noreferrer"><img src="https://maisonmataha.com/cdn/shop/files/4_2_61b464a8-6f6e-46f9-821c-b29475fbfbf3.jpg?v=1791373740&amp;width=1200" alt="Escapade Gourmande Grand Cru" width="360" height="300" loading="lazy" decoding="async" /></a></div>
+<div class="gift-media"><a class="gift-photo" href="https://www.luckyscent.com/products/escapade-gourmande-grand-cru-by-maison-mataha" target="_blank" rel="noopener noreferrer"><img src="https://maisonmataha.com/cdn/shop/files/4_2_61b464a8-6f6e-46f9-821c-b29475fbfbf3.jpg?v=1791373740&amp;width=1200" alt="Escapade Gourmande Grand Cru" width="360" height="300" loading="lazy" decoding="async" /></a></div>
 
-**Wish list.** The Maison Mataha perfume. I wrote “Escape Gourmand” in Notes; this is the full name.
+A few years ago, I had Escapade Gourmande and loved it. I've heard the hype about this one and would be willing to get a full bottle since it's not exactly a blind buy. But perhaps a sample would be a better idea.
 
-<a class="shop-link" href="https://maisonmataha.com/products/escapade-gourmande-grand-cru" target="_blank" rel="noopener noreferrer">View at Maison Mataha<span aria-hidden="true"> →</span></a>
+<a class="shop-link" href="https://www.luckyscent.com/products/escapade-gourmande-grand-cru-by-maison-mataha" target="_blank" rel="noopener noreferrer">View at Luckyscent<span aria-hidden="true"> →</span></a>
 
 ### Outdoor slippers
 
